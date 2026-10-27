@@ -258,7 +258,7 @@ nav a:hover {
   border-radius: 3px;
   padding: 1px 4px;
 }
-.mascot-hero {
+.portrait-hero {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -266,7 +266,7 @@ nav a:hover {
   position: relative;
   min-width: 0;
 }
-.mascot-hero:before {
+.portrait-hero:before {
   content: "";
   position: absolute;
   inset: 8% 2% 14%;
@@ -274,18 +274,12 @@ nav a:hover {
   background: #e9a23b12;
   border: 1px solid #e9a23b25;
 }
-.mascot-hero img {
+.portrait-hero img {
   width: 100%;
   height: auto;
   max-width: 440px;
   position: relative;
   object-fit: contain;
-}
-.mascot-caption {
-  font-size: 8px;
-  letter-spacing: 1.7px;
-  color: var(--muted);
-  margin-top: 12px;
 }
 .hero-foot {
   grid-column: 1/-1;
@@ -972,12 +966,12 @@ footer > a:last-child {
   .hero-actions .text-link {
     font-size: 11px;
   }
-  .mascot-hero {
+  .portrait-hero {
     width: 100%;
     max-width: 370px;
     margin: 25px auto 0;
   }
-  .mascot-hero img {
+  .portrait-hero img {
     max-width: 320px;
   }
   .hero-foot {

@@ -44,16 +44,13 @@ export default function Home() {
           </div>
           <ProfileLinks />
         </div>
-        <div className="mascot-hero">
+        <div className="portrait-hero">
           <img
-            src="/brand/beer-buddy.png"
-            width="1374"
-            height="1145"
-            alt="The Beer Buddy, a friendly amber beer character working on a laptop"
+            src="/images/kian-suit-portrait.png"
+            width="1254"
+            height="1254"
+            alt="Kian Thomasbeer in a navy suit with Beer Buddy sitting on his shoulder"
           />
-          <span className="mascot-caption">
-            THE BEER BUDDY · ALWAYS LEARNING
-          </span>
         </div>
         <div className="hero-foot">
           <span>BASED IN CURIOSITY. OPEN TO POSSIBILITY.</span>
