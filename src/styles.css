@@ -285,7 +285,7 @@ nav a:hover {
   );
 }
 .portrait-hero img {
-  width: clamp(480px, 44vw, 560px);
+  width: clamp(576px, 52.8vw, 672px);
   height: auto;
   max-width: none;
   position: absolute;
@@ -882,7 +882,7 @@ footer > a:last-child {
     right: -3%;
   }
   .portrait-hero img {
-    width: clamp(420px, 51vw, 520px);
+    width: clamp(504px, 61.2vw, 624px);
   }
   .hero-foot {
     flex-direction: column;
@@ -999,13 +999,13 @@ footer > a:last-child {
     inset: auto;
     width: 100%;
     max-width: 370px;
-    height: 360px;
+    height: 432px;
     margin: 15px auto 0;
     order: 2;
   }
   .portrait-hero img {
-    width: 100%;
-    max-width: 370px;
+    width: 120%;
+    max-width: 444px;
     bottom: -20px;
   }
   .hero-foot {
