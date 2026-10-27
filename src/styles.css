@@ -266,20 +266,14 @@ nav a:hover {
   position: relative;
   min-width: 0;
 }
-.portrait-hero:before {
-  content: "";
-  position: absolute;
-  inset: 8% 2% 14%;
-  border-radius: 50%;
-  background: #e9a23b12;
-  border: 1px solid #e9a23b25;
-}
 .portrait-hero img {
   width: 100%;
   height: auto;
   max-width: 440px;
   position: relative;
   object-fit: contain;
+  transform: scale(1.08);
+  transform-origin: center bottom;
 }
 .hero-foot {
   grid-column: 1/-1;
