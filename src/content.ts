@@ -11,4 +11,9 @@ export const articles = [
 ];
 export const readingTime = (body: string[]) => Math.max(1, Math.ceil(body.join(' ').split(/\s+/).length / 200));
 // Add verified URLs and a resume in public/ when available. Null values render honest placeholders.
-export const profile = {github:null as string|null,linkedin:null as string|null,email:null as string|null,resume:null as string|null};
+export const profile = {
+ github: 'https://github.com/MrHim0thy',
+ linkedin: 'https://www.linkedin.com/in/kian-thomasbeer/',
+ email: 'kianthomasbeer@gmail.com',
+ resume: '/Kian_Thomasbeer_Resume.pdf',
+};

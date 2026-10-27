@@ -14,7 +14,13 @@ export function ProfileLinks() {
         { label: "Resume", icon: <Download size={16} />, url: profile.resume },
       ].map((x) =>
         x.url ? (
-          <a key={x.label} href={x.url} target="_blank" rel="noreferrer">
+          <a
+            key={x.label}
+            href={x.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`${x.label === "Resume" ? "View résumé PDF" : x.label} (opens in a new tab)`}
+          >
             {x.icon}
             {x.label}
             <ArrowUpRight size={13} />

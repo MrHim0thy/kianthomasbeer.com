@@ -9,7 +9,7 @@ import {
 } from "react-router-dom";
 import { MotionConfig, motion } from "framer-motion";
 import { ArrowUpRight, Menu, X } from "lucide-react";
-import { projects, articles } from "./content";
+import { projects, articles, profile } from "./content";
 import Home from "./pages/Home";
 import Projects from "./pages/Projects";
 import CuriosityJournal from "./pages/CuriosityJournal";
@@ -99,12 +99,13 @@ export default function App() {
               </NavLink>
             ))}
           </nav>
-          <Link
+          <a
             className="header-contact"
-            to={{ pathname: "/", hash: "#contact" }}
+            href={`mailto:${profile.email}`}
+            aria-label="Contact Kian Thomasbeer by email"
           >
-            Let’s connect <ArrowUpRight size={16} />
-          </Link>
+            Contact <ArrowUpRight size={16} />
+          </a>
         </header>
         <motion.main
           id="main"
