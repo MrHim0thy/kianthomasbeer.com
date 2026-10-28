@@ -284,15 +284,30 @@ nav a:hover {
     transparent 68%
   );
 }
-.portrait-hero img {
-  width: clamp(576px, 52.8vw, 672px);
-  height: auto;
-  max-width: none;
+.portrait-composition {
+  height: clamp(576px, 52.8vw, 672px);
+  aspect-ratio: 1817 / 2628;
   position: absolute;
   bottom: -28px;
-  left: 50%;
-  object-fit: contain;
+  left: 47%;
   transform: translateX(-50%);
+  overflow: hidden;
+}
+/* Frame the source's transparent canvas; neither PNG is edited or stretched. */
+.portrait-composition .portrait-photo {
+  position: absolute;
+  width: 166.0979637%;
+  max-width: none;
+  height: auto;
+  left: -2.6967529%;
+  top: -24.7336377%;
+}
+.portrait-composition .shoulder-buddy {
+  position: absolute;
+  width: 30%;
+  height: auto;
+  left: 64%;
+  top: 18.5%;
 }
 .hero-foot {
   position: relative;
@@ -881,8 +896,9 @@ footer > a:last-child {
     left: 45%;
     right: -3%;
   }
-  .portrait-hero img {
-    width: clamp(504px, 61.2vw, 624px);
+  .portrait-composition {
+    height: clamp(504px, 61.2vw, 624px);
+    left: 50%;
   }
   .hero-foot {
     flex-direction: column;
@@ -1003,9 +1019,8 @@ footer > a:last-child {
     margin: 15px auto 0;
     order: 2;
   }
-  .portrait-hero img {
-    width: 120%;
-    max-width: 444px;
+  .portrait-composition {
+    height: min(120vw, 444px);
     bottom: -20px;
   }
   .hero-foot {

@@ -45,12 +45,22 @@ export default function Home() {
           <ProfileLinks />
         </div>
         <div className="portrait-hero">
-          <img
-            src="/images/kian-suit-portrait.png"
-            width="1254"
-            height="1254"
-            alt="Kian Thomasbeer in a navy suit with Beer Buddy sitting on his shoulder"
-          />
+          <div className="portrait-composition">
+            <img
+              className="portrait-photo"
+              src="/images/kian-website-portrait.png"
+              width="3018"
+              height="3278"
+              alt="Kian Thomasbeer smiling in a light blue shirt"
+            />
+            <img
+              className="shoulder-buddy"
+              src="/brand/beer-buddy.png"
+              width="1374"
+              height="1145"
+              alt="Beer Buddy perched on Kian’s shoulder, working on a laptop"
+            />
+          </div>
         </div>
         <div className="hero-foot">
           <span>BASED IN CURIOSITY. OPEN TO POSSIBILITY.</span>
