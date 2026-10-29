@@ -1,0 +1,59 @@
+/* One capstone visualization; no shared page or card styles are changed. */
+.uva-respiratory { border-top: 1px solid var(--line); margin-top: 70px; padding-top: 45px; }
+.respiratory-subtitle { max-width: 760px; margin-top: 18px; font-size: 16px; }
+.respiratory-controls { display: flex; align-items: flex-end; justify-content: space-between; gap: 25px; margin-top: 32px; }
+.respiratory-controls label { display: block; color: var(--navy); font-size: 12px; font-weight: 600; margin-bottom: 9px; }
+.respiratory-controls select { min-height: 44px; width: 330px; max-width: 100%; color: var(--navy); background: var(--cream); border: 1px solid var(--line); border-radius: 5px; padding: 10px 35px 10px 12px; font: inherit; font-size: 13px; }
+.respiratory-controls select:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+.respiratory-controls > span { font-size: 11px; color: var(--muted); line-height: 1.8; text-align: right; }
+.respiratory-scope { font-size: 12px; line-height: 1.8; background: #a8d86f13; border-left: 2px solid #97a58c; padding: 14px 17px; margin-top: 22px; }
+.respiratory-scope strong { color: var(--navy); font-weight: 600; }
+.respiratory-chart-help { font-size: 11px; margin-top: 25px; margin-bottom: 12px; }
+.respiratory-chart-frame { position: relative; width: 100%; border: 1px solid var(--line); border-radius: 5px; background: #fffdf74d; padding: 0; }
+.respiratory-chart-frame:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+.respiratory-chart-frame svg { display: block; width: 100%; height: auto; touch-action: pan-y; }
+.respiratory-grid-line { stroke: var(--line); stroke-width: 1; stroke-dasharray: 3 5; }
+.respiratory-axis { stroke: #7b817e; stroke-width: 1; }
+.respiratory-tick { fill: var(--muted); font: 11px Inter,ui-sans-serif,system-ui,sans-serif; }
+.respiratory-axis-label { fill: var(--navy); font: 11px Inter,ui-sans-serif,system-ui,sans-serif; }
+.respiratory-data-line { fill: none; stroke: var(--accent); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.respiratory-data-dot { fill: var(--accent); }
+.respiratory-cursor { stroke: #788867; stroke-width: 1; stroke-dasharray: 4 4; }
+.respiratory-active-dot { fill: var(--amber); stroke: var(--navy); stroke-width: 1.5; }
+.respiratory-tooltip { position: absolute; pointer-events: none; top: 8px; width: 180px; padding: 10px 12px; border: 1px solid var(--line); border-radius: 5px; background: var(--cream); box-shadow: 0 4px 14px #1a1f2b0d; color: var(--navy); }
+.respiratory-tooltip span { display: block; font-size: 10px; color: var(--muted); line-height: 1.6; }
+.respiratory-tooltip strong { display: block; font-size: 12px; font-weight: 600; line-height: 1.7; }
+.respiratory-coverage { font-size: 11px; margin-top: 12px; }
+.respiratory-readout { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 10px; border-bottom: 1px solid var(--line); padding: 16px 0; min-height: 56px; font-size: 12px; color: var(--muted); }
+.respiratory-readout strong { color: var(--navy); font-weight: 600; }
+.respiratory-source { font-size: 11px; line-height: 1.8; margin-top: 20px; }
+.respiratory-source code { font-size: 10px; overflow-wrap: anywhere; }
+.respiratory-observation { border-left: 2px solid var(--amber); padding: 5px 0 5px 23px; margin-top: 35px; }
+.respiratory-observation .eyebrow { font-size: 9px; letter-spacing: 1.4px; line-height: 1.8; }
+.respiratory-observation p { max-width: 850px; font-size: 13px; margin-top: 14px; line-height: 1.9; }
+.respiratory-observation p:last-child { font-size: 12px; }
+.respiratory-data-state { border: 1px dashed var(--line); border-radius: 5px; margin-top: 28px; padding: 32px; }
+.respiratory-data-state > svg { color: var(--accent); margin-bottom: 18px; }
+.respiratory-data-state h3 { font-size: 23px; margin-bottom: 14px; }
+.respiratory-data-state p { max-width: 680px; }
+.respiratory-data-state button { background: none; border: 0; color: var(--accent); margin-top: 20px; padding: 5px 0; }
+.respiratory-table { margin-top: 20px; }
+.respiratory-table summary { cursor: pointer; color: var(--accent); font-size: 12px; line-height: 1.8; padding: 8px 0; }
+.respiratory-table summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.respiratory-table-scroll { overflow: auto; max-height: 420px; border: 1px solid var(--line); margin-top: 12px; }
+.respiratory-table table { width: 100%; border-collapse: collapse; font-size: 12px; text-align: left; }
+.respiratory-table caption { font-size: 11px; color: var(--muted); padding: 14px; text-align: left; }
+.respiratory-table th, .respiratory-table td { padding: 11px 14px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+.respiratory-table thead th { background: var(--surface); color: var(--navy); font-weight: 600; }
+.respiratory-table tbody th { font-weight: 400; }
+.respiratory-table tbody tr:nth-child(even) { background: #a8d86f0b; }
+@media (max-width: 700px) {
+  .uva-respiratory { margin-top: 45px; padding-top: 35px; }
+  .respiratory-subtitle { font-size: 14px; }
+  .respiratory-controls { align-items: stretch; flex-direction: column; gap: 16px; }
+  .respiratory-controls select { width: 100%; }
+  .respiratory-controls > span { text-align: left; }
+  .respiratory-data-state { padding: 25px; }
+  .respiratory-observation { padding-left: 18px; }
+}
+.respiratory-table-scroll:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }

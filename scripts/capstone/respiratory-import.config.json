@@ -1,0 +1,12 @@
+{
+  "dateColumn": "Week.Ending.Date",
+  "districtColumn": "Health_District",
+  "countColumn": "Combined.Respiratory.Viruses.Count",
+  "facilityColumn": "Facility.Type",
+  "facilityValue": "Emergency Department",
+  "dateFormat": "YYYY-MM-DD",
+  "measureType": "count",
+  "missingTokens": ["", "NA", "NaN", "NULL"],
+  "suppressedTokens": ["*"],
+  "statewideUnavailableReason": "The capstone merged dataset contains only 17 health districts, with incomplete weekly coverage. It is not a complete statewide district roster."
+}

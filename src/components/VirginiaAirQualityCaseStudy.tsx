@@ -5,6 +5,7 @@ import { Heading } from "./Shared";
 import { virginiaAirQuality as study } from "../content/virginiaAirQuality";
 import "./VirginiaAirQualityCaseStudy.css";
 import RawDataResearch from "./RawDataResearch";
+import RespiratoryVisitsChart from "./capstone/RespiratoryVisitsChart";
 
 function AtmosphereIllustration() {
   return (
@@ -92,6 +93,7 @@ export default function VirginiaAirQualityCaseStudy() {
         </div>
       </motion.section>
       <RawDataResearch />
+      <RespiratoryVisitsChart />
     </article>
   );
 }
