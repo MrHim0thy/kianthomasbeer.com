@@ -80,7 +80,7 @@ function WeeklyLineChart({ series, district }: { series: WeeklyPoint[]; district
             {active.count !== null && <circle cx={chart.x(activeIndex)} cy={chart.y(active.count)} r={4.5} className="respiratory-active-dot" />}
           </g>}
         </svg>
-        {active && activeIndex !== null && <div className="respiratory-tooltip" style={{ left: Math.min(Math.max(chart.x(activeIndex) - 90, 8), width - 188) }} aria-hidden="true">
+        {active && activeIndex !== null && <div className="respiratory-tooltip" style={{ left: Math.min(Math.max(chart.x(activeIndex) - 100, 8), width - 208) }} aria-hidden="true">
           <span>Week ending {formatWeek(active.date)}</span><strong>{pointLabel(active)}</strong>
         </div>}
       </div> : <div className="respiratory-data-state" role="status"><Database size={23} aria-hidden="true" /><h3>No reported counts available for this district</h3><p>Missing or suppressed observations have not been replaced with zero. Choose another district or inspect the source-status table below.</p></div>}

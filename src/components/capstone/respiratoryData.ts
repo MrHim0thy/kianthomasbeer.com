@@ -69,7 +69,9 @@ export function pointLabel(point: WeeklyPoint): string {
   return 'Missing count in source';
 }
 export function lineGeometry(series: WeeklyPoint[], width: number) {
-  const left = 67, right = 22, top = 28, bottom = 66, height = 330;
+  // Presentation only: desktop plot area grows from 236px to 307px (~30%).
+  const desktop = width >= 700;
+  const left = desktop ? 76 : 71, right = 22, top = 32, bottom = 72, height = desktop ? 411 : 342;
   const max = Math.max(0, ...series.flatMap(p => p.count === null ? [] : [p.count]));
   const rawStep = Math.max(1, max / 4), magnitude = 10 ** Math.floor(Math.log10(rawStep));
   const step = Math.max(1, Math.ceil(rawStep / magnitude) * magnitude);

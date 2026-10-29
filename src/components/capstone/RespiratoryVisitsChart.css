@@ -14,15 +14,15 @@
 .respiratory-chart-frame svg { display: block; width: 100%; height: auto; touch-action: pan-y; }
 .respiratory-grid-line { stroke: var(--line); stroke-width: 1; stroke-dasharray: 3 5; }
 .respiratory-axis { stroke: #7b817e; stroke-width: 1; }
-.respiratory-tick { fill: var(--muted); font: 11px Inter,ui-sans-serif,system-ui,sans-serif; }
+.respiratory-tick { fill: var(--muted); font: 12px Inter,ui-sans-serif,system-ui,sans-serif; }
 .respiratory-axis-label { fill: var(--navy); font: 11px Inter,ui-sans-serif,system-ui,sans-serif; }
 .respiratory-data-line { fill: none; stroke: var(--accent); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 .respiratory-data-dot { fill: var(--accent); }
 .respiratory-cursor { stroke: #788867; stroke-width: 1; stroke-dasharray: 4 4; }
 .respiratory-active-dot { fill: var(--amber); stroke: var(--navy); stroke-width: 1.5; }
-.respiratory-tooltip { position: absolute; pointer-events: none; top: 8px; width: 180px; padding: 10px 12px; border: 1px solid var(--line); border-radius: 5px; background: var(--cream); box-shadow: 0 4px 14px #1a1f2b0d; color: var(--navy); }
-.respiratory-tooltip span { display: block; font-size: 10px; color: var(--muted); line-height: 1.6; }
-.respiratory-tooltip strong { display: block; font-size: 12px; font-weight: 600; line-height: 1.7; }
+.respiratory-tooltip { position: absolute; pointer-events: none; top: 8px; width: 200px; padding: 12px 14px; border: 1px solid var(--line); border-radius: 5px; background: var(--cream); box-shadow: 0 4px 14px #1a1f2b0d; color: var(--navy); }
+.respiratory-tooltip span { display: block; font-size: 12px; color: var(--muted); line-height: 1.6; }
+.respiratory-tooltip strong { display: block; font-size: 14px; font-weight: 600; line-height: 1.7; }
 .respiratory-coverage { font-size: 11px; margin-top: 12px; }
 .respiratory-readout { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 10px; border-bottom: 1px solid var(--line); padding: 16px 0; min-height: 56px; font-size: 12px; color: var(--muted); }
 .respiratory-readout strong { color: var(--navy); font-weight: 600; }
