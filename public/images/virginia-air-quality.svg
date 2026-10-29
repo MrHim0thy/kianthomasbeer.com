@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 215" role="img" aria-labelledby="title description">
+  <title id="title">Air pollution and statistical analysis concept</title>
+  <desc id="description">A cloud of particles above a stylized skyline connects to a sigma symbol. Illustrative only, not actual project data.</desc>
+  <rect width="360" height="215" fill="#e6eddc"/>
+  <text x="18" y="25" fill="#3f5140" font-family="Arial,sans-serif" font-size="7" letter-spacing="1.4">CONCEPT STUDY / AIR &amp; ANALYSIS</text>
+  <g fill="none" stroke="#819876" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M39 110c-13 0-17-18-5-23-2-15 16-24 27-15 8-20 35-16 38 3 16-5 28 15 16 25H39" fill="#faf7ef"/>
+    <path d="M32 165h109M42 165v-32h24v32m5 0v-45h25v45m7 0v-26h24v26" fill="#cad8b8"/>
+    <path d="M78 133h10m-10 9h10m-10 9h10M49 144h10m51 7h10"/>
+    <path d="M144 105h23l19 26h24m-66 18h23l19-18" stroke-dasharray="3 5"/>
+    <circle cx="235" cy="131" r="38" fill="#faf7ef"/>
+    <path d="M274 131h29m-17-24 18-14m-18 62 18 14"/>
+  </g>
+  <g fill="#7fb3d3">
+    <circle cx="59" cy="111" r="3"/><circle cx="92" cy="106" r="2"/>
+    <circle cx="116" cy="120" r="3"/><circle cx="43" cy="120" r="2"/>
+    <circle cx="307" cy="131" r="5"/>
+  </g>
+  <g fill="#a8d86f"><circle cx="309" cy="89" r="6"/><circle cx="309" cy="173" r="6"/></g>
+  <circle cx="171" cy="105" r="3" fill="#e9a23b"/>
+  <text x="235" y="145" text-anchor="middle" font-family="Georgia,serif" font-size="39" fill="#1a1f2b">Σ</text>
+  <text x="18" y="198" fill="#3f5140" font-family="Arial,sans-serif" font-size="7" letter-spacing="1">ILLUSTRATIVE ONLY · NOT ACTUAL DATA</text>
+</svg>

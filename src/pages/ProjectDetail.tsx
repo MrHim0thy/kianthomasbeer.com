@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { ChevronLeft } from "lucide-react";
-import { projects } from "../content";
+import { projects, getProjectCategories } from "../content";
 import { Heading, Art } from "../components/Shared";
 import NotFound from "./NotFound";
 export default function ProjectDetail() {
@@ -13,21 +13,36 @@ export default function ProjectDetail() {
         <ChevronLeft size={16} />
         All projects
       </Link>
-      <Heading label={p.category} title={p.title} text={p.description} />
+      <Heading label={getProjectCategories(p).join(" · ")} title={p.title} text={p.description} />
       <div className="tags detail-tags">
         {p.tools.map((t) => (
           <span key={t}>{t}</span>
         ))}
       </div>
-      <Art kind={p.kind} large />
+      {!p.overview && <Art kind={p.kind} large />}
       <div className="detail-layout">
         <aside>
-          <div className="eyebrow">PROJECT NOTES</div>
-          <p>Initial overview</p>
-          <p className="muted">Further documentation coming soon.</p>
+          {p.overview ? (
+            <>
+              <div className="eyebrow">INSTITUTION & YEAR</div>
+              <p>{p.institution}</p>
+              <p><time dateTime={String(p.year)}>{p.year}</time></p>
+            </>
+          ) : (
+            <>
+              <div className="eyebrow">PROJECT NOTES</div>
+              <p>Initial overview</p>
+              <p className="muted">Further documentation coming soon.</p>
+            </>
+          )}
         </aside>
         <div>
-          {[
+          {p.overview ? (
+            <section className="prose-block">
+              <h2>Project overview</h2>
+              <p>{p.overview}</p>
+            </section>
+          ) : [
             ["The problem", p.problem],
             ["The approach", p.approach],
             ["Tools & methods", p.tools.join(" · ")],

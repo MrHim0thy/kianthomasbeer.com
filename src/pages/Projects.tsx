@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { Sparkles } from "lucide-react";
-import { projects, categories } from "../content";
+import { projects, categories, getProjectCategories } from "../content";
 import { Heading, ProjectCard } from "../components/Shared";
 export default function Projects() {
   const [filter, setFilter] = useState("All");
   const list = projects.filter(
-    (p) => filter === "All" || p.category === filter,
+    (p) => filter === "All" || getProjectCategories(p).includes(filter),
   );
   return (
     <>

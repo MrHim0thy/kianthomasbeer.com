@@ -82,7 +82,7 @@ export default function Home() {
           </Link>
         </div>
         <div className="project-grid">
-          {projects.map((p) => (
+          {projects.filter((p) => p.featured !== false).map((p) => (
             <ProjectCard key={p.slug} project={p} />
           ))}
         </div>

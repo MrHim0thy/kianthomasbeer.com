@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Github, Linkedin, Download, ArrowUpRight } from "lucide-react";
-import { projects, profile } from "../content";
+import { projects, profile, getProjectCategories } from "../content";
 export function ProfileLinks() {
   return (
     <div className="profile-links">
@@ -43,6 +43,19 @@ export function Art({
   kind: string;
   large?: boolean;
 }) {
+  if (kind === "air-quality") {
+    return (
+      <div className={`project-art air-quality ${large ? "large" : ""}`}>
+        <img
+          src="/images/virginia-air-quality.svg"
+          alt="Illustrative air-pollution and statistics concept; not actual project data"
+          width="360"
+          height="215"
+          style={{ width: "100%", height: "100%", objectFit: "contain" }}
+        />
+      </div>
+    );
+  }
   return (
     <div
       className={`project-art ${kind} ${large ? "large" : ""}`}
@@ -98,7 +111,7 @@ export function ProjectCard({
     <Link className="project-card group" to={`/projects/${p.slug}`}>
       <Art kind={p.kind} />
       <div className="card-meta">
-        <span>{p.category}</span>
+        <span>{getProjectCategories(p).join(" · ")}</span>
         <ArrowUpRight size={20} />
       </div>
       <h3>{p.title}</h3>
