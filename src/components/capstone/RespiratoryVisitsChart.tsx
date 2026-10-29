@@ -22,10 +22,17 @@ function WeeklyLineChart({ series, district }: { series: WeeklyPoint[]; district
   }, []);
   const chart = useMemo(() => lineGeometry(series, width), [series, width]);
   const active = activeIndex === null ? null : series[activeIndex];
-  const known = series.filter(p => p.count !== null).length;
-  const suppressed = series.filter(p => p.status === 'suppressed').length;
-  const absent = series.filter(p => p.status === 'absent').length;
-  const missing = series.filter(p => p.status === 'missing').length;
+  const { known, suppressed, absent, missing } = useMemo(() => ({
+    known: series.filter(p => p.count !== null).length,
+    suppressed: series.filter(p => p.status === 'suppressed').length,
+    absent: series.filter(p => p.status === 'absent').length,
+    missing: series.filter(p => p.status === 'missing').length,
+  }), [series]);
+  // Pointer movement changes only the cursor and readout, not the 243 observation marks.
+  const observationMarks = useMemo(() => <g>
+    {chart.paths.map((path, index) => <path key={index} d={path} className="respiratory-data-line" />)}
+    {series.map((point, index) => point.count === null ? null : <circle key={point.date} cx={chart.x(index)} cy={chart.y(point.count)} r={1.5} className="respiratory-data-dot" />)}
+  </g>, [chart, series]);
   function pointFromPointer(event: PointerEvent<SVGSVGElement>) {
     const rect = event.currentTarget.getBoundingClientRect();
     const x = (event.clientX - rect.left) / rect.width * chart.width;
@@ -73,8 +80,7 @@ function WeeklyLineChart({ series, district }: { series: WeeklyPoint[]; district
           {chart.xTicks.map(index => <text key={index} x={chart.x(index)} y={chart.height - chart.bottom + 23} textAnchor={index === 0 ? 'start' : index === series.length - 1 ? 'end' : 'middle'} className="respiratory-tick">{formatWeek(series[index].date, true)}</text>)}
           <text x={(chart.left + width - chart.right) / 2} y={chart.height - 12} textAnchor="middle" className="respiratory-axis-label">Week ending</text>
           <text transform={`translate(15 ${(chart.top + chart.height - chart.bottom) / 2}) rotate(-90)`} textAnchor="middle" className="respiratory-axis-label">Respiratory ED visits (count)</text>
-          {chart.paths.map((path, index) => <path key={index} d={path} className="respiratory-data-line" />)}
-          {series.map((point, index) => point.count === null ? null : <circle key={point.date} cx={chart.x(index)} cy={chart.y(point.count)} r={1.5} className="respiratory-data-dot" />)}
+          {observationMarks}
           {active && activeIndex !== null && <g aria-hidden="true">
             <line x1={chart.x(activeIndex)} x2={chart.x(activeIndex)} y1={chart.top} y2={chart.height - chart.bottom} className="respiratory-cursor" />
             {active.count !== null && <circle cx={chart.x(activeIndex)} cy={chart.y(active.count)} r={4.5} className="respiratory-active-dot" />}

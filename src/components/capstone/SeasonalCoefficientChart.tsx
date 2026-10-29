@@ -20,7 +20,8 @@ export default function SeasonalCoefficientChart() {
   }, []);
   const selected = seasonalMonths.filter(m => selectedMonths.includes(m.month));
   const active = selected.find(m => m.month === focusedMonth) ?? selected[0];
-  const left = width < 550 ? 92 : 116, right = 86, top = 26, rowHeight = 62;
+  const compact = width < 550;
+  const left = compact ? 95 : 116, right = 86, top = 26, rowHeight = 62;
   const height = top + selected.length * rowHeight + 67;
   const x = (value: number) => left + (value + 0.1) / 0.2 * (width - left - right);
   const zero = x(0);
@@ -63,7 +64,7 @@ export default function SeasonalCoefficientChart() {
               <rect x="5" y={y - 24} width={width - 10} height="49" rx="4" className="seasonal-row-target" />
               <text x="12" y={y + 4} className="seasonal-month-label">{month.month}</text>
               <rect x={Math.min(zero, end)} y={y - 11} width={Math.max(1.5, Math.abs(end - zero))} height="22" rx="2" className={value < 0 ? 'seasonal-negative' : 'seasonal-positive'} />
-              <text x={value < 0 ? end - 8 : end + 8} y={y + 4} textAnchor={value < 0 ? 'end' : 'start'} className="seasonal-value">{coefficientLabel(value)}</text>
+              <text x={compact ? width - 12 : value < 0 ? end - 8 : end + 8} y={y + 4} textAnchor={compact || value < 0 ? 'end' : 'start'} className="seasonal-value">{coefficientLabel(value)}</text>
             </g>;
           })}
           <text x={(left + width - right) / 2} y={height - 10} textAnchor="middle" className="seasonal-axis-label">{width < 550 ? 'PM2.5 coefficient' : 'PM2.5 coefficient per predictor unit · not visit counts'}</text>
@@ -71,7 +72,7 @@ export default function SeasonalCoefficientChart() {
       </div>
       {active && <div className="seasonal-detail" aria-live="polite" aria-atomic="true">
         <span className="eyebrow">{active.month}{active.reference ? ' / REFERENCE MONTH' : ' / COEFFICIENT DETAILS'}</span>
-        <h3>{active.month} PM2.5 slope: {coefficientLabel(monthSlope(active))}</h3>
+        <h3>{active.month} PM2.5 {mode === 'total' ? 'slope' : 'interaction'}: {coefficientLabel(valueFor(active))}{mode === 'interaction' && active.reference ? ' (reference)' : ''}</h3>
         <p className="seasonal-equation">{active.reference ? `January baseline ${coefficientLabel(monthSlope(active))}; no added interaction term.` : `${coefficientLabel(januarySlopeUnits / coefficientScale)} ${monthInteraction(active) < 0 ? '−' : '+'} ${Math.abs(monthInteraction(active)).toFixed(5)} = ${coefficientLabel(monthSlope(active))}`}</p>
         <p>{active.reference ? 'January defines the comparison baseline.' : `The interaction relative to January is ${coefficientLabel(monthInteraction(active))}. It is added to the baseline to obtain the total month-specific slope.`} Standard errors, confidence intervals, and p-values are not available in the verified coefficient excerpt.</p>
       </div>}

@@ -1,0 +1,39 @@
+/* QA refinements limited to this article; preserve the site's shared design. */
+.uva-case-study { --uva-section-gap: 70px; --uva-section-padding: 45px; min-width: 0; }
+.uva-case-study > :is(.uva-data-research, .uva-respiratory, .uva-seasonal, .uva-modeling, .uva-resources),
+.uva-case-study .uva-closing-section { margin-top: var(--uva-section-gap); padding-top: var(--uva-section-padding); }
+.uva-case-study :is(.modeling-tabs > button, .uva-pipeline-stage) { min-width: 0; overflow-wrap: anywhere; }
+.uva-case-study :is(.seasonal-mode, .respiratory-controls > div, .uva-source-block > div) { min-width: 0; }
+.uva-case-study .seasonal-month-options label { min-height: 44px; }
+.uva-case-study :is(summary, .uva-resource-action, .uva-official-sources a) { min-height: 44px; }
+.uva-case-study :is(.modeling-tabs > button, .modeling-aic-row, .uva-pipeline-stage):focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.uva-case-study .respiratory-controls select { width: min(330px, 100%); }
+.uva-case-study :is(.seasonal-table-wrap, .respiratory-table-scroll, .modeling-cv-table) { max-width: 100%; }
+.uva-case-study :is(.seasonal-source, .respiratory-source, .modeling-source, .uva-closing-provenance) { font-size: 12px; line-height: 1.9; }
+.uva-case-study .modeling-aic-axis > div { position: relative; height: 18px; }
+.uva-case-study .modeling-aic-axis > div > span { position: absolute; transform: translateX(-50%); }
+.uva-case-study .modeling-aic-axis > div > span:nth-child(1) { left: 0; transform: none; }
+.uva-case-study .modeling-aic-axis > div > span:nth-child(2) { left: 25%; }
+.uva-case-study .modeling-aic-axis > div > span:nth-child(3) { left: 50%; }
+.uva-case-study .modeling-aic-axis > div > span:nth-child(4) { left: 75%; }
+.uva-case-study .modeling-aic-axis > div > span:nth-child(5) { left: 100%; }
+@media (min-width: 701px) and (max-width: 1000px) {
+  .uva-case-study .uva-pipeline-stages { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 25px; }
+  .uva-case-study .uva-pipeline-stages > li::after { display: none; }
+  .uva-case-study .uva-pipeline-stage { min-height: 172px; }
+  .uva-case-study .modeling-tabs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 700px) {
+  .uva-case-study { --uva-section-gap: 45px; --uva-section-padding: 35px; }
+  .uva-case-study .respiratory-controls select { width: 100%; font-size: 16px; }
+  .uva-case-study .seasonal-mode select { font-size: 16px; }
+  .uva-case-study .modeling-aic-figure { padding-inline: 8px; }
+  .uva-case-study :is(.modeling-aic-row, .modeling-aic-axis) { grid-template-columns: 72px minmax(0, 1fr) 74px; gap: 6px; }
+  .uva-case-study .seasonal-chart-container svg { min-height: 0; }
+  .uva-case-study .seasonal-month-label { font-size: 12px; }
+}
+/* Preserve the fills while giving data marks a >=3:1 contrasting boundary. */
+.uva-case-study .seasonal-positive { stroke: var(--accent); stroke-width: 1.2; }
+.uva-case-study .seasonal-negative { stroke: #788867; stroke-width: 1.2; }
+.uva-case-study .modeling-aic-track > span { border: 1px solid var(--accent); }
+.uva-case-study .modeling-aic-final .modeling-aic-track > span { border-color: #788867; }

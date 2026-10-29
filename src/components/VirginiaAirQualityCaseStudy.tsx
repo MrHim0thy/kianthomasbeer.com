@@ -10,6 +10,8 @@ import SeasonalCoefficientChart from "./capstone/SeasonalCoefficientChart";
 import StatisticalModelExplorer from "./capstone/StatisticalModelExplorer";
 import ResearchConclusions from "./capstone/ResearchConclusions";
 import ResearchResources from "./capstone/ResearchResources";
+import { useCapstoneMetadata } from "./capstone/useCapstoneMetadata";
+import "./capstone/CapstoneQa.css";
 
 function AtmosphereIllustration() {
   return (
@@ -42,6 +44,7 @@ function AtmosphereIllustration() {
 }
 
 export default function VirginiaAirQualityCaseStudy() {
+  useCapstoneMetadata();
   const reduceMotion = useReducedMotion();
   const reveal = {
     initial: reduceMotion ? false as const : { opacity: 0, y: 14 },

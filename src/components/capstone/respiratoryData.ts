@@ -59,8 +59,10 @@ export function districtSeries(data: RespiratoryDataset, district: string): Week
   }
   return series;
 }
+const weekFormatter = new Intl.DateTimeFormat('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
+const compactWeekFormatter = new Intl.DateTimeFormat('en-US', { month: 'short', year: 'numeric', timeZone: 'UTC' });
 export function formatWeek(date: string, compact = false): string {
-  return new Intl.DateTimeFormat('en-US', { month: 'short', ...(compact ? {} : { day: 'numeric' }), year: 'numeric', timeZone: 'UTC' }).format(new Date(date + 'T00:00:00Z'));
+  return (compact ? compactWeekFormatter : weekFormatter).format(new Date(date + 'T00:00:00Z'));
 }
 export function pointLabel(point: WeeklyPoint): string {
   if (point.count !== null) return `${point.count.toLocaleString('en-US')} visits`;

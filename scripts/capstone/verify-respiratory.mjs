@@ -40,6 +40,18 @@ assert.ok(data.records.some(r => r.count === 0), 'Actual reported zeros must be 
 assert.throws(() => parseRespiratoryDataset({ ...data, records: [...data.records, data.records[0]] }), /Duplicate/);
 assert.throws(() => parseRespiratoryDataset({ ...data, statewide: { available: true, reason: 'Not verified' } }), /Statewide/);
 assert.equal(parseRespiratoryDataset({ ...data, records: [], districts: [] }).records.length, 0);
+// Test-only missing-count fixture; never exported to the website or treated as research data.
+const missingOnly = parseRespiratoryDataset({ ...data, districts: [data.districts[0]], records: [
+  { date: data.coverage.start, district: data.districts[0], count: null, status: 'missing' },
+] });
+const missingSeries = districtSeries(missingOnly, data.districts[0]);
+assert.ok(missingSeries.every(point => point.count === null));
+assert.equal(missingSeries[0].status, 'missing');
+assert.equal(missingSeries[1].status, 'absent');
+assert.deepEqual(lineGeometry(missingSeries, 330).paths, []);
+assert.equal(moduleExports.pointLabel(missingSeries[0]), 'Missing count in source');
+assert.equal(moduleExports.formatWeek('2024-08-24'), 'Aug 24, 2024');
+assert.throws(() => parseRespiratoryDataset({ ...data, records: [{ ...data.records[0], count: null, status: undefined }] }), /Invalid count/);
 assert.throws(() => parseDate('2024-02-30', 1), /invalid date/);
 assert.throws(() => parseCsv('a,a\n1,2'), /unique/);
 assert.throws(() => parseCsv('a,b\n"unfinished'), /quoted field/);
