@@ -1,0 +1,67 @@
+/* Only the capstone's closing research sections. */
+.uva-closing-section { margin-top: 70px; padding-top: 45px; border-top: 1px solid var(--line); }
+.uva-closing-intro { max-width: 880px; font-size: 16px; line-height: 1.9; margin-top: 23px; }
+.uva-findings-list { list-style: none; margin: 38px 0 0; padding: 0; }
+.uva-findings-list > li { display: grid; grid-template-columns: 48px minmax(0, 1.35fr) minmax(0, 1fr); gap: 30px; padding: 35px 0; border-top: 1px solid var(--line); align-items: start; }
+.uva-finding-number { font: 30px/1.2 Georgia,serif; color: var(--accent); }
+.uva-finding-copy h3 { font-size: 25px; line-height: 1.35; max-width: 480px; margin-bottom: 16px; }
+.uva-finding-copy p { font-size: 14px; line-height: 1.9; }
+.uva-finding-copy .uva-finding-source { font-size: 10px; margin-top: 16px; }
+.uva-finding-source cite { font-style: normal; }
+.uva-finding-type, .uva-finding-coefficients { border-left: 2px solid #97a58c; padding: 4px 0 5px 24px; }
+.uva-finding-type strong { display: block; font: 27px/1.4 Georgia,serif; color: var(--navy); margin: 18px 0 13px; }
+.uva-finding-type strong > span { color: var(--accent); font-size: 19px; }
+.uva-finding-type p, .uva-finding-coefficients p { font-size: 11px; line-height: 1.9; }
+.uva-finding-qualifier { display: block; font-size: 10px; color: var(--muted); line-height: 1.8; margin-top: 15px; }
+.uva-finding-coefficients dl { margin: 15px 0; }
+.uva-finding-coefficients dl > div { display: flex; justify-content: space-between; gap: 18px; padding: 6px 0; border-bottom: 1px solid var(--line); }
+.uva-finding-coefficients dt { font-size: 12px; color: var(--muted); }
+.uva-finding-coefficients dd { margin: 0; font-size: 13px; font-variant-numeric: tabular-nums; color: var(--navy); }
+.uva-research-synthesis { margin: 40px 0 0; padding: 30px 0; border-block: 1px solid var(--line); }
+.uva-research-synthesis figcaption { font: 25px/1.4 Georgia,serif; color: var(--navy); }
+.uva-research-synthesis figcaption > span { display: block; font-family: inherit; font-size: 11px; line-height: 1.9; color: var(--muted); margin-top: 10px; }
+.uva-research-synthesis ol { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); list-style: none; padding: 0; margin: 30px 0 0; gap: 40px; }
+.uva-research-synthesis li { position: relative; padding-top: 23px; border-top: 1px solid #97a58c; }
+.uva-synthesis-node { display: inline-flex; position: relative; margin-top: -38px; vertical-align: top; background: var(--cream); padding-right: 12px; font-size: 10px; letter-spacing: 1px; color: var(--accent); }
+.uva-research-synthesis h3 { font-size: 23px; margin-bottom: 14px; }
+.uva-research-synthesis p { font-size: 13px; line-height: 1.9; }
+.uva-synthesis-arrow { position: absolute; right: -29px; top: -14px; color: var(--accent); font-size: 20px; background: var(--cream); }
+.uva-limitations { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr); gap: 65px; }
+.uva-limitations .uva-section-heading > p { font-size: 13px; margin-top: 22px; }
+.uva-limitations dl { margin: 0; }
+.uva-limitations dl > div { padding: 23px 0; border-bottom: 1px solid var(--line); }
+.uva-limitations dl > div:first-child { padding-top: 0; }
+.uva-limitations dt { font: 21px/1.4 Georgia,serif; color: var(--navy); margin-bottom: 12px; }
+.uva-limitations dd { margin: 0; font-size: 14px; line-height: 1.9; }
+.uva-conclusion > .uva-section-heading { max-width: 770px; }
+.uva-conclusion-copy { max-width: 830px; margin-top: 28px; }
+.uva-conclusion-copy p { font-size: 15px; line-height: 1.95; margin-top: 20px; }
+.uva-conclusion-copy p:first-child { font: 24px/1.7 Georgia,serif; color: var(--navy); }
+.uva-team-reflection { max-width: 830px; border-left: 2px solid var(--amber); padding: 8px 0 8px 28px; margin-top: 45px; }
+.uva-team-reflection h3 { font-size: 26px; margin-top: 17px; }
+.uva-team-reflection p { font-size: 14px; line-height: 1.95; margin-top: 19px; }
+.uva-closing-provenance { font-size: 11px; line-height: 1.9; margin-top: 35px; max-width: 900px; }
+@media (max-width: 900px) {
+  .uva-findings-list > li { grid-template-columns: 30px minmax(0, 1.2fr) minmax(0, 1fr); gap: 20px; }
+  .uva-finding-type strong { font-size: 23px; }
+  .uva-limitations { gap: 35px; }
+  .uva-research-synthesis ol { gap: 30px; }
+  .uva-synthesis-arrow { right: -24px; }
+}
+@media (max-width: 700px) {
+  .uva-closing-section { margin-top: 45px; padding-top: 35px; }
+  .uva-closing-intro { font-size: 14px; }
+  .uva-findings-list > li { grid-template-columns: 30px minmax(0, 1fr); gap: 16px; padding: 28px 0; }
+  .uva-finding-number { font-size: 25px; }
+  .uva-finding-copy h3 { font-size: 23px; }
+  .uva-finding-type, .uva-finding-coefficients { grid-column: 2; padding-left: 18px; margin-top: 8px; }
+  .uva-research-synthesis ol { grid-template-columns: 1fr; gap: 28px; border-left: 1px solid #97a58c; margin-left: 7px; padding-left: 27px; }
+  .uva-research-synthesis li { border-top: 0; padding-top: 0; }
+  .uva-synthesis-node { position: absolute; left: -40px; top: 0; margin: 0; padding: 4px 5px; }
+  .uva-synthesis-arrow { position: static; display: block; transform: rotate(90deg); transform-origin: left center; margin: 10px 0 0 8px; background: none; width: fit-content; }
+  .uva-limitations { grid-template-columns: 1fr; gap: 28px; }
+  .uva-conclusion-copy p:first-child { font-size: 22px; }
+  .uva-team-reflection { padding-left: 20px; }
+  .uva-team-reflection h3 { font-size: 24px; }
+}
+
