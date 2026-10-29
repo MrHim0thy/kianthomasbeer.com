@@ -3,10 +3,12 @@ import { ChevronLeft } from "lucide-react";
 import { projects, getProjectCategories } from "../content";
 import { Heading, Art } from "../components/Shared";
 import NotFound from "./NotFound";
+import VirginiaAirQualityCaseStudy from "../components/VirginiaAirQualityCaseStudy";
 export default function ProjectDetail() {
   const slug = useLocation().pathname.split("/").pop();
   const p = projects.find((p) => p.slug === slug);
   if (!p) return <NotFound />;
+  if (p.slug === "virginia-air-quality") return <VirginiaAirQualityCaseStudy />;
   return (
     <>
       <Link className="back-link" to="/projects">
