@@ -53,18 +53,18 @@ export default function Home() {
               height="3278"
               alt="Kian Thomasbeer smiling in a light blue shirt"
             />
-            <img
-              className="shoulder-buddy"
-              src="/brand/beer-buddy.png"
-              width="1374"
-              height="1145"
-              alt="Beer Buddy perched on Kian’s shoulder, working on a laptop"
-            />
           </div>
         </div>
         <div className="hero-foot">
           <span>BASED IN CURIOSITY. OPEN TO POSSIBILITY.</span>
-          <span>SCROLL TO EXPLORE ↓</span>
+        </div>
+        <div className="hero-buddy">
+          <img
+            src="/brand/beer-buddy-peeking.png"
+            width="1774"
+            height="887"
+            alt="Beer Buddy in sunglasses peeking over the hero divider"
+          />
         </div>
       </section>
       <section className="section">
