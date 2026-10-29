@@ -9,6 +9,7 @@ import RespiratoryVisitsChart from "./capstone/RespiratoryVisitsChart";
 import SeasonalCoefficientChart from "./capstone/SeasonalCoefficientChart";
 import StatisticalModelExplorer from "./capstone/StatisticalModelExplorer";
 import ResearchConclusions from "./capstone/ResearchConclusions";
+import ResearchResources from "./capstone/ResearchResources";
 
 function AtmosphereIllustration() {
   return (
@@ -100,6 +101,7 @@ export default function VirginiaAirQualityCaseStudy() {
       <SeasonalCoefficientChart />
       <StatisticalModelExplorer />
       <ResearchConclusions />
+      <ResearchResources />
     </article>
   );
 }

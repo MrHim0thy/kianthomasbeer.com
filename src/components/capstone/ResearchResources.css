@@ -1,0 +1,47 @@
+/* Resource and credit styles are limited to this capstone section. */
+.uva-resources { margin-top: 70px; padding-top: 45px; border-top: 1px solid var(--line); }
+.uva-resources-intro { font-size: 16px; line-height: 1.9; max-width: 870px; margin-top: 23px; }
+.uva-resource-list { margin-top: 35px; }
+.uva-resource-row { display: grid; grid-template-columns: 30px minmax(0, 1fr) 190px; gap: 25px; align-items: start; padding: 30px 0; border-top: 1px solid var(--line); }
+.uva-resource-row > svg { color: var(--accent); margin-top: 4px; }
+.uva-resource-row h3 { font-size: 25px; line-height: 1.3; margin-bottom: 12px; }
+.uva-resource-row p { font-size: 13px; line-height: 1.9; }
+.uva-resource-row .uva-resource-availability { font-size: 11px; padding-top: 6px; color: var(--muted); }
+.uva-resource-action { display: inline-flex; align-items: center; justify-content: flex-end; gap: 9px; color: var(--accent); font-size: 13px; padding-block: 5px; text-underline-offset: 5px; }
+.uva-resource-action:hover { text-decoration: underline; }
+.uva-resource-action:focus-visible, .uva-official-sources a:focus-visible, .uva-reproducibility summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+.uva-resource-data { grid-template-columns: 30px minmax(0, 1fr); }
+.uva-resource-row .uva-resource-source-note { font-size: 11px; max-width: 780px; margin-top: 17px; }
+.uva-official-sources { list-style: none; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 32px; padding: 0; margin: 22px 0 0; }
+.uva-official-sources li { padding: 20px 0; border-top: 1px solid var(--line); min-width: 0; }
+.uva-official-sources a { display: flex; align-items: flex-start; justify-content: space-between; gap: 15px; color: var(--navy); padding: 4px 0; font-size: 14px; }
+.uva-official-sources a > svg { flex-shrink: 0; color: var(--accent); margin-top: 3px; }
+.uva-official-sources small { display: block; color: var(--muted); font-size: 11px; margin-top: 7px; line-height: 1.7; }
+.uva-official-sources a:hover { color: var(--accent); }
+.uva-official-sources li > p { font-size: 11px; margin-top: 10px; }
+.uva-team-credits { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 60px; border-top: 1px solid var(--line); padding-top: 35px; margin-top: 10px; }
+.uva-team-credits h3 { font-size: 28px; line-height: 1.3; max-width: 370px; margin-bottom: 17px; }
+.uva-team-credits p { font-size: 13px; line-height: 1.9; }
+.uva-team-credits .uva-team-collaboration { font-size: 12px; margin-top: 20px; max-width: 370px; }
+.uva-team-names h4 { font-size: 10px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--muted); margin: 0 0 12px; }
+.uva-team-names ul { list-style: none; padding: 0; margin: 0 0 25px; }
+.uva-team-names li { font: 20px/1.8 Georgia,serif; color: var(--navy); }
+.uva-team-names > p { color: var(--navy); }
+.uva-reproducibility { border-block: 1px solid var(--line); margin-top: 35px; }
+.uva-reproducibility summary { font-size: 16px; color: var(--accent); padding: 22px 0; cursor: pointer; }
+.uva-reproducibility > div { max-width: 850px; padding: 5px 0 28px; }
+.uva-reproducibility section + section { margin-top: 23px; }
+.uva-reproducibility h4 { font-size: 18px; margin-bottom: 10px; }
+.uva-reproducibility p { font-size: 13px; line-height: 1.9; }
+@media (prefers-reduced-motion: no-preference) { .uva-resource-action, .uva-official-sources a { transition: color 150ms ease; } }
+@media (max-width: 700px) {
+  .uva-resources { margin-top: 45px; padding-top: 35px; }
+  .uva-resources-intro { font-size: 14px; }
+  .uva-resource-row { grid-template-columns: 24px minmax(0, 1fr); gap: 14px 17px; padding: 25px 0; }
+  .uva-resource-row h3 { font-size: 23px; }
+  .uva-resource-action, .uva-resource-row .uva-resource-availability { grid-column: 2; justify-content: flex-start; padding-top: 0; }
+  .uva-official-sources { grid-template-columns: 1fr; }
+  .uva-team-credits { grid-template-columns: 1fr; gap: 28px; }
+  .uva-team-credits h3 { font-size: 25px; }
+  .uva-team-names li { font-size: 19px; }
+}
