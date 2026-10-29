@@ -1,41 +1,7 @@
-export const categories = ['All', 'Data & Analytics', 'Technology', 'Research', 'Creative', 'Personal'];
-export interface Project {
- slug: string;
- title: string;
- category: string;
- categories?: string[];
- number: string;
- kind: string;
- description: string;
- tools: string[];
- problem?: string;
- approach?: string;
- results?: string;
- institution?: string;
- year?: number;
- overview?: string;
- featured?: boolean;
-}
-export const getProjectCategories = (project: Project) => project.categories ?? [project.category];
-export const projects: Project[] = [
- {
-  slug: 'virginia-air-quality',
-  title: 'Air Pollution & Respiratory ER Visits',
-  description: 'Investigating how particulate matter, seasonality, and socioeconomic factors relate to respiratory emergency department visits across Virginia.',
-  category: 'Data & Analytics',
-  categories: ['Data & Analytics', 'Research'],
-  tools: ['R', 'Statistical Modeling', 'Geospatial Analysis'],
-  number: '04',
-  kind: 'air-quality',
-  year: 2026,
-  institution: 'University of Virginia',
-  overview: 'Project overview coming soon. Documentation for this completed statistics capstone will be added here.',
-  featured: false,
- },
- {slug:'business-intelligence', title:'Business Intelligence & Forecasting', category:'Data & Analytics', number:'01', kind:'forecast', description:'Turning complex data into a clearer view of what comes next.', tools:['Python','SQL','Forecasting'], problem:'This project focuses on data cleaning, forecasting, and business reporting.', approach:'Python and SQL support the data preparation and forecasting workflow. A detailed account of the source data, models, and reporting process will be added here.', results:'Results and validated outcomes have not yet been provided.'},
- {slug:'what-makes-a-hit-song', title:'What Makes a Hit Song?', category:'Research', number:'02', kind:'music', description:'An exploration of music, popularity, and the patterns behind the charts.', tools:['R','Visualization','Music analytics'], problem:'Explore music analytics across Spotify, Billboard, and YouTube.', approach:'The project uses R and data visualization to investigate music popularity. Dataset details and analytical methods are awaiting documentation.', results:'Findings and validated outcomes have not yet been provided.'},
- {slug:'neurodecide', title:'NeuroDecide', category:'Technology', number:'03', kind:'neuro', description:'Connecting assessment data to a more thoughtful reporting workflow.', tools:['Automation','Statistics','Reporting'], problem:'Assessment processing involves scoring, statistical analysis, and client report generation.', approach:'This project concerns automated assessment processing and reporting. Implementation details and Kian’s specific contributions will be added when supplied.', results:'Results and validated outcomes have not yet been provided.'}
-];
+// Compatibility exports keep existing detail pages and page titles unchanged.
+export { projects, featuredProjects, categories, getProjectCategories, getProjectRoute } from './content/projects';
+export type { Project } from './content/projects';
+
 export const articles = [
  {slug:'asking-better-questions',title:'The best analysis starts with a better question.',category:'Data Science',description:'A sample essay on curiosity, context, and the work before the spreadsheet.',body:['A useful analysis begins before the first line of code. It begins with a question: what are we trying to understand, and why does it matter?','A dataset can suggest many directions. Choosing among them requires context, careful definitions, and a willingness to revisit assumptions. A chart is only useful when its reader understands what it measures.','This is sample editorial content for demonstrating the blog layout. Replace it with an original article before presenting it as Kian’s writing.']},
  {slug:'making-space-for-curiosity',title:'Making space for curiosity.',category:'Personal',description:'A sample note on following interesting questions across disciplines.',body:['Curiosity rarely fits neatly into a single category. A question about music can become a question about statistics; a new language can change how we think about familiar ideas.','Leaving room for exploration can be a creative practice of its own. A notebook, an unfinished experiment, or a conversation can become the starting point for something unexpected.','This is a clearly labeled sample article, not a published account of Kian’s personal experiences.']},

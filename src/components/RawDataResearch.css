@@ -1,0 +1,57 @@
+/* Only used within the UVA capstone case study. */
+.uva-data-research { margin-top: 70px; padding-top: 45px; border-top: 1px solid var(--line); }
+.uva-source-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 30px 38px; margin-top: 35px; }
+.uva-source-block { display: flex; gap: 18px; padding: 25px 0; border-top: 1px solid var(--line); }
+.uva-source-icon { display: grid; place-items: center; flex: 0 0 42px; height: 42px; border-radius: 8px; background: #a8d86f1c; color: var(--accent); }
+.uva-source-block h3 { font-size: 20px; line-height: 1.4; margin-bottom: 12px; }
+.uva-source-block p { font-size: 13px; line-height: 1.85; }
+.uva-pipeline { margin-top: 35px; }
+.uva-pipeline-heading h3, .uva-research-notes > h3 { font-size: 25px; }
+.uva-pipeline-heading p { margin-top: 10px; font-size: 12px; }
+.uva-pipeline-stages { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 26px; list-style: none; padding: 0; margin: 27px 0 25px; }
+.uva-pipeline-stages > li { min-width: 0; position: relative; }
+.uva-pipeline-stages > li:not(:last-child)::after { content: '→'; position: absolute; top: 69px; left: 100%; width: 26px; text-align: center; color: #788867; font-size: 20px; line-height: 24px; }
+.uva-pipeline-stage { display: flex; flex-direction: column; text-align: left; width: 100%; min-height: 172px; padding: 20px 17px; border: 1px solid var(--line); border-radius: 5px; color: var(--navy); background: #fffdf780; }
+.uva-pipeline-stage:hover, .uva-pipeline-stage[aria-pressed="true"] { border-color: var(--accent); background: #a8d86f13; }
+.uva-stage-top { display: flex; align-items: center; justify-content: space-between; width: 100%; color: var(--accent); margin-bottom: 20px; }
+.uva-stage-top > span { font-size: 9px; letter-spacing: 1px; color: var(--muted); }
+.uva-stage-title { font-size: 16px; line-height: 1.35; font-weight: 600; }
+.uva-stage-label { font-size: 10px; line-height: 1.6; color: var(--muted); margin-top: 9px; }
+.uva-pipeline-inputs { position: relative; display: flex; flex-direction: column; align-items: center; gap: 7px; padding-top: 28px; text-align: center; }
+.uva-pipeline-inputs::before { content: ''; position: absolute; top: 0; height: 22px; width: 1px; background: #97a58c; }
+.uva-pipeline-inputs > svg { position: absolute; top: 0; color: #788867; background: var(--cream); }
+.uva-input-label { font-size: 8px; text-transform: uppercase; letter-spacing: 1.2px; color: var(--muted); }
+.uva-input-chip { font-size: 10px; line-height: 1.5; border: 1px solid #cad8b8; border-radius: 3px; padding: 5px 8px; background: #eef4e54d; color: #46573d; }
+.uva-pipeline-explanation { border-left: 2px solid var(--amber); padding: 22px 26px; min-height: 162px; background: #fffdf74d; }
+.uva-pipeline-explanation h4 { margin: 11px 0; font-size: 21px; font-weight: 500; letter-spacing: -.4px; }
+.uva-pipeline-explanation p { max-width: 820px; font-size: 14px; }
+.uva-research-notes { margin-top: 40px; }
+.uva-notes-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 30px; margin-top: 22px; }
+.uva-research-note { border-top: 2px solid #a8d86f; padding-top: 20px; }
+.uva-research-note h4 { font-size: 18px; margin: 0 0 12px; letter-spacing: -.3px; font-weight: 550; }
+.uva-research-note p { font-size: 13px; line-height: 1.85; }
+@media (prefers-reduced-motion: no-preference) {
+  .uva-pipeline-stage { transition: border-color 180ms ease, background-color 180ms ease; }
+}
+@media (max-width: 900px) {
+  .uva-pipeline-stages { gap: 18px; }
+  .uva-pipeline-stages > li:not(:last-child)::after { width: 18px; font-size: 17px; }
+  .uva-pipeline-stage { padding: 17px 12px; min-height: 185px; }
+}
+@media (max-width: 700px) {
+  .uva-data-research { margin-top: 45px; padding-top: 35px; }
+  .uva-source-grid { grid-template-columns: 1fr; gap: 4px; margin-top: 28px; }
+  .uva-source-block { gap: 14px; padding: 22px 0; }
+  .uva-source-block h3 { font-size: 19px; }
+  .uva-pipeline { margin-top: 25px; }
+  .uva-pipeline-stages { grid-template-columns: 1fr; gap: 33px; }
+  .uva-pipeline-stage { min-height: 0; padding: 20px; }
+  .uva-stage-top { margin-bottom: 12px; }
+  .uva-stage-title { font-size: 18px; }
+  .uva-pipeline-stages > li:not(:last-child)::after { content: '↓'; left: calc(50% - 12px); top: auto; bottom: -29px; width: 24px; }
+  .uva-pipeline-inputs { padding-top: 28px; align-items: flex-start; padding-left: 22px; }
+  .uva-pipeline-inputs::before { left: 29px; }
+  .uva-pipeline-inputs > svg { left: 22px; }
+  .uva-pipeline-explanation { padding: 22px 20px; min-height: 200px; }
+  .uva-notes-grid { grid-template-columns: 1fr; gap: 26px; }
+}

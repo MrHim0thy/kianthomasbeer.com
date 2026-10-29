@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Github, Linkedin, Download, ArrowUpRight } from "lucide-react";
-import { projects, profile, getProjectCategories } from "../content";
+import { profile } from "../content";
+import { getProjectCategories, getProjectRoute, type Project } from "../content/projects";
 export function ProfileLinks() {
   return (
     <div className="profile-links">
@@ -39,18 +40,20 @@ export function ProfileLinks() {
 export function Art({
   kind,
   large = false,
+  illustration,
 }: {
   kind: string;
   large?: boolean;
+  illustration?: Project["illustration"];
 }) {
-  if (kind === "air-quality") {
+  if (illustration) {
     return (
-      <div className={`project-art air-quality ${large ? "large" : ""}`}>
+      <div className={`project-art ${kind} ${large ? "large" : ""}`}>
         <img
-          src="/images/virginia-air-quality.svg"
-          alt="Illustrative air-pollution and statistics concept; not actual project data"
-          width="360"
-          height="215"
+          src={illustration.src}
+          alt={illustration.alt}
+          width={illustration.width}
+          height={illustration.height}
           style={{ width: "100%", height: "100%", objectFit: "contain" }}
         />
       </div>
@@ -105,11 +108,11 @@ export function Art({
 export function ProjectCard({
   project: p,
 }: {
-  project: (typeof projects)[number];
+  project: Project;
 }) {
   return (
-    <Link className="project-card group" to={`/projects/${p.slug}`}>
-      <Art kind={p.kind} />
+    <Link className="project-card group" to={getProjectRoute(p)}>
+      <Art kind={p.kind} illustration={p.illustration} />
       <div className="card-meta">
         <span>{getProjectCategories(p).join(" · ")}</span>
         <ArrowUpRight size={20} />

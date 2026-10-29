@@ -8,7 +8,8 @@ import {
   Sparkles,
   Mail,
 } from "lucide-react";
-import { projects, profile } from "../content";
+import { profile } from "../content";
+import { featuredProjects } from "../content/projects";
 import { ProfileLinks, ProjectCard } from "../components/Shared";
 export default function Home() {
   return (
@@ -82,7 +83,7 @@ export default function Home() {
           </Link>
         </div>
         <div className="project-grid">
-          {projects.filter((p) => p.featured !== false).map((p) => (
+          {featuredProjects.map((p) => (
             <ProjectCard key={p.slug} project={p} />
           ))}
         </div>

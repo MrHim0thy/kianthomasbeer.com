@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Sparkles } from "lucide-react";
-import { projects, categories, getProjectCategories } from "../content";
+import { projects, categories, getProjectCategories } from "../content/projects";
 import { Heading, ProjectCard } from "../components/Shared";
 export default function Projects() {
   const [filter, setFilter] = useState("All");

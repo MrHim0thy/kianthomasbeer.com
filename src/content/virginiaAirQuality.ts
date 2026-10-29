@@ -20,4 +20,22 @@ export const virginiaAirQuality = {
     { title: 'Socioeconomic Context', description: 'Median household income, employment, and wage information from HDPulse and the Bureau of Labor Statistics.' },
     { title: 'Statistical Analysis', description: 'Geographic data integration, exploratory analysis, regression modeling, seasonal interactions, and model evaluation.' },
   ],
+  dataPreparation: {
+    sources: [
+      { title: 'EPA — Air Quality', description: 'Daily PM2.5 and PM10 measurements collected at monitoring stations across Virginia. Our analysis used 2024 EPA daily pollution data.' },
+      { title: 'Virginia Department of Health — Respiratory Visits', description: 'Weekly emergency department visit counts associated with COVID-19, influenza, and RSV, reported by Virginia health district.' },
+      { title: 'HDPulse — Socioeconomic Indicators', description: 'Median household income and county-level income rankings from the National Cancer Institute.' },
+      { title: 'Bureau of Labor Statistics — Employment', description: 'Employment and average weekly wage measurements used to provide additional socioeconomic context.' },
+    ],
+    stages: [
+      { title: 'EPA Daily Measurements', label: 'Daily observations', explanation: 'Daily PM2.5 and PM10 measurements collected at monitoring stations across Virginia. Our analysis used 2024 EPA daily pollution data.' },
+      { title: 'Weekly Aggregation', label: 'A common time scale', explanation: 'Daily PM2.5 and PM10 measurements were aggregated into weekly averages to match the VDH reporting frequency.' },
+      { title: 'Geographic Alignment', label: 'A common geography', explanation: 'Pollution monitoring station coordinates and county-level socioeconomic observations were mapped to Virginia Department of Health districts.', inputs: ['VDH health districts', 'HDPulse + BLS observations'] },
+      { title: 'Combined Analytical Dataset', label: 'Data Integration', explanation: 'Weekly pollution measurements, respiratory visit counts, and socioeconomic indicators were joined by geographic district and relevant time period.', inputs: ['VDH weekly respiratory visits', 'Socioeconomic indicators'] },
+    ],
+    notes: [
+      { title: 'Different Time Resolutions', description: 'EPA measurements were recorded daily, while VDH respiratory visits were reported weekly. This required aggregation and limited the ability to investigate precise day-level delayed effects.' },
+      { title: 'Incomplete PM10 Coverage', description: 'PM10 observations were missing for the final four months of the analyzed year. The team prioritized PM2.5 for subsequent modeling because it provided more complete temporal coverage.' },
+    ],
+  },
 };

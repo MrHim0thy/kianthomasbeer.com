@@ -36,7 +36,11 @@ The three new sections intentionally remain placeholders. No Fitbit, Spotify, or
 
 ## Editing content
 
-`src/content.ts` holds projects, retained sample articles, and verified profile links. Add a project with a unique slug to create its card and detail route. `src/pages/ProjectDetail.tsx` and `src/pages/Article.tsx` render the respective details. Sample articles are retained for compatibility, not shown as original journal entries.
+`src/content/projects.ts` is the single project source. Add an entry to `projectEntries` with a unique `slug`, `title`, `description`, `categories`, `tools`, `kind`, `featured`, and `displayOrder` (plus the existing primary `category` and project `number`). Lower display orders appear first. The homepage automatically selects the first three featured entries; Projects shows every entry and matches all categories. Both use the same `ProjectCard` from `src/components/Shared.tsx`.
+
+Routes are derived from the slug as `/projects/<slug>`. The existing detail template resolves new entries automatically; optional `problem`, `approach`, and `results` fields provide its content. Use `kind` to reuse the existing CSS artwork (`forecast`, `music`, or `neuro`), or add `illustration: { src, alt, width, height }` to use an SVG/image from `public/`. Illustration metadata and all card copy live with the project entry, so edits update both listings. The capstone’s expanded case study remains separate and unchanged.
+
+`src/content.ts` re-exports project data for existing consumers and retains sample articles and verified profile links. `src/pages/ProjectDetail.tsx` and `src/pages/Article.tsx` render details. Sample articles are retained for compatibility, not shown as original journal entries.
 
 Unknown profile URLs remain `null` with visible “soon” labels. Add verified GitHub, LinkedIn, and email values to `profile`. To enable the resume, put the real PDF at `public/resume.pdf` and set `profile.resume` to `/resume.pdf`. Home’s background, education, experience placeholders, and contact section are in `src/pages/Home.tsx`. No dates, roles, statistics, or project results have been invented. Project visuals are abstract concept illustrations, not screenshots or measured results.
 

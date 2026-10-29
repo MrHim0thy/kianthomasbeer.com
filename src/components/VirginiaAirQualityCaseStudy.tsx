@@ -4,6 +4,7 @@ import { ChevronLeft, Wind, HeartPulse, Building2, Layers3 } from "lucide-react"
 import { Heading } from "./Shared";
 import { virginiaAirQuality as study } from "../content/virginiaAirQuality";
 import "./VirginiaAirQualityCaseStudy.css";
+import RawDataResearch from "./RawDataResearch";
 
 function AtmosphereIllustration() {
   return (
@@ -90,6 +91,7 @@ export default function VirginiaAirQualityCaseStudy() {
           })}
         </div>
       </motion.section>
+      <RawDataResearch />
     </article>
   );
 }
