@@ -311,14 +311,13 @@ nav a:hover {
   top: -24.7336377%;
 }
 .hero-buddy {
-  --buddy-width: 240px;
+  --buddy-width: 124px;
   position: absolute;
-  right: -32px;
-  /* Source line center: y=767 on a 1774 x 887 canvas. */
-  bottom: calc(var(--buddy-width) * -0.0676437);
-  width: 150px;
-  height: calc(var(--buddy-width) / 2);
-  overflow: hidden;
+  right: -20px;
+  /* Hands meet the divider at source y=938 on the 1536 x 1024 canvas. */
+  bottom: calc(var(--buddy-width) * -0.0559896);
+  width: var(--buddy-width);
+  aspect-ratio: 3 / 2;
   z-index: 2;
 }
 .hero-buddy img {
@@ -326,9 +325,7 @@ nav a:hover {
   width: var(--buddy-width);
   max-width: none;
   height: auto;
-  position: relative;
-  left: -50px;
-  transform-origin: 50% 86.47%;
+  transform-origin: 50% 91.6%;
 }
 @media (prefers-reduced-motion: no-preference) {
   .hero-buddy {
@@ -1070,12 +1067,8 @@ footer > a:last-child {
     min-height: 0;
   }
   .hero-buddy {
-    --buddy-width: 110px;
-    width: 64px;
-    right: -20px;
-  }
-  .hero-buddy img {
-    left: -24px;
+    --buddy-width: 56px;
+    right: -21px;
   }
   .section {
     padding: 45px 0;

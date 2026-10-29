@@ -60,9 +60,9 @@ export default function Home() {
         </div>
         <div className="hero-buddy">
           <img
-            src="/brand/beer-buddy-peeking.png"
-            width="1774"
-            height="887"
+            src="/brand/beer-buddy-hanging.png"
+            width="1536"
+            height="1024"
             alt="Beer Buddy in sunglasses peeking over the hero divider"
           />
         </div>
