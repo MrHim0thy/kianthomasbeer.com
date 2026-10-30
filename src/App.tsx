@@ -25,10 +25,10 @@ const navigation = [
   { label: "Performance Lab", path: "/performance-lab" },
   { label: "Soundcheck", path: "/soundcheck" },
 ];
-function Brand() {
+function Brand({ showMascot = true }: { showMascot?: boolean }) {
   return (
     <Link to="/" className="wordmark" aria-label="Kian Thomasbeer home">
-      <img src="/brand/beer-buddy.png" width="56" height="48" alt="" />
+      {showMascot && <img src="/brand/beer-buddy.png" width="56" height="48" alt="" />}
       <span>
         kian<span className="brand-dot">.</span>
       </span>
@@ -75,7 +75,7 @@ export default function App() {
       </a>
       <div className="site-shell">
         <header className="site-header">
-          <Brand />
+          <Brand showMascot={false} />
           <button
             className="menu-toggle"
             aria-label={menu ? "Close navigation" : "Open navigation"}

@@ -1000,3 +1000,7 @@ footer > a:last-child {
     transition: none !important;
   }
 }
+
+/* Retain the header brand footprint so removing its mascot does not shift navigation. */
+.site-header .wordmark { padding-right: 63px; }
+@media (max-width: 760px) { .site-header .wordmark { padding-right: 54px; } }
