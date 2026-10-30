@@ -5,10 +5,12 @@ import { Heading, Art } from "../components/Shared";
 import NotFound from "./NotFound";
 import { lazy, Suspense } from "react";
 const VirginiaAirQualityCaseStudy = lazy(() => import("../components/VirginiaAirQualityCaseStudy"));
+const HitSongCaseStudy = lazy(() => import("../components/hit-song/HitSongCaseStudy"));
 export default function ProjectDetail() {
   const slug = useLocation().pathname.split("/").pop();
   const p = projects.find((p) => p.slug === slug);
   if (!p) return <NotFound />;
+  if (p.slug === "what-makes-a-hit-song") return <Suspense fallback={<p role="status">Loading music analytics…</p>}><HitSongCaseStudy /></Suspense>;
   if (p.slug === "virginia-air-quality") return <Suspense fallback={<p role="status">Loading research case study…</p>}><VirginiaAirQualityCaseStudy /></Suspense>;
   return (
     <>

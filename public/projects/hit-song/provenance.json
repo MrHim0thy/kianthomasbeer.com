@@ -1,0 +1,22 @@
+{
+  "source": "https://rpubs.com/KianT/1375691",
+  "sourceSha256": "b13acbea100550949d2fc9f23e81082a2c4a4178fcb811b8ea35a07d7d71e350",
+  "method": "Original embedded PNG bytes, widget JSON, sizing configuration and runtime dependencies extracted without recalculation.",
+  "widgets": [
+    {
+      "file": "duration",
+      "id": "htmlwidget-a8e085e8d132cc592c42",
+      "type": "plotly"
+    },
+    {
+      "file": "title-words",
+      "id": "htmlwidget-adc5f638eff92ba352c5",
+      "type": "wordcloud2"
+    },
+    {
+      "file": "platform-engagement",
+      "id": "htmlwidget-a1f933139b2ea8744cfa",
+      "type": "plotly"
+    }
+  ]
+}
