@@ -1,4 +1,5 @@
-import { motion, useReducedMotion } from 'framer-motion';
+import { useResearchReveal } from './useResearchReveal';
+import { motion } from 'framer-motion';
 import { researchFindings as content } from '../../content/virginiaResearchFindings';
 import { seasonalMonths, monthSlope, coefficientLabel } from '../../content/virginiaSeasonalModel';
 import './ResearchConclusions.css';
@@ -11,11 +12,10 @@ function FindingVisual({ kind }: { kind: string }) {
 }
 
 export default function ResearchConclusions() {
-  const reduced = useReducedMotion();
-  const reveal = { initial: reduced ? false as const : { opacity: 0, y: 12 }, whileInView: { opacity: 1, y: 0 }, viewport: { once: true, amount: 0.08 }, transition: { duration: reduced ? 0 : 0.4 } };
+  const reveal = useResearchReveal(0.08);
   return <div className="uva-closing-research">
     <motion.section {...reveal} className="uva-closing-section" aria-labelledby="uva-findings-title">
-      <div className="uva-section-heading"><span className="eyebrow">07 / RESEARCH FINDINGS</span><h2 id="uva-findings-title">What Did the Data Reveal?</h2></div>
+      <div className="uva-section-heading"><span className="uva-chapter-number" aria-hidden="true">07</span><span className="eyebrow">07 / RESEARCH FINDINGS</span><h2 id="uva-findings-title">What Did the Data Reveal?</h2></div>
       <p className="uva-closing-intro">{content.introduction}</p>
       <ol className="uva-findings-list">{content.findings.map((finding, index) => <li key={finding.title}>
         <span className="uva-finding-number" aria-hidden="true">0{index + 1}</span>
@@ -27,11 +27,11 @@ export default function ResearchConclusions() {
       </figure>
     </motion.section>
     <motion.section {...reveal} className="uva-closing-section uva-limitations" aria-labelledby="uva-limitations-title">
-      <div className="uva-section-heading"><span className="eyebrow">08 / RESEARCH LIMITATIONS</span><h2 id="uva-limitations-title">What the Data Couldn't Tell Us</h2><p>Boundaries on what these observations can support.</p></div>
+      <div className="uva-section-heading"><span className="uva-chapter-number" aria-hidden="true">08</span><span className="eyebrow">08 / RESEARCH LIMITATIONS</span><h2 id="uva-limitations-title">What the Data Couldn't Tell Us</h2><p>Boundaries on what these observations can support.</p></div>
       <dl>{content.limitations.map(item => <div key={item.title}><dt>{item.title}</dt><dd>{item.text}</dd></div>)}</dl>
     </motion.section>
     <motion.section {...reveal} className="uva-closing-section uva-conclusion" aria-labelledby="uva-conclusion-title">
-      <div className="uva-section-heading"><span className="eyebrow">09 / CONCLUSION</span><h2 id="uva-conclusion-title">A More Complicated Picture Than Pollution Alone</h2></div>
+      <div className="uva-section-heading"><span className="uva-chapter-number" aria-hidden="true">09</span><span className="eyebrow">09 / CONCLUSION</span><h2 id="uva-conclusion-title">A More Complicated Picture Than Pollution Alone</h2></div>
       <div className="uva-conclusion-copy">{content.conclusion.map(paragraph => <p key={paragraph}>{paragraph}</p>)}</div>
       <aside className="uva-team-reflection" aria-labelledby="uva-reflection-title"><span className="eyebrow">A PERSONAL REFLECTION / A TEAM PROJECT</span><h3 id="uva-reflection-title">What This Project Taught Me</h3>{content.reflection.map(paragraph => <p key={paragraph}>{paragraph}</p>)}</aside>
       <p className="uva-closing-provenance">Research source: <cite>University of Virginia Statistics Capstone Technical Report, April 2026, exploratory analysis, Methods, and Results.</cite> Findings summarize the original group research by Kian Thomasbeer, Sana Rehan, and Ariyah Walker. The interactive website is a subsequent presentation of that work. Potential confounders and aggregation limits describe interpretive constraints; they are not additional measured results.</p>

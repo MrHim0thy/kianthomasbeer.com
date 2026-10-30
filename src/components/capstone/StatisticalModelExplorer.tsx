@@ -1,3 +1,4 @@
+import { useResearchReveal } from './useResearchReveal';
 import { useId, useRef, useState, type KeyboardEvent } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 import { Check, Layers3 } from 'lucide-react';
@@ -5,6 +6,7 @@ import { modelStages, modelingContent as content, reportedAicModels, aicAxisMaxi
 import './StatisticalModelExplorer.css';
 
 export default function StatisticalModelExplorer() {
+  const reveal = useResearchReveal();
   const [selectedIndex, setSelectedIndex] = useState(3);
   const tabs = useRef<Array<HTMLButtonElement | null>>([]);
   const id = useId();
@@ -23,9 +25,8 @@ export default function StatisticalModelExplorer() {
   }
   return (
     <motion.section className="uva-modeling" aria-labelledby="uva-modeling-title"
-      initial={reduceMotion ? false : { opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.06 }} transition={{ duration: reduceMotion ? 0 : 0.45 }}>
-      <div className="uva-section-heading"><span className="eyebrow">06 / STATISTICAL MODELING</span><h2 id="uva-modeling-title">{content.title}</h2></div>
+      {...reveal}>
+      <div className="uva-section-heading"><span className="uva-chapter-number" aria-hidden="true">06</span><span className="eyebrow">06 / STATISTICAL MODELING</span><h2 id="uva-modeling-title">{content.title}</h2></div>
       <p className="modeling-introduction">{content.introduction}</p>
       <div role="tablist" aria-label="Explore modeling approaches" className="modeling-tabs" aria-orientation="horizontal">
         {modelStages.map((model, index) => <button key={model.id} ref={element => { tabs.current[index] = element; }}

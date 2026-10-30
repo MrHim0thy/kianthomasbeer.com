@@ -1,16 +1,17 @@
+import { useResearchReveal } from './useResearchReveal';
 import { useEffect, useId, useRef, useState } from 'react';
-import { motion, useReducedMotion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { seasonalMonths, januarySlopeUnits, coefficientScale, monthSlope, monthInteraction, coefficientLabel, seasonalModelContent as content } from '../../content/virginiaSeasonalModel';
 import './SeasonalCoefficientChart.css';
 
 type MonthName = typeof seasonalMonths[number]['month'];
 export default function SeasonalCoefficientChart() {
+  const reveal = useResearchReveal();
   const [selectedMonths, setSelectedMonths] = useState<MonthName[]>(seasonalMonths.map(m => m.month));
   const [mode, setMode] = useState<'total' | 'interaction'>('total');
   const [focusedMonth, setFocusedMonth] = useState<MonthName>('September');
   const [width, setWidth] = useState(800);
   const container = useRef<HTMLDivElement>(null);
-  const reduceMotion = useReducedMotion();
   const id = useId();
   useEffect(() => {
     if (!container.current) return;
@@ -32,9 +33,8 @@ export default function SeasonalCoefficientChart() {
   }
   return (
     <motion.section className="uva-seasonal" aria-labelledby="uva-seasonal-title"
-      initial={reduceMotion ? false : { opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.06 }} transition={{ duration: reduceMotion ? 0 : 0.45 }}>
-      <div className="uva-section-heading"><span className="eyebrow">05 / SEASONAL INTERACTIONS</span><h2 id="uva-seasonal-title">{content.title}</h2></div>
+      {...reveal}>
+      <div className="uva-section-heading"><span className="uva-chapter-number" aria-hidden="true">05</span><span className="eyebrow">05 / SEASONAL INTERACTIONS</span><h2 id="uva-seasonal-title">{content.title}</h2></div>
       <p className="seasonal-introduction">{content.introduction}</p>
       <div className="seasonal-scope"><strong>Documented coefficients only.</strong> This compares four reported monthly PM2.5 associations from the Negative Binomial analysis. It is not a prediction of emergency visit counts. January is the reference month; uncertainty estimates are unavailable.</div>
       <div className="seasonal-controls">

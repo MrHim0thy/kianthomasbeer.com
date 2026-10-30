@@ -1,5 +1,6 @@
+import { useResearchReveal } from './useResearchReveal';
 import { useEffect, useId, useMemo, useRef, useState, type KeyboardEvent, type PointerEvent } from 'react';
-import { motion, useReducedMotion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { AlertCircle, Database, RefreshCw } from 'lucide-react';
 import { districtSeries, formatWeek, lineGeometry, parseRespiratoryDataset, pointLabel, type RespiratoryDataset, type WeeklyPoint } from './respiratoryData';
 import './RespiratoryVisitsChart.css';
@@ -107,10 +108,10 @@ function WeeklyLineChart({ series, district }: { series: WeeklyPoint[]; district
 }
 
 export default function RespiratoryVisitsChart() {
+  const reveal = useResearchReveal();
   const [load, setLoad] = useState<LoadState>({ status: 'loading' });
   const [district, setDistrict] = useState('');
   const [attempt, setAttempt] = useState(0);
-  const reduceMotion = useReducedMotion();
   const selectId = useId();
   useEffect(() => {
     const controller = new AbortController();
@@ -136,9 +137,8 @@ export default function RespiratoryVisitsChart() {
   const series = useMemo(() => data && district ? districtSeries(data, district) : [], [data, district]);
   return (
     <motion.section className="uva-respiratory" aria-labelledby="uva-respiratory-title"
-      initial={reduceMotion ? false : { opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.06 }} transition={{ duration: reduceMotion ? 0 : 0.45 }}>
-      <div className="uva-section-heading"><span className="eyebrow" aria-hidden="true">04 / RESPIRATORY HEALTH</span><h2 id="uva-respiratory-title">When Do Respiratory Emergencies Peak?</h2></div>
+      {...reveal}>
+      <div className="uva-section-heading"><span className="uva-chapter-number" aria-hidden="true">04</span><span className="eyebrow" aria-hidden="true">04 / RESPIRATORY HEALTH</span><h2 id="uva-respiratory-title">When Do Respiratory Emergencies Peak?</h2></div>
       <p className="respiratory-subtitle">Weekly emergency department visits associated with COVID-19, influenza, and RSV across Virginia.</p>
       {load.status === 'loading' && <div className="respiratory-data-state" role="status" aria-busy="true"><Database size={23} aria-hidden="true" /><p>Loading verified respiratory visit counts…</p></div>}
       {(load.status === 'missing' || load.status === 'error') && <div className="respiratory-data-state" role="status"><AlertCircle size={23} aria-hidden="true" /><h3>{load.status === 'missing' ? 'Waiting for verified source data' : 'Data unavailable'}</h3><p>{load.message}</p><button type="button" className="text-link" onClick={() => setAttempt(n => n + 1)}><RefreshCw size={15} aria-hidden="true" />Retry loading data</button></div>}

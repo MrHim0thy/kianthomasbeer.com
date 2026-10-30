@@ -1,18 +1,18 @@
-import { motion, useReducedMotion } from 'framer-motion';
+import { useResearchReveal } from './useResearchReveal';
+import { motion } from 'framer-motion';
 import { ArrowUpRight, FileText, Database } from 'lucide-react';
 import { virginiaAirQuality as study } from '../../content/virginiaAirQuality';
 import { technicalReportPath, capstonePublicSources, researchResourceContent as content } from '../../content/virginiaResearchResources';
 import './ResearchResources.css';
 
 export default function ResearchResources() {
-  const reduced = useReducedMotion();
+  const reveal = useResearchReveal();
   const team = study.metadata.find(item => item.label === 'Team')?.value.split(', ') ?? [];
   const advisor = study.metadata.find(item => item.label === 'Faculty advisor')?.value;
   const reportUrl = technicalReportPath ? `/${technicalReportPath.replace(/^\/+/, '')}` : null;
   return <motion.section className="uva-resources" aria-labelledby="uva-resources-title"
-    initial={reduced ? false : { opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true, amount: 0.06 }} transition={{ duration: reduced ? 0 : 0.4 }}>
-    <div className="uva-section-heading"><span className="eyebrow">10 / EXPLORE THE RESEARCH</span><h2 id="uva-resources-title">Go Beyond the Visualizations</h2></div>
+      {...reveal}>
+    <div className="uva-section-heading"><span className="uva-chapter-number" aria-hidden="true">10</span><span className="eyebrow">10 / EXPLORE THE RESEARCH</span><h2 id="uva-resources-title">Go Beyond the Visualizations</h2></div>
     <p className="uva-resources-intro">{content.introduction}</p>
     <div className="uva-resource-list">
       <section className="uva-resource-row" aria-labelledby="uva-report-resource"><FileText aria-hidden="true" size={24} strokeWidth={1.5} />

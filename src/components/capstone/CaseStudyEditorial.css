@@ -1,0 +1,111 @@
+/* Editorial layer: capstone-only, loaded after all existing QA refinements.
+   Charts retain their geometry, data encodings, marks and keyboard behavior. */
+.uva-case-study { --uva-section-gap: 94px; --uva-section-padding: 54px; --uva-notebook-font: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+.uva-case-study .uva-reading-progress { position: fixed; inset: 0 0 auto; height: 3px; background: var(--amber); z-index: 100; pointer-events: none; transform: scaleX(0); transform-origin: left center; }
+.uva-case-study .uva-case-hero { position: relative; isolation: isolate; padding-top: 22px; padding-bottom: 28px; }
+.uva-case-study .uva-case-hero > :not(.uva-hero-contours) { position: relative; z-index: 1; }
+.uva-case-study .uva-hero-contours { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
+.uva-case-study .uva-notebook-label { display: inline-block; font: 10px/1.8 var(--uva-notebook-font); color: var(--muted); letter-spacing: 1.2px; border-left: 2px solid var(--amber); padding-left: 12px; margin-top: 25px; }
+.uva-case-study .uva-case-hero .page-heading { padding-top: 24px; }
+.uva-case-study .uva-case-hero h1 { font-family: Georgia, 'Times New Roman', serif; font-weight: 400; font-size: clamp(42px, 4.5vw, 64px); letter-spacing: -2px; line-height: 1.1; }
+.uva-case-study .uva-case-hero .page-heading > p { line-height: 1.85; }
+.uva-case-study .uva-case-hero .eyebrow { font-family: var(--uva-notebook-font); font-size: 10px; letter-spacing: 1.4px; }
+.uva-case-study .uva-atmosphere { padding: 12px 0 0; }
+.uva-case-study .uva-atmosphere figcaption { font-family: var(--uva-notebook-font); font-size: 10px; line-height: 1.8; }
+.uva-case-study .uva-metadata { border-top-color: #c3bba9; background: linear-gradient(90deg, #e9a23b05, transparent); padding-top: 27px; padding-bottom: 29px; }
+.uva-case-study .uva-metadata dt { font-family: var(--uva-notebook-font); font-size: 10px; letter-spacing: 1.2px; }
+.uva-case-study .uva-section-heading { position: relative; padding-right: 120px; min-width: 0; }
+.uva-case-study .uva-chapter-number { position: absolute; right: 0; top: -5px; font: 400 98px/.92 Georgia,serif; letter-spacing: -6px; color: rgb(26 31 43 / 6%); pointer-events: none; user-select: none; }
+.uva-case-study .uva-section-heading > .eyebrow { display: inline-flex; align-items: center; gap: 12px; font: 10px/1.8 var(--uva-notebook-font); color: var(--accent); letter-spacing: 1.4px; }
+.uva-case-study .uva-section-heading > .eyebrow::before { content: ''; width: 23px; height: 1px; background: var(--amber); flex-shrink: 0; }
+.uva-case-study .uva-section-heading > h2 { font: 400 clamp(29px, 3vw, 40px)/1.18 Georgia,serif; letter-spacing: -.6px; margin-top: 17px; }
+.uva-case-study :is(.uva-research, .uva-limitations) > .uva-section-heading { padding: 85px 0 0; }
+.uva-case-study :is(.uva-research, .uva-limitations) > .uva-section-heading > .uva-chapter-number { left: 0; right: auto; top: -5px; font-size: 83px; }
+.uva-case-study .uva-research { padding-top: 88px; padding-bottom: 82px; }
+.uva-case-study .uva-research-copy blockquote { border-left-width: 1px; line-height: 1.55; }
+.uva-case-study .uva-glance { padding-top: 50px; }
+.uva-case-study .uva-glance-block { border-radius: 2px; border-top-width: 1px; border-color: #d8d4c7; background: #fffdf74d; }
+.uva-case-study .uva-glance-block h3 { font-family: Georgia,serif; font-weight: 400; font-size: 24px; }
+.uva-case-study .uva-source-block { border-top-color: #d8d4c7; }
+.uva-case-study .uva-source-block h3 { font-family: Georgia,serif; font-weight: 400; font-size: 23px; }
+.uva-case-study .uva-pipeline { padding-top: 27px; border-top: 1px solid var(--line); }
+.uva-case-study .uva-pipeline-stage { border-radius: 8px; background: #fffdf9b3; box-shadow: 0 4px 14px #1a1f2b04; }
+.uva-case-study .uva-pipeline-stage[aria-pressed="true"] { border-color: #a57a37; background: #edf1e5; box-shadow: 0 5px 20px #596b4310; }
+.uva-case-study :is(.uva-stage-top > span, .uva-input-label, .uva-stage-label) { font-family: var(--uva-notebook-font); }
+.uva-case-study .uva-pipeline-explanation { background: linear-gradient(90deg, #e9a23b08, #fffdf74d); border-left-width: 1px; }
+.uva-case-study :is(.respiratory-chart-frame, .seasonal-chart-container, .modeling-aic-figure) { border-color: #d4d0c2; border-top: 2px solid #b78b4d; border-radius: 9px; background: #fffdf9b3; box-shadow: 0 9px 30px #1a1f2b07; }
+.uva-case-study .respiratory-chart-frame { margin-top: 19px; }
+.uva-case-study :is(.respiratory-chart-help, .seasonal-chart-help) { font-size: 12px; line-height: 1.9; margin-top: 25px; margin-bottom: 18px; }
+.uva-case-study :is(.respiratory-controls, .seasonal-controls) { padding-bottom: 5px; }
+.uva-case-study :is(.respiratory-controls select, .seasonal-mode select) { background-color: #fffdf9; border-color: #b9b5a8; border-radius: 6px; }
+.uva-case-study .seasonal-month-options { gap: 8px; }
+.uva-case-study .seasonal-month-options label { padding: 5px 10px; border: 1px solid var(--line); border-radius: 5px; background: #fffdf780; }
+.uva-case-study .seasonal-month-options label:has(input:checked) { background: #edf1e5; border-color: #a8b79c; }
+.uva-case-study :is(.seasonal-detail, .respiratory-observation, .modeling-limitation) { border-left-width: 1px; }
+.uva-case-study .seasonal-detail { margin-top: 28px; padding-block: 25px; background: #fffdf780; }
+.uva-case-study .seasonal-detail h3 { font-family: Georgia,serif; font-weight: 400; }
+.uva-case-study :is(.seasonal-table-wrap, .respiratory-table-scroll, .modeling-cv-table) { border-color: #d4d0c2; border-radius: 6px; }
+.uva-case-study :is(.seasonal-table-wrap caption, .respiratory-table caption, .modeling-cv-table caption, .modeling-aic-figure figcaption) { font-family: var(--uva-notebook-font); font-size: 11px; line-height: 1.8; }
+.uva-case-study .modeling-tabs { margin-top: 36px; }
+.uva-case-study .modeling-tabs > button { background: #fffdf9b3; border-radius: 7px; border-top-width: 2px; }
+.uva-case-study .modeling-tabs > button[aria-selected="true"] { border-color: #a57a37; background: #f8eddc; box-shadow: 0 4px 16px #95571308; }
+.uva-case-study .modeling-tab-number { font-family: var(--uva-notebook-font); font-size: 10px; }
+.uva-case-study .modeling-panel { background: #fffdf980; border-radius: 7px; border-color: #d4d0c2; padding: 33px; }
+.uva-case-study .modeling-panel h3 { font-family: Georgia,serif; font-weight: 400; }
+.uva-case-study .modeling-metric { border-left-width: 1px; background: #edf1e5; }
+.uva-case-study .modeling-metric > span { font-family: var(--uva-notebook-font); }
+.uva-case-study .modeling-metric strong { font-family: Georgia,serif; font-weight: 400; }
+.uva-case-study :is(.modeling-aic, .modeling-cv, .modeling-dispersion) { margin-top: 48px; padding-top: 38px; }
+.uva-case-study .uva-findings-list { margin-top: 43px; }
+.uva-case-study .uva-findings-list > li { padding-block: 39px; }
+.uva-case-study .uva-finding-number { font-size: 39px; color: #a5793f; }
+.uva-case-study .uva-finding-copy h3 { font-family: Georgia,serif; font-weight: 400; font-size: 28px; line-height: 1.3; }
+.uva-case-study .uva-findings-list > li:nth-child(even) :is(.uva-finding-type, .uva-finding-coefficients) { border-color: #c59a60; }
+.uva-case-study .uva-research-synthesis { padding-block: 35px; border-top-color: #b78b4d; }
+.uva-case-study .uva-research-synthesis h3 { font-family: Georgia,serif; font-weight: 400; }
+.uva-case-study .uva-conclusion { padding: 49px 40px 42px; background: linear-gradient(110deg, #e9a23b09, #fffdf74d 65%, transparent); border-block: 1px solid #d8d2c2; }
+.uva-case-study .uva-conclusion-copy { margin-top: 34px; }
+.uva-case-study .uva-conclusion-copy p:first-child { font-size: clamp(23px, 2.2vw, 29px); line-height: 1.65; }
+.uva-case-study .uva-team-reflection { margin-top: 40px; padding-left: 24px; border-left-width: 1px; }
+.uva-case-study .uva-team-reflection h3 { font-family: Georgia,serif; font-weight: 400; }
+.uva-case-study .uva-resource-row h3, .uva-case-study .uva-team-credits h3 { font-family: Georgia,serif; font-weight: 400; }
+.uva-case-study .uva-resource-action { padding: 10px 13px; border: 1px solid #d7c6aa; border-radius: 4px; background: #fffdf980; }
+.uva-case-study .uva-resource-action:hover { background: #f7e9d4; text-decoration: none; border-color: #a57a37; }
+.uva-case-study .uva-official-sources a:hover { color: var(--accent); text-decoration: underline; text-underline-offset: 4px; }
+.uva-case-study :is(.uva-reproducibility, .modeling-under-hood) summary { font-family: var(--uva-notebook-font); font-size: 13px; }
+@media (prefers-reduced-motion: no-preference) {
+  .uva-case-study :is(.uva-resource-action, .uva-pipeline-stage, .modeling-tabs > button, .seasonal-month-options label) { transition: background-color 160ms ease, border-color 160ms ease, box-shadow 160ms ease; }
+}
+@media (max-width: 1000px) {
+  .uva-case-study { --uva-section-gap: 77px; --uva-section-padding: 46px; }
+  .uva-case-study .uva-chapter-number { font-size: 84px; }
+  .uva-case-study .uva-section-heading { padding-right: 104px; }
+}
+@media (max-width: 700px) {
+  .uva-case-study { --uva-section-gap: 55px; --uva-section-padding: 35px; }
+  .uva-case-study .uva-case-hero { padding-top: 12px; }
+  .uva-case-study .uva-hero-contours { opacity: .6; }
+  .uva-case-study .uva-notebook-label { margin-top: 19px; font-size: 9px; }
+  .uva-case-study .uva-case-hero h1 { font-size: clamp(38px, 9vw, 54px); letter-spacing: -1.5px; }
+  .uva-case-study .uva-case-hero .page-heading .eyebrow { font-size: 9px; }
+  .uva-case-study .uva-atmosphere { padding: 0; }
+  .uva-case-study .uva-section-heading { padding-right: 72px; }
+  .uva-case-study .uva-chapter-number { top: 1px; font-size: 59px; letter-spacing: -3px; }
+  .uva-case-study .uva-section-heading > .eyebrow { gap: 8px; font-size: 9px; letter-spacing: .9px; }
+  .uva-case-study .uva-section-heading > .eyebrow::before { width: 16px; }
+  .uva-case-study .uva-section-heading > h2 { font-size: 29px; }
+  .uva-case-study :is(.uva-research, .uva-limitations) > .uva-section-heading { padding: 0 72px 0 0; }
+  .uva-case-study :is(.uva-research, .uva-limitations) > .uva-section-heading > .uva-chapter-number { left: auto; right: 0; top: 1px; font-size: 59px; }
+  .uva-case-study .uva-research { padding-top: 50px; padding-bottom: 50px; }
+  .uva-case-study .uva-glance { padding-top: 35px; }
+  .uva-case-study .uva-glance-block { padding: 23px; }
+  .uva-case-study .uva-source-block h3 { font-size: 21px; }
+  .uva-case-study .seasonal-month-options label { padding-inline: 8px; }
+  .uva-case-study .modeling-panel { padding: 23px 18px; }
+  .uva-case-study .uva-finding-copy h3 { font-size: 24px; }
+  .uva-case-study .uva-finding-number { font-size: 29px; }
+  .uva-case-study .uva-findings-list > li { padding-block: 28px; }
+  .uva-case-study .uva-conclusion { padding: 32px 19px; }
+  .uva-case-study .uva-conclusion-copy p:first-child { font-size: 23px; }
+  .uva-case-study .uva-team-reflection { padding-left: 18px; }
+}

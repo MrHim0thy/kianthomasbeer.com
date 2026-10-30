@@ -1,5 +1,7 @@
+import { useResearchReveal } from './capstone/useResearchReveal';
 import { Link } from "react-router-dom";
-import { motion, useReducedMotion } from "framer-motion";
+import { useRef } from "react";
+import { motion } from "framer-motion";
 import { ChevronLeft, Wind, HeartPulse, Building2, Layers3 } from "lucide-react";
 import { Heading } from "./Shared";
 import { virginiaAirQuality as study } from "../content/virginiaAirQuality";
@@ -12,6 +14,22 @@ import ResearchConclusions from "./capstone/ResearchConclusions";
 import ResearchResources from "./capstone/ResearchResources";
 import { useCapstoneMetadata } from "./capstone/useCapstoneMetadata";
 import "./capstone/CapstoneQa.css";
+import ReadingProgress from "./capstone/ReadingProgress";
+import "./capstone/CaseStudyEditorial.css";
+
+function HeroContours() {
+  return <svg className="uva-hero-contours" viewBox="0 0 1200 600" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+    <defs>
+      <linearGradient id="uva-contour-ink" x1="0" y1="0" x2="1" y2="1"><stop stopColor="#c9bda6" stopOpacity=".3" /><stop offset=".55" stopColor="#e9a23b" stopOpacity=".24" /><stop offset="1" stopColor="#1a1f2b" stopOpacity=".09" /></linearGradient>
+      <linearGradient id="uva-contour-fade"><stop offset=".25" stopColor="white" stopOpacity="0" /><stop offset=".78" stopColor="white" /></linearGradient>
+      <mask id="uva-contour-mask"><rect width="1200" height="600" fill="url(#uva-contour-fade)" /></mask>
+    </defs>
+    <g fill="none" stroke="url(#uva-contour-ink)" strokeWidth="1" mask="url(#uva-contour-mask)">
+      {[0, 28, 56, 84, 112, 140, 168, 196].map(offset => <path key={offset} transform={`translate(${offset * 0.14} ${offset})`} d="M650-80C810 20 1000-90 1125 80S1050 300 1290 360" />)}
+      {[0, 24, 48, 72, 96].map(offset => <path key={offset} transform={`translate(0 ${offset})`} d="M300 390C525 310 655 580 860 440S1060 340 1270 410" />)}
+    </g>
+  </svg>;
+}
 
 function AtmosphereIllustration() {
   return (
@@ -45,19 +63,17 @@ function AtmosphereIllustration() {
 
 export default function VirginiaAirQualityCaseStudy() {
   useCapstoneMetadata();
-  const reduceMotion = useReducedMotion();
-  const reveal = {
-    initial: reduceMotion ? false as const : { opacity: 0, y: 14 },
-    whileInView: { opacity: 1, y: 0 },
-    viewport: { once: true, amount: 0.12 },
-    transition: { duration: reduceMotion ? 0 : 0.45 },
-  };
+  const articleRef = useRef<HTMLElement>(null);
+  const reveal = useResearchReveal(0.12);
   const icons = [Wind, HeartPulse, Building2, Layers3];
   return (
-    <article className="uva-case-study">
+    <article className="uva-case-study" ref={articleRef}>
+      <ReadingProgress articleRef={articleRef} />
       <Link className="back-link" to="/projects"><ChevronLeft size={16} />All projects</Link>
       <div className="uva-case-hero">
+        <HeroContours />
         <div>
+          <span className="uva-notebook-label" aria-hidden="true">research / virginia-air-quality</span>
           <Heading label={study.eyebrow} title={study.title} text={study.subtitle} />
           <div className="tags detail-tags" aria-label="Project topics">
             {study.tags.map(tag => <span key={tag}>{tag}</span>)}
@@ -75,6 +91,7 @@ export default function VirginiaAirQualityCaseStudy() {
       </dl>
       <motion.section {...reveal} className="uva-research" aria-labelledby="uva-question-title">
         <div className="uva-section-heading">
+          <span className="uva-chapter-number" aria-hidden="true">01</span>
           <span className="eyebrow" aria-hidden="true">01 / THE QUESTION</span>
           <h2 id="uva-question-title">The Research Question</h2>
         </div>
@@ -85,6 +102,7 @@ export default function VirginiaAirQualityCaseStudy() {
       </motion.section>
       <motion.section {...reveal} className="uva-glance" aria-labelledby="uva-glance-title">
         <div className="uva-section-heading">
+          <span className="uva-chapter-number" aria-hidden="true">02</span>
           <span className="eyebrow" aria-hidden="true">02 / THE FRAMEWORK</span>
           <h2 id="uva-glance-title">Project at a Glance</h2>
         </div>

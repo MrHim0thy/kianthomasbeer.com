@@ -1,13 +1,14 @@
+import { useResearchReveal } from './capstone/useResearchReveal';
 import { useState } from "react";
-import { motion, useReducedMotion } from "framer-motion";
+import { motion } from "framer-motion";
 import { Wind, HeartPulse, Building2, BriefcaseBusiness, CalendarDays, MapPin, Layers3, ArrowUp } from "lucide-react";
 import { virginiaAirQuality } from "../content/virginiaAirQuality";
 import "./RawDataResearch.css";
 
 export default function RawDataResearch() {
+  const reveal = useResearchReveal();
   const data = virginiaAirQuality.dataPreparation;
   const [activeStage, setActiveStage] = useState(1);
-  const reduceMotion = useReducedMotion();
   const sourceIcons = [Wind, HeartPulse, Building2, BriefcaseBusiness];
   const stageIcons = [Wind, CalendarDays, MapPin, Layers3];
   const selected = data.stages[activeStage];
@@ -16,12 +17,10 @@ export default function RawDataResearch() {
     <motion.section
       className="uva-data-research"
       aria-labelledby="uva-data-title"
-      initial={reduceMotion ? false : { opacity: 0, y: 14 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.06 }}
-      transition={{ duration: reduceMotion ? 0 : 0.45 }}
+      {...reveal}
     >
       <div className="uva-section-heading">
+        <span className="uva-chapter-number" aria-hidden="true">03</span>
         <span className="eyebrow" aria-hidden="true">03 / DATA PREPARATION</span>
         <h2 id="uva-data-title">From Raw Data to Research</h2>
       </div>
