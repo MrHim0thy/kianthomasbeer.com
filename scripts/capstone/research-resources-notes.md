@@ -2,12 +2,11 @@
 
 The resource section is implemented in `src/components/capstone/ResearchResources.tsx`, with scoped styles and configuration in `src/content/virginiaResearchResources.ts`.
 
-## Outstanding original research materials
+## Technical Report
 
-- **Final Technical Report PDF:** not found in repository public assets or among the named capstone / technical-report candidates in Downloads. The existing working Word document and proposal PDF are not published as a final report. Provide the reviewed final PDF; copy to `public/reports/uva-statistics-capstone-2026.pdf` and set `technicalReportPath` to `reports/uva-statistics-capstone-2026.pdf`. The static PDF link uses the site's existing root-base deployment and opens in a new tab. Check that it renders and downloads before enabling.
-- **Original capstone analysis repository URL:** no verified URL exists in project configuration. The general GitHub profile and website repository are not substitutes. Supply the repository containing the original R analysis; verify its contents and accessibility before setting `capstoneRepositoryUrl`.
+The user-supplied final PDF was added on 2026-10-30 at `public/reports/uva-statistics-capstone-2026.pdf`. It contains 16 pages and is copied byte-for-byte from the supplied file. `technicalReportPath` enables the report action in a new tab. The static asset can also be saved using the browser PDF viewer.
 
-Both values default to null. The website renders plain availability text, with no disabled, empty, or placeholder anchors. No report or analysis repository is fabricated.
+The resources section contains the Technical Report and official data sources. No analysis repository configuration or resource entry is included.
 
 ## Official source pages
 
@@ -27,4 +26,4 @@ Team names and advisor reuse the existing capstone metadata. Spring 2026 is supp
 ## Preview
 
 `npm run build`, then `npm run dev -- --host 127.0.0.1`.
-Open `http://127.0.0.1:5173/#/projects/virginia-air-quality`, scroll to 10 / Explore the Research. Tab through the four source links, verify new-tab security attributes, and use Enter / Space on Data & Reproducibility Notes. Verify no report / repository anchor is rendered while its configuration is null.
+Open `http://127.0.0.1:5173/#/projects/virginia-air-quality`, scroll to 10 / Explore the Research. Tab through the four source links, verify new-tab security attributes, and use Enter / Space on Data & Reproducibility Notes. Verify the View Report action opens the actual PDF in a new tab and that no code resource entry is displayed.

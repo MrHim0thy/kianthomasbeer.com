@@ -1,10 +1,5 @@
-// Publication placeholders: enable only after the actual assets / analysis repository are verified.
-// Put the reviewed final PDF at public/reports/uva-statistics-capstone-2026.pdf,
-// then set technicalReportPath to 'reports/uva-statistics-capstone-2026.pdf'.
-// A Word working document or proposal is not substituted for the final report.
-export const technicalReportPath: string | null = null;
-// Supply the repository containing the original capstone R analysis, not the website repository.
-export const capstoneRepositoryUrl: string | null = null;
+// User-supplied final report, copied unchanged into public assets.
+export const technicalReportPath: string | null = 'reports/uva-statistics-capstone-2026.pdf';
 
 export const capstonePublicSources = [
   { name: 'EPA', title: 'Daily air quality measurements', url: 'https://www.epa.gov/outdoor-air-quality-data/download-daily-data', description: 'Official monitor-level daily air quality query and download tool.' },
@@ -18,7 +13,7 @@ export const researchResourceContent = {
     { title: 'Original research inputs', text: 'The original group analysis combined EPA pollution measurements, VDH respiratory emergency department records, and socioeconomic indicators from HDPulse and the Bureau of Labor Statistics.' },
     { title: 'What powers this website', text: 'The respiratory time-series chart uses processed research data. Its static export retains only the fields needed for the visualization, preserves missing and suppressed counts, and does not provide a complete statewide total. The seasonal and model comparison displays use verified reported coefficients and metrics; they do not rerun the fitted models.' },
     { title: 'Methods and reproducibility', text: 'Data transformations and model assumptions are documented in the Technical Report. Website-specific processing and verification are documented in the capstone scripts. The complete final fitted-model specification and validation outputs have not been independently verified here, so these displays are not a claim of full end-to-end reproducibility.' },
-    { title: 'Public sources and processed files', text: 'The official links lead to original public source portals, not the cleaned or merged analytical dataset. Current source releases, definitions, access conditions, and licensing may differ from the files used in the study. A live source link does not establish that the complete analysis code or datasets are publicly available.' },
-    { title: 'Responsible publication', text: 'Any published code or processed data should exclude restricted or sensitive information and comply with the applicable source terms. Only reviewed materials should be released; no permission to redistribute all source or analytical files is implied.' },
+    { title: 'Public sources and processed files', text: 'The official links lead to original public source portals, not the cleaned or merged analytical dataset. Current source releases, definitions, access conditions, and licensing may differ from the files used in the study. A live source link does not establish that the complete analytical datasets are publicly available.' },
+    { title: 'Responsible publication', text: 'Any published processed data should exclude restricted or sensitive information and comply with the applicable source terms. Only reviewed materials should be released; no permission to redistribute all source or analytical files is implied.' },
   ],
 };

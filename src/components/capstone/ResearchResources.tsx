@@ -1,7 +1,7 @@
 import { motion, useReducedMotion } from 'framer-motion';
-import { ArrowUpRight, FileText, Code2, Database } from 'lucide-react';
+import { ArrowUpRight, FileText, Database } from 'lucide-react';
 import { virginiaAirQuality as study } from '../../content/virginiaAirQuality';
-import { technicalReportPath, capstoneRepositoryUrl, capstonePublicSources, researchResourceContent as content } from '../../content/virginiaResearchResources';
+import { technicalReportPath, capstonePublicSources, researchResourceContent as content } from '../../content/virginiaResearchResources';
 import './ResearchResources.css';
 
 export default function ResearchResources() {
@@ -18,10 +18,6 @@ export default function ResearchResources() {
       <section className="uva-resource-row" aria-labelledby="uva-report-resource"><FileText aria-hidden="true" size={24} strokeWidth={1.5} />
         <div><h3 id="uva-report-resource">Read the Technical Report</h3><p>Full research methodology, statistical analysis, figures, model diagnostics, and conclusions.</p></div>
         {reportUrl ? <a className="uva-resource-action" href={reportUrl} target="_blank" rel="noopener noreferrer" aria-label="View the UVA capstone Technical Report PDF (opens in a new tab)">View Report<ArrowUpRight size={15} aria-hidden="true" /></a> : <p className="uva-resource-availability">Report PDF not yet published.</p>}
-      </section>
-      <section className="uva-resource-row" aria-labelledby="uva-code-resource"><Code2 aria-hidden="true" size={24} strokeWidth={1.5} />
-        <div><h3 id="uva-code-resource">Explore the Code</h3><p>R scripts for data cleaning, geospatial integration, statistical modeling, and visualization.</p></div>
-        {capstoneRepositoryUrl ? <a className="uva-resource-action" href={capstoneRepositoryUrl} target="_blank" rel="noopener noreferrer" aria-label="Explore the original capstone analysis on GitHub (opens in a new tab)">Explore GitHub<ArrowUpRight size={15} aria-hidden="true" /></a> : <p className="uva-resource-availability">Analysis repository not yet linked.</p>}
       </section>
       <section className="uva-resource-row uva-resource-data" aria-labelledby="uva-data-resource"><Database aria-hidden="true" size={24} strokeWidth={1.5} />
         <div><h3 id="uva-data-resource">Explore the Data Sources</h3><p>Public environmental, health, and socioeconomic datasets used in the study.</p>
