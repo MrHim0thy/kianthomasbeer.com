@@ -169,60 +169,6 @@ nav a:hover {
 .lime {
   color: var(--accent);
 }
-.hero {
-  position: relative;
-  padding-top: 85px;
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  align-items: center;
-  min-height: 650px;
-  overflow: visible;
-  isolation: isolate;
-}
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: auto 0 0;
-  height: 1px;
-  background: var(--line);
-  pointer-events: none;
-}
-.hero-copy {
-  position: relative;
-  z-index: 1;
-}
-.hero h1 {
-  font-size: clamp(66px, 7.5vw, 103px);
-  letter-spacing: -5px;
-  white-space: nowrap;
-  margin: 30px 0 23px;
-}
-.hero h1 > span:first-child {
-  font-family: Georgia, serif;
-  font-style: italic;
-  font-weight: 400;
-  color: var(--accent);
-}
-.hero-star {
-  display: none;
-}
-.hero-subtitle {
-  font-size: clamp(18px, 1.9vw, 25px);
-  line-height: 1.5;
-  color: #414a55;
-  letter-spacing: -0.5px;
-}
-.hero-note {
-  font-size: 12px;
-  margin-top: 20px;
-}
-.hero-actions {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 28px;
-  margin-top: 30px;
-}
 .button {
   display: inline-flex;
   align-items: center;
@@ -273,88 +219,7 @@ nav a:hover {
   border-radius: 3px;
   padding: 1px 4px;
 }
-.portrait-hero {
-  position: absolute;
-  inset: 0 0 0 43%;
-  min-width: 0;
-  overflow: hidden;
-  pointer-events: none;
-  mask-image: linear-gradient(to bottom, #000 calc(100% - 16px), transparent);
-}
-.portrait-hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(
-    ellipse at 48% 42%,
-    rgb(233 162 59 / 6%),
-    rgb(233 162 59 / 2%) 35%,
-    transparent 68%
-  );
-}
-.portrait-composition {
-  height: clamp(576px, 52.8vw, 672px);
-  aspect-ratio: 1817 / 2628;
-  position: absolute;
-  bottom: -28px;
-  left: 47%;
-  transform: translateX(-50%);
-  overflow: hidden;
-}
 /* Frame the source's transparent canvas without editing or stretching it. */
-.portrait-composition .portrait-photo {
-  position: absolute;
-  width: 166.0979637%;
-  max-width: none;
-  height: auto;
-  left: -2.6967529%;
-  top: -24.7336377%;
-}
-.hero-buddy {
-  --buddy-width: 124px;
-  position: absolute;
-  right: -20px;
-  /* Hands meet the divider at source y=938 on the 1536 x 1024 canvas. */
-  bottom: calc(var(--buddy-width) * -0.0559896);
-  width: var(--buddy-width);
-  aspect-ratio: 3 / 2;
-  z-index: 2;
-}
-.hero-buddy img {
-  display: block;
-  width: var(--buddy-width);
-  max-width: none;
-  height: auto;
-  transform-origin: 50% 91.6%;
-}
-@media (prefers-reduced-motion: no-preference) {
-  .hero-buddy {
-    animation: buddy-peek-in 700ms ease-out both;
-  }
-  .hero-buddy img {
-    transition: transform 280ms ease;
-  }
-  .hero-buddy:hover img {
-    transform: translateY(-5px) rotate(-3deg);
-  }
-  @keyframes buddy-peek-in {
-    from { opacity: 0; transform: translateY(5px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-}
-.hero-foot {
-  position: relative;
-  z-index: 1;
-  grid-column: 1/-1;
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  align-items: center;
-  margin: 55px 0 20px;
-  font-size: 8px;
-  letter-spacing: 1.5px;
-  color: var(--muted);
-}
 .section {
   padding: 65px 0;
 }
@@ -922,29 +787,6 @@ footer > a:last-child {
   .header-contact {
     display: none;
   }
-  .hero {
-    padding-top: 65px;
-  }
-  .portrait-hero {
-    left: 45%;
-    right: -3%;
-  }
-  .portrait-composition {
-    height: clamp(504px, 61.2vw, 624px);
-    left: 50%;
-  }
-  .hero-foot {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 14px;
-    min-height: 30px;
-  }
-  .hero h1 {
-    font-size: 78px;
-  }
-  .hero-actions {
-    gap: 20px;
-  }
   .project-grid {
     gap: 18px;
   }
@@ -1015,60 +857,6 @@ footer > a:last-child {
     bottom: 20px;
     width: 3px;
     height: 12px;
-  }
-  .hero {
-    padding-top: 45px;
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    min-height: 0;
-  }
-  .hero > .hero-copy > .eyebrow {
-    font-size: 8px;
-    letter-spacing: 1.5px;
-  }
-  .hero h1 {
-    font-size: clamp(65px, 14vw, 94px);
-    letter-spacing: -4px;
-    margin: 27px 0 20px;
-  }
-  .hero-subtitle {
-    font-size: 21px;
-  }
-  .hero-note {
-    font-size: 12px;
-  }
-  .hero-actions {
-    gap: 23px;
-  }
-  .hero-actions .text-link {
-    font-size: 11px;
-  }
-  .portrait-hero {
-    position: relative;
-    inset: auto;
-    width: 100%;
-    max-width: 370px;
-    height: 432px;
-    margin: 15px auto 0;
-    order: 2;
-  }
-  .portrait-composition {
-    height: min(120vw, 444px);
-    bottom: -20px;
-  }
-  .hero-foot {
-    order: 1;
-    margin: 30px 0 0;
-    flex-direction: row;
-    align-items: center;
-    font-size: 6px;
-    letter-spacing: 1px;
-    min-height: 0;
-  }
-  .hero-buddy {
-    --buddy-width: 56px;
-    right: -21px;
   }
   .section {
     padding: 45px 0;

@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import {
   ArrowUpRight,
-  ArrowRight,
   Globe2,
   Disc3,
   Languages,
@@ -11,63 +10,11 @@ import {
 import { profile } from "../content";
 import { featuredProjects } from "../content/projects";
 import { ProfileLinks, ProjectCard } from "../components/Shared";
+import TerminalHero from "../components/home/TerminalHero";
 export default function Home() {
   return (
     <>
-      <section className="hero">
-        <div className="hero-copy">
-          <div className="eyebrow">
-            <span className="status-dot" /> THE PERSON BEHIND THE PROJECTS
-          </div>
-          <h1>
-            Hi, I’m <span>Kian.</span>
-            <span className="hero-star">✳</span>
-          </h1>
-          <p className="hero-subtitle">
-            Exploring data, technology, ideas,
-            <br className="desktop-break" /> and everything in between.
-          </p>
-          <p className="hero-note">
-            A statistician by training. A curious person by nature.
-            <br />
-            Welcome to my little corner of the internet.
-          </p>
-          <div className="hero-actions">
-            <Link className="button primary" to="/projects">
-              Explore my work <ArrowUpRight size={18} />
-            </Link>
-            <Link
-              className="text-link"
-              to={{ pathname: "/", hash: "#background" }}
-            >
-              A little about me <ArrowRight size={17} />
-            </Link>
-          </div>
-          <ProfileLinks />
-        </div>
-        <div className="portrait-hero">
-          <div className="portrait-composition">
-            <img
-              className="portrait-photo"
-              src="/images/kian-website-portrait.png"
-              width="3018"
-              height="3278"
-              alt="Kian Thomasbeer smiling in a light blue shirt"
-            />
-          </div>
-        </div>
-        <div className="hero-foot">
-          <span>BASED IN CURIOSITY. OPEN TO POSSIBILITY.</span>
-        </div>
-        <div className="hero-buddy">
-          <img
-            src="/brand/beer-buddy-hanging.png"
-            width="1536"
-            height="1024"
-            alt="Beer Buddy in sunglasses peeking over the hero divider"
-          />
-        </div>
-      </section>
+      <TerminalHero />
       <section className="section">
         <div className="section-heading">
           <div>
