@@ -12,6 +12,21 @@ export const aboutMe = {
   introduction: 'I’m Kian Thomasbeer, a University of Virginia statistics graduate interested in data analysis, technology, and creative problem-solving. I enjoy finding patterns in everyday life—and following the questions they raise.',
   portrait: { src: '/images/kian-website-portrait.png', alt: 'Kian Thomasbeer smiling in a light blue shirt', width: 3018, height: 3278 },
   portraitCaption: 'Kian Thomasbeer · A little more than a résumé',
+  graduationPhoto: {
+    src: '/images/about/uva-graduation-celebration.jpeg',
+    alt: 'Four graduates celebrating with champagne on the steps in front of a columned University of Virginia building',
+    width: 3712,
+    height: 5568,
+    caption: 'Celebrating a chapter at the University of Virginia.',
+  },
+  mahjongPhoto: {
+    src: '/images/about/mahjong-with-pandas.jpg',
+    alt: 'Kian playing mahjong at a table surrounded by panda plush toys',
+    width: 6000,
+    height: 4000,
+    title: 'Mahjong & unexpected company',
+    caption: 'A candid moment at the mahjong table, with panda plush toys for company.',
+  },
   background: [
     'My background is in Applied Statistics at the University of Virginia, with a minor in Business. I’m drawn to the way statistics brings structure to complicated questions—and to how a good visualization can make an idea easier to understand.',
     'I work with Python, R, SQL, and data visualization to explore questions, build analytical workflows, and communicate what the data can and cannot tell us. For me, the interesting part is connecting the technical work to a question that matters.',
@@ -28,7 +43,7 @@ export const aboutMe = {
   ],
   interests: [
     { id: 'ultimate', title: 'Ultimate frisbee', caption: 'Staying active, playing competitively, and being part of a team.', photo: null as AboutPhoto | null },
-    { id: 'travel', title: 'Places & perspectives', caption: 'Exploring somewhere new—and discovering different cultures along the way.', photo: null as AboutPhoto | null },
+    { id: 'travel', title: 'Places & perspectives', caption: 'Exploring somewhere new—and discovering different cultures along the way.', photo: { src: '/images/about/whale-shark-exploration.png', alt: 'A swimmer beneath a whale shark in open blue water, with sunlight filtering down from the surface', width: 1654, height: 951 } as AboutPhoto | null },
     { id: 'music', title: 'Always listening', caption: 'Afrobeats, Brazilian funk, R&B, house, and whatever I discover next.', photo: null as AboutPhoto | null },
     { id: 'cooking', title: 'In the kitchen', caption: 'Experimenting with recipes and flavors from around the world.', photo: null as AboutPhoto | null },
     { id: 'languages', title: 'Words open doors', caption: 'An interest in English, Spanish, German, and the perspectives languages offer.', photo: null as AboutPhoto | null },
