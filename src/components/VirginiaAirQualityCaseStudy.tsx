@@ -2,7 +2,7 @@ import { useResearchReveal } from './capstone/useResearchReveal';
 import { Link } from "react-router-dom";
 import { useRef } from "react";
 import { motion } from "framer-motion";
-import { ChevronLeft, Wind, HeartPulse, Building2, Layers3 } from "lucide-react";
+import { ChevronLeft, Wind, HeartPulse, Building2, Layers3, ArrowUpRight } from "lucide-react";
 import { Heading } from "./Shared";
 import { virginiaAirQuality as study } from "../content/virginiaAirQuality";
 import "./VirginiaAirQualityCaseStudy.css";
@@ -16,6 +16,9 @@ import { useCapstoneMetadata } from "./capstone/useCapstoneMetadata";
 import "./capstone/CapstoneQa.css";
 import ReadingProgress from "./capstone/ReadingProgress";
 import "./capstone/CaseStudyEditorial.css";
+import PastelHeroPanels from './capstone/PastelHeroPanels';
+import { technicalReportPath } from '../content/virginiaResearchResources';
+import "./capstone/CaseStudyPastel.css";
 
 function HeroContours() {
   return <svg className="uva-hero-contours" viewBox="0 0 1200 600" preserveAspectRatio="none" aria-hidden="true" focusable="false">
@@ -78,8 +81,9 @@ export default function VirginiaAirQualityCaseStudy() {
           <div className="tags detail-tags" aria-label="Project topics">
             {study.tags.map(tag => <span key={tag}>{tag}</span>)}
           </div>
+          {technicalReportPath && <a className="uva-hero-report" href={`/${technicalReportPath.replace(/^\/+/, '')}`} target="_blank" rel="noopener noreferrer">View full report <ArrowUpRight size={16} aria-hidden="true" /><span className="uva-pastel-sr-only"> (PDF, opens in a new tab)</span></a>}
         </div>
-        <AtmosphereIllustration />
+        <PastelHeroPanels><AtmosphereIllustration /></PastelHeroPanels>
       </div>
       <dl className="uva-metadata">
         {study.metadata.map(item => (
