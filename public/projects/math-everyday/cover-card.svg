@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 215" role="img" aria-labelledby="title desc">
+<title id="title">Math Everyday concept cover</title><desc id="desc">Four abstract motifs for proportions, rhythm, language, and a daily activity treemap. Illustrative, not measured data.</desc>
+<rect width="360" height="215" fill="#f4f4f1"/>
+<rect x="10" y="10" width="165" height="86" fill="#f5a38f"/><rect x="185" y="10" width="165" height="86" fill="#c3cdf8"/><rect x="10" y="106" width="165" height="86" fill="#bddbc9"/><rect x="185" y="106" width="165" height="86" fill="#ded5ee"/>
+<circle cx="92" cy="53" r="31" fill="#fff5ee"/><path d="M92 53V22A31 31 0 0 1 123 53Z" fill="#df705c"/><path d="M92 53h31A31 31 0 0 1 92 84Z" fill="#f8c1a5"/><circle cx="92" cy="53" r="10" fill="#f5a38f"/>
+<path d="M199 62h20l13-14 12 23 15-42 14 49 16-24 14 8h33" fill="none" stroke="#586cb0" stroke-width="3" stroke-linejoin="round"/>
+<text x="28" y="148" fill="#2e6551" font-family="Georgia,serif" font-style="italic" font-size="30">Words.</text><text x="28" y="174" fill="#2e6551" font-family="Georgia,serif" font-size="17">Everyday stories.</text>
+<g stroke="#ded5ee" stroke-width="3"><rect x="203" y="117" width="67" height="63" fill="#a08bbf"/><rect x="270" y="117" width="62" height="33" fill="#b9a6d1"/><rect x="270" y="150" width="32" height="30" fill="#c6b6db"/><rect x="302" y="150" width="30" height="30" fill="#9279b5"/></g>
+<text x="11" y="207" fill="#4b5a51" font-family="Arial,sans-serif" font-size="6.5" letter-spacing="1.2">MATH EVERYDAY / CONCEPT COVER · NOT DATA</text>
+</svg>

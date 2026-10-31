@@ -1,0 +1,13 @@
+{
+  "publication": "https://rpubs.com/KianT/1378325",
+  "sourceSha256": "1821c8e3ca9d8bad5fc196bb367e9248dde92537bde2b7046d99d70ec8d6df8c",
+  "figures": 3,
+  "interactiveWidgets": 1,
+  "method": "Original PNG bytes, complete widget JSON and dependencies, and verbatim published paragraphs. No data regenerated.",
+  "sourceConflicts": [
+    "Heart-rate prose claims tracker observations, but matching R code simulates data at five-minute intervals.",
+    "Email prose claims five years, but file name alone does not verify coverage.",
+    "Conclusion mentions a heatmap; none is present in the publication."
+  ],
+  "compatibility": "An iframe-local iii=true guard prevents the original wordcloud onRender hook from raising a ReferenceError or triggering a reload. Widget payload is unchanged."
+}

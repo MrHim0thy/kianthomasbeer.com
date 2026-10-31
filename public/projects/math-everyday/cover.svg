@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600" viewBox="0 0 600 600" role="img" aria-labelledby="title desc">
+<title id="title">Math Everyday — four visual stories</title><desc id="desc">Concept cover with abstract portion, rhythm, language and time motifs. Not measured data.</desc>
+<rect width="600" height="600" fill="#f4f4f1"/>
+<rect x="22" y="22" width="274" height="274" fill="#f5a38f"/>
+<rect x="306" y="22" width="272" height="274" fill="#c3cdf8"/>
+<rect x="22" y="306" width="274" height="272" fill="#bddbc9"/>
+<rect x="306" y="306" width="272" height="272" fill="#ded5ee"/>
+<g font-family="Arial,sans-serif" font-size="12" letter-spacing="2" fill="#293744"><text x="42" y="54">01 / PROPORTION</text><text x="326" y="54">02 / RHYTHM</text><text x="42" y="338">03 / LANGUAGE</text><text x="326" y="338">04 / TIME</text></g>
+<circle cx="158" cy="179" r="83" fill="#fff5ee"/><path d="M158 179V96A83 83 0 0 1 241 179Z" fill="#df705c"/><path d="M158 179H241A83 83 0 0 1 158 262Z" fill="#f8c1a5"/><circle cx="158" cy="179" r="28" fill="#f5a38f"/>
+<path d="M324 197h33l18-26 20 44 27-110 24 136 23-61 20 17h70" fill="none" stroke="#586cb0" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
+<g fill="#2e6551" font-family="Georgia,serif"><text x="41" y="425" font-size="57" font-style="italic">Words.</text><text x="44" y="475" font-size="29">Patterns.</text><text x="44" y="515" font-size="24">Everyday stories.</text></g>
+<g fill="#a08bbf" stroke="#ded5ee" stroke-width="6"><rect x="327" y="370" width="124" height="186"/><rect x="451" y="370" width="106" height="106" fill="#b9a6d1"/><rect x="451" y="476" width="58" height="80" fill="#c6b6db"/><rect x="509" y="476" width="48" height="80" fill="#9279b5"/></g>
+</svg>

@@ -22,6 +22,19 @@ export interface Project {
 // Add new entries here. Lower displayOrder values appear first.
 const projectEntries: Project[] = [
   {
+    slug: 'math-everyday',
+    title: 'Math Everyday: Visual Stories of Daily Life',
+    description: 'Everyday routines become visual stories of proportion, rhythm, language, and time—with original R figures and source transparency notes.',
+    category: 'Creative',
+    categories: ['Creative', 'Data & Analytics', 'Personal'],
+    tools: ['R', 'ggplot2', 'wordcloud2', 'treemapify'],
+    number: '05',
+    kind: 'math-everyday',
+    illustration: { src: '/projects/math-everyday/cover-card.svg', alt: 'Concept cover of portion, rhythm, language and treemap motifs; not measured data', width: 360, height: 215 },
+    featured: false,
+    displayOrder: 5,
+  },
+  {
     "slug": "virginia-air-quality",
     "title": "Air Pollution & Respiratory ER Visits",
     "description": "Investigating how particulate matter, seasonality, and socioeconomic factors relate to respiratory emergency department visits across Virginia.",
