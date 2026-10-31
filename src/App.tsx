@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { lazy, Suspense, useEffect, useState } from "react";
 import {
   Routes,
   Route,
@@ -18,12 +18,13 @@ import Soundcheck from "./pages/Soundcheck";
 import ProjectDetail from "./pages/ProjectDetail";
 import Article from "./pages/Article";
 import NotFound from "./pages/NotFound";
+const AboutMe = lazy(() => import("./pages/AboutMe"));
 const navigation = [
   { label: "Home", path: "/" },
   { label: "Projects", path: "/projects" },
   { label: "Curiosity Journal", path: "/curiosity-journal" },
   { label: "Performance Lab", path: "/performance-lab" },
-  { label: "Soundcheck", path: "/soundcheck" },
+  { label: "About Me", path: "/about" },
 ];
 function Brand({ showMascot = true }: { showMascot?: boolean }) {
   return (
@@ -57,7 +58,7 @@ export default function App() {
         path === `/writing/${a.slug}` ||
         path === `/curiosity-journal/${a.slug}`,
     );
-    document.title = `${project?.title || article?.title || navigation.find((n) => n.path === path)?.label || "Page not found"} — Kian Thomasbeer`;
+    document.title = `${project?.title || article?.title || navigation.find((n) => n.path === path)?.label || (path === "/soundcheck" ? "Soundcheck" : "Page not found")} — Kian Thomasbeer`;
     return () => cancelAnimationFrame(frame);
   }, [location.pathname, location.hash]);
   return (
@@ -130,9 +131,7 @@ export default function App() {
             />
             <Route
               path="/about"
-              element={
-                <Navigate to={{ pathname: "/", hash: "#background" }} replace />
-              }
+              element={<Suspense fallback={<p role="status">Loading About Me…</p>}><AboutMe /></Suspense>}
             />
             <Route
               path="/life"

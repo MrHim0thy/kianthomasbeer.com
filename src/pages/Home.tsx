@@ -83,9 +83,9 @@ export default function Home() {
               text: "A future space for ultimate frisbee, training, and athletic performance.",
             },
             {
-              title: "Soundcheck",
-              route: "/soundcheck",
-              text: "Music, data, and discovery — with room to explore what makes a hit song.",
+              title: "About Me",
+              route: "/about",
+              text: "The person behind the projects — my background, interests, and the questions that keep me curious.",
             },
           ].map((p) => (
             <Link className="page-preview" key={p.route} to={p.route}>

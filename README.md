@@ -28,13 +28,16 @@ Each main page is independently editable:
 | Projects | `src/pages/Projects.tsx` | `/#/projects` |
 | Curiosity Journal | `src/pages/CuriosityJournal.tsx` | `/#/curiosity-journal` |
 | Performance Lab | `src/pages/PerformanceLab.tsx` | `/#/performance-lab` |
-| Soundcheck | `src/pages/Soundcheck.tsx` | `/#/soundcheck` |
+| About Me | `src/pages/AboutMe.tsx` | `/#/about` |
+| Soundcheck (unlisted, retained for future use) | `src/pages/Soundcheck.tsx` | `/#/soundcheck` |
 
 `src/App.tsx` owns shared navigation, page titles, and routing. `src/main.tsx` is the app entry point. `src/components/Shared.tsx` contains shared project cards, concept visuals, profile links, and page headings. `src/styles.css` defines the palette, layout, responsive rules, and reduced-motion support.
 
-The three new sections intentionally remain placeholders. No Fitbit, Spotify, or other account integrations are implemented. Existing project details remain at `/#/projects/:slug`. Old `/writing` links redirect to Curiosity Journal, and existing sample article detail links still work. `/about` redirects to Home’s background section; `/life` redirects to Performance Lab.
+Curiosity Journal and Performance Lab remain placeholders. No Fitbit, Spotify, or other account integrations are implemented. Existing project details remain at `/#/projects/:slug`. Old `/writing` links redirect to Curiosity Journal, and existing sample article detail links still work. `/about` renders the dedicated About Me page; `/life` redirects to Performance Lab. Soundcheck remains accessible at its existing route but is no longer listed in navigation or the homepage preview links.
 
 ## Editing content
+
+`src/content/aboutMe.ts` holds the About Me biography, existing portrait, undated timeline, interests, mission statement, and next steps. Add your personal photographs to `public/images/` and replace an interest's `photo: null as AboutPhoto | null` with `{ src: '/images/your-photo.jpg', alt: 'A meaningful description', width: 1600, height: 1200 }` using its actual dimensions. Until supplied, the five interest panels explicitly say “Photo to come.” Do not invent employment milestones or dates; add verified details to the timeline when available. Résumé, LinkedIn, and email links reuse `profile` in `src/content.ts`; project links resolve from the shared published collection.
 
 `src/content/projects.ts` is the single project source. Add an entry to `projectEntries` with a unique `slug`, `title`, `description`, `categories`, `tools`, `kind`, and `displayOrder` (plus the existing primary `category` and project `number`). Set `illustration` to the thumbnail's `src`, `alt`, natural `width` and `height`, and optional letterbox `background`. The same thumbnail and metadata render through `ProjectCard` on both pages. Routes derive from the slug through `getProjectRoute`.
 
