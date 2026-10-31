@@ -28,7 +28,7 @@ export default function Projects() {
       </div>
       <div className="project-grid section-bottom">
         {list.map((p) => (
-          <ProjectCard key={p.slug} project={p} useListingThumbnail />
+          <ProjectCard key={p.slug} project={p} />
         ))}
         {!list.length && (
           <div className="empty">

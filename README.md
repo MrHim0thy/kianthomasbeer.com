@@ -36,7 +36,9 @@ The three new sections intentionally remain placeholders. No Fitbit, Spotify, or
 
 ## Editing content
 
-`src/content/projects.ts` is the single project source. Add an entry to `projectEntries` with a unique `slug`, `title`, `description`, `categories`, `tools`, `kind`, `featured`, and `displayOrder` (plus the existing primary `category` and project `number`). Lower display orders appear first. The homepage automatically selects the first three featured entries; Projects shows every entry and matches all categories. Both use the same `ProjectCard` from `src/components/Shared.tsx`.
+`src/content/projects.ts` is the single project source. Add an entry to `projectEntries` with a unique `slug`, `title`, `description`, `categories`, `tools`, `kind`, and `displayOrder` (plus the existing primary `category` and project `number`). Set `illustration` to the thumbnail's `src`, `alt`, natural `width` and `height`, and optional letterbox `background`. The same thumbnail and metadata render through `ProjectCard` on both pages. Routes derive from the slug through `getProjectRoute`.
+
+Lower `displayOrder` values appear first. `publishedProjects` excludes entries with `published: false`; omitted status means published. Projects filters this published collection, and the homepage automatically takes its first three entries. There are no separate featured flags or page-specific thumbnail overrides. To hide a project from both listings, set `published: false`; its underlying data and detail route remain intact. To add a project, add its entry and detail page—no manual homepage list changes are needed.
 
 Routes are derived from the slug as `/projects/<slug>`. The existing detail template resolves new entries automatically; optional `problem`, `approach`, and `results` fields provide its content. Use `kind` to reuse the existing CSS artwork (`forecast`, `music`, or `neuro`), or add `illustration: { src, alt, width, height }` to use an SVG/image from `public/`. Illustration metadata and all card copy live with the project entry, so edits update both listings. The capstone’s expanded case study remains separate and unchanged.
 

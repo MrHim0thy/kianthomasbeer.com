@@ -35,8 +35,10 @@ The widget retains a 672px minimum workspace and internal horizontal scrolling,
 with a standalone link. A table exposes the first 30 original frequencies to
 keyboard users without trying to replace the complete interactive widget.
 
-The new project is not featured, preserving the homepage's existing first three
-projects. The route uses the existing HashRouter: `/#/projects/math-everyday`.
+Both project listings use the central collection in `src/content/projects.ts`.
+Selected Work automatically takes the first three published projects by display
+order; there is no separate featured flag or thumbnail override. The route uses
+the existing HashRouter: `/#/projects/math-everyday`.
 
 Verification: compare original PNG bytes and widget JSON, inspect all four visuals,
 test word-cloud hover and the accessible table, verify card navigation and category

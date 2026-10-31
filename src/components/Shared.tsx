@@ -107,14 +107,12 @@ export function Art({
 }
 export function ProjectCard({
   project: p,
-  useListingThumbnail = false,
 }: {
   project: Project;
-  useListingThumbnail?: boolean;
 }) {
   return (
     <Link className="project-card group" to={getProjectRoute(p)}>
-      <Art kind={p.kind} illustration={useListingThumbnail ? p.listingThumbnail ?? p.illustration : p.illustration} />
+      <Art kind={p.kind} illustration={p.illustration} />
       <div className="card-meta">
         <span>{getProjectCategories(p).join(" · ")}</span>
         <ArrowUpRight size={20} />

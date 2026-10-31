@@ -17,11 +17,8 @@ export interface Project {
   number: string;
   kind: string;
   illustration?: ProjectIllustration;
-  // Projects-page overrides preserve the homepage's existing artwork.
-  listingThumbnail?: ProjectIllustration;
-  // Hides a project from the Projects listing only; data, route and homepage remain available.
+  // Controls both public listings. Unpublished entries retain their data and detail routes.
   published?: boolean;
-  featured: boolean;
   displayOrder: number;
   problem?: string;
   approach?: string;
@@ -41,9 +38,7 @@ const projectEntries: Project[] = [
     tools: ['R', 'ggplot2', 'wordcloud2', 'treemapify'],
     number: '05',
     kind: 'math-everyday',
-    illustration: { src: '/projects/math-everyday/cover-card.svg', alt: 'Concept cover of portion, rhythm, language and treemap motifs; not measured data', width: 360, height: 215 },
-    listingThumbnail: { src: '/images/projects/math-everyday-four-panel.png', alt: 'Four-panel concept graphic with a pie chart, heart-rate line, typography, and treemap; illustrative, not measured data', width: 271, height: 148, background: '#f4f3f7' },
-    featured: false,
+    illustration: { src: '/images/projects/math-everyday-four-panel.png', alt: 'Four-panel concept graphic with a pie chart, heart-rate line, typography, and treemap; illustrative, not measured data', width: 271, height: 148, background: '#f4f3f7' },
     displayOrder: 5,
   },
   {
@@ -62,17 +57,10 @@ const projectEntries: Project[] = [
     ],
     "number": "04",
     "kind": "air-quality",
-    "illustration": {
-      "src": "/images/virginia-air-quality.svg",
-      "alt": "Illustrative air-pollution and statistics concept; not actual project data",
-      "width": 360,
-      "height": 215
-    },
     "year": 2026,
-    listingThumbnail: { src: '/images/projects/virginia-air-quality-landscape.png', alt: 'Illustrative Virginia silhouette with pollution imagery, atmospheric flow lines, and a cityscape; not a data map', width: 1774, height: 887, background: '#edeaff' },
+    illustration: { src: '/images/projects/virginia-air-quality-landscape.png', alt: 'Illustrative Virginia silhouette with pollution imagery, atmospheric flow lines, and a cityscape; not a data map', width: 1774, height: 887, background: '#edeaff' },
     "institution": "University of Virginia",
     "overview": "Project overview coming soon. Documentation for this completed statistics capstone will be added here.",
-    "featured": true,
     "displayOrder": 1
   },
   {
@@ -94,12 +82,11 @@ const projectEntries: Project[] = [
     "categories": [
       "Data & Analytics"
     ],
-    "featured": true,
     "displayOrder": 2
   },
   {
     "slug": "what-makes-a-hit-song",
-    listingThumbnail: { src: '/images/projects/hit-song-music-analytics.png', alt: 'Concept illustration of a vinyl record surrounded by colorful music analytics panels; not actual project data', width: 1536, height: 1024, background: '#0b0e13' },
+    illustration: { src: '/images/projects/hit-song-music-analytics.png', alt: 'Concept illustration of a vinyl record surrounded by colorful music analytics panels; not actual project data', width: 1536, height: 1024, background: '#0b0e13' },
     "title": "What Makes a Hit Song?",
     "category": "Research",
     "number": "02",
@@ -116,7 +103,6 @@ const projectEntries: Project[] = [
     "categories": [
       "Research"
     ],
-    "featured": true,
     "displayOrder": 3
   },
   {
@@ -138,7 +124,6 @@ const projectEntries: Project[] = [
     "categories": [
       "Technology"
     ],
-    "featured": false,
     "displayOrder": 4
   }
 ];
@@ -149,4 +134,5 @@ export const getProjectCategories = (project: Project) => project.categories;
 export const projects = [...projectEntries].sort((a, b) => a.displayOrder - b.displayOrder);
 // New projects are listed by default. Set published: false to keep one out of all listing filters.
 export const publishedProjects = projects.filter(project => project.published !== false);
-export const featuredProjects = projects.filter(project => project.featured).slice(0, 3);
+// Selected Work is always the first three entries from the exact same published list.
+export const featuredProjects = publishedProjects.slice(0, 3);
