@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { Sparkles } from "lucide-react";
-import { projects, categories, getProjectCategories } from "../content/projects";
+import { publishedProjects, categories, getProjectCategories } from "../content/projects";
 import { Heading, ProjectCard } from "../components/Shared";
 export default function Projects() {
   const [filter, setFilter] = useState("All");
-  const list = projects.filter(
+  const list = publishedProjects.filter(
     (p) => filter === "All" || getProjectCategories(p).includes(filter),
   );
   return (
@@ -28,7 +28,7 @@ export default function Projects() {
       </div>
       <div className="project-grid section-bottom">
         {list.map((p) => (
-          <ProjectCard key={p.slug} project={p} />
+          <ProjectCard key={p.slug} project={p} useListingThumbnail />
         ))}
         {!list.length && (
           <div className="empty">

@@ -48,13 +48,13 @@ export function Art({
 }) {
   if (illustration) {
     return (
-      <div className={`project-art ${kind} ${large ? "large" : ""}`}>
+      <div className={`project-art ${kind} ${large ? "large" : ""}`} style={illustration.background ? { background: illustration.background } : undefined}>
         <img
           src={illustration.src}
           alt={illustration.alt}
           width={illustration.width}
           height={illustration.height}
-          style={{ width: "100%", height: "100%", objectFit: "contain" }}
+          style={{ width: "100%", height: "100%", objectFit: "contain", objectPosition: "center" }}
         />
       </div>
     );
@@ -107,12 +107,14 @@ export function Art({
 }
 export function ProjectCard({
   project: p,
+  useListingThumbnail = false,
 }: {
   project: Project;
+  useListingThumbnail?: boolean;
 }) {
   return (
     <Link className="project-card group" to={getProjectRoute(p)}>
-      <Art kind={p.kind} illustration={p.illustration} />
+      <Art kind={p.kind} illustration={useListingThumbnail ? p.listingThumbnail ?? p.illustration : p.illustration} />
       <div className="card-meta">
         <span>{getProjectCategories(p).join(" · ")}</span>
         <ArrowUpRight size={20} />

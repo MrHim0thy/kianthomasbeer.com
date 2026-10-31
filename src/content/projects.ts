@@ -1,5 +1,12 @@
 // One source of truth for project cards, ordering, filters, and detail metadata.
 export const categories = ['All', 'Data & Analytics', 'Technology', 'Research', 'Creative', 'Personal'];
+export interface ProjectIllustration {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+  background?: string;
+}
 export interface Project {
   slug: string;
   title: string;
@@ -9,7 +16,11 @@ export interface Project {
   tools: string[];
   number: string;
   kind: string;
-  illustration?: { src: string; alt: string; width: number; height: number };
+  illustration?: ProjectIllustration;
+  // Projects-page overrides preserve the homepage's existing artwork.
+  listingThumbnail?: ProjectIllustration;
+  // Hides a project from the Projects listing only; data, route and homepage remain available.
+  published?: boolean;
   featured: boolean;
   displayOrder: number;
   problem?: string;
@@ -31,6 +42,7 @@ const projectEntries: Project[] = [
     number: '05',
     kind: 'math-everyday',
     illustration: { src: '/projects/math-everyday/cover-card.svg', alt: 'Concept cover of portion, rhythm, language and treemap motifs; not measured data', width: 360, height: 215 },
+    listingThumbnail: { src: '/images/projects/math-everyday-four-panel.png', alt: 'Four-panel concept graphic with a pie chart, heart-rate line, typography, and treemap; illustrative, not measured data', width: 271, height: 148, background: '#f4f3f7' },
     featured: false,
     displayOrder: 5,
   },
@@ -57,6 +69,7 @@ const projectEntries: Project[] = [
       "height": 215
     },
     "year": 2026,
+    listingThumbnail: { src: '/images/projects/virginia-air-quality-landscape.png', alt: 'Illustrative Virginia silhouette with pollution imagery, atmospheric flow lines, and a cityscape; not a data map', width: 1774, height: 887, background: '#edeaff' },
     "institution": "University of Virginia",
     "overview": "Project overview coming soon. Documentation for this completed statistics capstone will be added here.",
     "featured": true,
@@ -64,6 +77,7 @@ const projectEntries: Project[] = [
   },
   {
     "slug": "business-intelligence",
+    published: false,
     "title": "Business Intelligence & Forecasting",
     "category": "Data & Analytics",
     "number": "01",
@@ -85,6 +99,7 @@ const projectEntries: Project[] = [
   },
   {
     "slug": "what-makes-a-hit-song",
+    listingThumbnail: { src: '/images/projects/hit-song-music-analytics.png', alt: 'Concept illustration of a vinyl record surrounded by colorful music analytics panels; not actual project data', width: 1536, height: 1024, background: '#0b0e13' },
     "title": "What Makes a Hit Song?",
     "category": "Research",
     "number": "02",
@@ -106,6 +121,7 @@ const projectEntries: Project[] = [
   },
   {
     "slug": "neurodecide",
+    published: false,
     "title": "NeuroDecide",
     "category": "Technology",
     "number": "03",
@@ -131,4 +147,6 @@ const projectEntries: Project[] = [
 export const getProjectRoute = (project: Project) => `/projects/${project.slug}`;
 export const getProjectCategories = (project: Project) => project.categories;
 export const projects = [...projectEntries].sort((a, b) => a.displayOrder - b.displayOrder);
+// New projects are listed by default. Set published: false to keep one out of all listing filters.
+export const publishedProjects = projects.filter(project => project.published !== false);
 export const featuredProjects = projects.filter(project => project.featured).slice(0, 3);
