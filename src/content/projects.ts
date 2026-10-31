@@ -38,7 +38,7 @@ const projectEntries: Project[] = [
     tools: ['R', 'ggplot2', 'wordcloud2', 'treemapify'],
     number: '05',
     kind: 'math-everyday',
-    illustration: { src: '/images/projects/math-everyday-four-panel.png', alt: 'Four-panel concept graphic with a pie chart, heart-rate line, typography, and treemap; illustrative, not measured data', width: 271, height: 148, background: '#f4f3f7' },
+    illustration: { src: '/images/projects/math-everyday-thumbnail.png', alt: 'Blue-and-gold concept artwork featuring a donut chart, line graph, typography, and treemap; illustrative, not measured data', width: 1670, height: 941, background: '#faf7ef' },
     displayOrder: 5,
   },
   {
