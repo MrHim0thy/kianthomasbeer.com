@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" fill="none">
+<rect width="1200" height="720" fill="#eee9de"/>
+<path d="M0 560H1200M0 590H1200M0 620H1200" stroke="#d9d1c2"/>
+<circle cx="855" cy="325" r="195" fill="#e0e5d8"/>
+<path d="M880 186C966 207 1009 306 967 382M967 382L967 344M967 382L1003 366M823 468C733 448 689 353 724 273M724 273L727 311M724 273L688 292" stroke="#536652" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M322 160L342 172L362 160L382 172L402 160L422 172L442 160L462 172L482 160L502 172L522 160L542 172V544L522 532L502 544L482 532L462 544L442 532L422 544L402 532L382 544L362 532L342 544L322 532Z" fill="#fffcf4" stroke="#bdb3a3" stroke-width="2"/>
+<text x="359" y="230" fill="#263631" font-family="Georgia,serif" font-size="29">First purchase</text>
+<path d="M359 257H505M359 290H456M359 321H490M359 352H470" stroke="#c8bfae" stroke-width="7"/>
+<text x="358" y="423" fill="#aa583f" font-family="Georgia,serif" font-size="52">Return?</text>
+<path d="M544 350H635V460H704M635 350V244H704" stroke="#aa583f" stroke-width="4"/>
+<circle cx="635" cy="350" r="9" fill="#aa583f"/>
+<rect x="769" y="260" width="149" height="112" rx="4" fill="#263631"/>
+<path d="M797 287H889M797 310H863M797 337H878" stroke="#dce4d6" stroke-width="5"/>
+<text x="70" y="80" fill="#536652" font-family="Arial,sans-serif" font-size="17" letter-spacing="4">CUSTOMER BEHAVIOR / MODELING / TIMING</text>
+<text x="70" y="663" fill="#263631" font-family="Georgia,serif" font-size="34">What tells us they’ll come back?</text>
+<text x="70" y="692" fill="#6b7166" font-family="Arial,sans-serif" font-size="13" letter-spacing="2">CONCEPTUAL ILLUSTRATION · NOT MEASURED DATA</text>
+</svg>

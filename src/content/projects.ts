@@ -1,5 +1,5 @@
 // One source of truth for project cards, ordering, filters, and detail metadata.
-export const categories = ['All', 'Data & Analytics', 'Technology', 'Research', 'Creative', 'Personal'];
+export const categories = ['All', 'Data & Analytics', 'Technology', 'Research', 'Creative', 'Personal', 'Machine Learning', 'Predictive Analytics'];
 export interface ProjectIllustration {
   src: string;
   alt: string;
@@ -29,6 +29,20 @@ export interface Project {
 }
 // Add new entries here. Lower displayOrder values appear first.
 const projectEntries: Project[] = [
+  {
+    slug: 'predicting-customer-loyalty',
+    title: 'Predicting Customer Loyalty',
+    description: "Can a customer's purchasing behavior predict whether they'll come back? Comparing statistical and machine learning models to understand customer retention using real-world retail transactions.",
+    category: 'Machine Learning',
+    categories: ['Machine Learning', 'Predictive Analytics'],
+    tools: ['Python', 'R', 'scikit-learn', 'PyTorch', 'Statistical Modeling'],
+    number: '06',
+    kind: 'customer-loyalty',
+    published: true,
+    displayOrder: 6,
+    year: 2025,
+    illustration: { src: '/images/projects/customer-loyalty-thumbnail.svg', alt: 'Illustrative retail receipt connected to a returning-customer loop and model branches; conceptual artwork, not measured data', width: 1200, height: 720, background: '#eee9de' },
+  },
   {
     slug: 'math-everyday',
     title: 'Math Everyday: Visual Stories of Daily Life',
