@@ -1,186 +1,82 @@
 import { Link } from "react-router-dom";
-import {
-  ArrowUpRight,
-  Globe2,
-  Disc3,
-  Languages,
-  Sparkles,
-  Mail,
-} from "lucide-react";
+import { ArrowUpRight, Mail } from "lucide-react";
 import { profile } from "../content";
 import { featuredProjects } from "../content/projects";
 import { ProfileLinks, ProjectCard } from "../components/Shared";
 import TerminalHero from "../components/home/TerminalHero";
+import "./Home.css";
+
 export default function Home() {
   return (
-    <>
+    <div className="home-editorial">
       <TerminalHero />
-      <section className="section">
+      <section className="section" aria-labelledby="selected-work-title">
         <div className="section-heading">
           <div>
             <div className="eyebrow">01 / SELECTED WORK</div>
-            <h2>
-              A few things I’ve
-              <br />
-              put my mind to<span className="lime">.</span>
-            </h2>
+            <h2 id="selected-work-title">A few things I’ve<br />put my mind to<span className="lime">.</span></h2>
           </div>
-          <Link className="text-link" to="/projects">
-            All projects <ArrowUpRight size={18} />
-          </Link>
+          <Link className="text-link" to="/projects">All projects <ArrowUpRight size={18} /></Link>
         </div>
         <div className="project-grid">
-          {featuredProjects.map((p) => (
-            <ProjectCard key={p.slug} project={p} />
-          ))}
+          {featuredProjects.map(project => <ProjectCard key={project.slug} project={project} />)}
         </div>
       </section>
-      <section className="interest-strip">
-        <span className="eyebrow">BEYOND THE SPREADSHEET</span>
-        <div>
-          {[
-            "Data & discovery",
-            "Music & discovery",
-            "Ultimate frisbee",
-            "Languages & ideas",
-          ].map((t, i) => (
-            <span key={t}>
-              {
-                [
-                  <Sparkles key="data" />,
-                  <Globe2 key="music" />,
-                  <Disc3 key="sport" />,
-                  <Languages key="languages" />,
-                ][i]
-              }
-              {t}
-            </span>
-          ))}
-        </div>
-        <Link className="text-link" to="/performance-lab">
-          Explore Performance Lab <ArrowUpRight size={17} />
-        </Link>
-      </section>
-      <section className="section">
+
+      <section className="home-explore" aria-labelledby="explore-title">
         <div className="section-heading">
           <div>
             <div className="eyebrow">02 / KEEP EXPLORING</div>
-            <h2>
-              More than one way to be curious<span className="lime">.</span>
-            </h2>
+            <h2 id="explore-title">There’s more to the story<span className="lime">.</span></h2>
           </div>
+          <p>Different interests. The same curiosity.</p>
         </div>
-        <div className="page-preview-grid">
+        <div className="home-destinations">
+          <Link className="home-destination home-journal" to="/curiosity-journal">
+            <div className="home-journal-art" aria-hidden="true"><span>What if?</span><span>Why?</span><span>What’s next?</span></div>
+            <div className="home-destination-copy"><span className="eyebrow">NOTES FROM THE PROCESS</span><h3>Curiosity Journal <ArrowUpRight size={22} /></h3><p>Questions, learning notes, and ideas worth following.</p></div>
+          </Link>
+          <Link className="home-destination home-performance" to="/performance-lab">
+            <img src="/images/home/ultimate-team.jpg" width="1400" height="929" alt="Five ultimate frisbee teammates sharing a moment on the sideline bench" loading="lazy" decoding="async" />
+            <div className="home-destination-copy"><span className="eyebrow">ON AND OFF THE FIELD</span><h3>Performance Lab <ArrowUpRight size={22} /></h3><p>Competition, teamwork, and a curiosity about performance.</p></div>
+          </Link>
+          <Link className="home-destination home-about-destination" to="/about">
+            <div className="home-about-art" aria-hidden="true"><span>Data is one<br />part of <em>me.</em></span></div>
+            <div className="home-destination-copy"><span className="eyebrow">THE PERSON BEHIND IT ALL</span><h3>About Me <ArrowUpRight size={22} /></h3><p>The experiences and interests that shape how I see things.</p></div>
+          </Link>
+        </div>
+      </section>
+
+      <section id="background" className="home-personal" aria-labelledby="personal-title">
+        <figure className="home-personal-photo">
+          <img src="/images/home/handstand-on-rock.jpg" width="1000" height="1335" alt="Kian doing a handstand on a rock with mountains stretching into the distance" loading="lazy" decoding="async" />
+          <figcaption>A different perspective, every now and then.</figcaption>
+        </figure>
+        <div className="home-personal-copy">
+          <div className="eyebrow">03 / A LITTLE PERSPECTIVE</div>
+          <h2 id="personal-title">I like figuring out<br />how things work<span className="lime">.</span></h2>
+          <p>Whether it’s a dataset, a new language, or a place I’ve never been, I’m drawn to the patterns that connect things. Statistics gives me one way to explore them. Curiosity usually does the rest.</p>
+          <p>My background is in Applied Statistics at the University of Virginia, with a minor in Business. Beyond the data, you’ll find me playing ultimate, discovering music, or trying something new.</p>
+          <Link className="text-link" to="/about">Meet the person behind the projects <ArrowUpRight size={18} /></Link>
+          <div className="home-curious"><span className="eyebrow">CURRENTLY CURIOUS ABOUT</span><p>Languages, machine learning, and the questions hiding in everyday data.</p></div>
+        </div>
+      </section>
+
+      <section className="home-capabilities" aria-labelledby="capabilities-title">
+        <div className="section-heading"><div><div className="eyebrow">04 / HOW I WORK</div><h2 id="capabilities-title">From questions to something useful<span className="lime">.</span></h2></div></div>
+        <div className="home-capability-grid">
           {[
-            {
-              title: "Curiosity Journal",
-              route: "/curiosity-journal",
-              text: "Learning notes, discoveries, and future experiments in German, SQL, machine learning, and statistics.",
-            },
-            {
-              title: "Performance Lab",
-              route: "/performance-lab",
-              text: "A future space for ultimate frisbee, training, and athletic performance.",
-            },
-            {
-              title: "About Me",
-              route: "/about",
-              text: "The person behind the projects — my background, interests, and the questions that keep me curious.",
-            },
-          ].map((p) => (
-            <Link className="page-preview" key={p.route} to={p.route}>
-              <ArrowUpRight size={22} />
-              <h3>{p.title}</h3>
-              <p>{p.text}</p>
-              <span>Explore this space →</span>
-            </Link>
-          ))}
+            { title: "Analyze", text: "Explore data, build statistical models, and look for patterns in complex questions.", tools: "Python · R · SQL" },
+            { title: "Build", text: "Turn analysis into dashboards, data applications, visualizations, and repeatable workflows.", tools: "Excel · Tableau · Power BI" },
+            { title: "Communicate", text: "Translate technical findings into clear explanations, visual stories, and useful insights.", tools: "Visual storytelling · Research" },
+          ].map((capability, index) => <div className="home-capability" key={capability.title}><span className="home-capability-number" aria-hidden="true">0{index + 1}</span><h3>{capability.title}</h3><p>{capability.text}</p><span className="home-capability-tools">{capability.tools}</span></div>)}
         </div>
       </section>
-      <Background />
-    </>
-  );
-}
-function Background() {
-  return (
-    <>
-      <section id="background" className="home-background">
-        <div className="about-grid">
-          <div className="about-copy">
-            <div className="eyebrow">A LITTLE BACKGROUND</div>
-            <h2>
-              Finding connections.
-              <br />
-              Following questions.
-            </h2>
-            <p>
-              My background is in Applied Statistics at the University of
-              Virginia, with a minor in Business. I’m interested in the ways
-              analytics, technology, and research can help us understand complex
-              questions.
-            </p>
-            <p>
-              This site is a growing collection of my work, ideas, and interests
-              — a digital home with room to evolve.
-            </p>
-            <ProfileLinks />
-          </div>
-        </div>
-        <div className="about-lower">
-          <section>
-            <div className="eyebrow">THE TOOLKIT</div>
-            <h2>Ways I work.</h2>
-            <div className="skill-list">
-              {["Python", "R", "SQL", "Excel", "Tableau", "Power BI"].map(
-                (s) => (
-                  <span key={s}>
-                    {s}
-                    <ArrowUpRight size={15} />
-                  </span>
-                ),
-              )}
-            </div>
-          </section>
-          <section>
-            <div className="eyebrow">BACKGROUND & EXPERIENCE</div>
-            <h2>A path in progress.</h2>
-            <div className="timeline">
-              <div>
-                <span>EDUCATION · DATES TO COME</span>
-                <h3>University of Virginia</h3>
-                <p>B.A. Applied Statistics · Business minor</p>
-              </div>
-              <div>
-                <span>EXPERIENCE · DETAILS TO COME</span>
-                <h3>The next chapter belongs here.</h3>
-                <p>
-                  Career roles, organizations, and dates will be added once
-                  provided.
-                </p>
-              </div>
-            </div>
-          </section>
-        </div>
-        <section className="contact" id="contact">
-          <div className="eyebrow">LET’S CONNECT</div>
-          <h2>
-            Good things start
-            <br />
-            with a conversation<span className="lime">.</span>
-          </h2>
-          {profile.email ? (
-            <a className="button primary" href={`mailto:${profile.email}`}>
-              <Mail size={18} />
-              Say hello
-            </a>
-          ) : (
-            <p>
-              Contact email coming soon. Verified social links and a
-              downloadable resume will be added here.
-            </p>
-          )}
-        </section>
+
+      <section className="home-contact" id="contact" aria-labelledby="contact-title">
+        <div><div className="eyebrow">05 / LET’S CONNECT</div><h2 id="contact-title">Have a question<br />worth exploring<span className="lime">?</span></h2><p>I’m always interested in thoughtful problems, new ideas, and opportunities to work with curious people.</p></div>
+        <div className="home-contact-actions"><a className="button primary" href={`mailto:${profile.email}`}><Mail size={18} /> Say hello <ArrowUpRight size={18} /></a><ProfileLinks /></div>
       </section>
-    </>
+    </div>
   );
 }
