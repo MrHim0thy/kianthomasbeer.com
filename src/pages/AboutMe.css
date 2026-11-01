@@ -7,6 +7,11 @@
 
 .about-me .about-mission>h2{font-size:9px;line-height:1.8;font-family:inherit;font-weight:600;letter-spacing:1.8px;color:#59655d;margin:0}
 
+/* Let each interest photograph define its frame, preserving the entire original
+   composition at every breakpoint instead of cropping to placeholder ratios. */
+.about-me .about-gallery .about-interest-photo{aspect-ratio:auto;overflow:visible}
+.about-me .about-gallery .about-interest-photo>img{width:100%;height:auto;object-fit:contain;object-position:center}
+
 /* Personal photographs retain their complete natural compositions. No fixed-height
    crop, overlay or filter: the graduation group, swimmer, shark and pandas stay visible. */
 .about-me .about-story-image{display:block;width:100%;height:auto;object-fit:contain;border:1px solid #26332e15;border-radius:3px}
