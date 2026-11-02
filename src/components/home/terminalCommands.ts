@@ -1,6 +1,6 @@
 import { profile } from '../../content';
-import { projects, getProjectRoute } from '../../content/projects';
-import { homeTerminalContent as copy, completedRandomProjectSlugs } from '../../content/homeTerminal';
+import { publishedProjects, getProjectRoute } from '../../content/projects';
+import { homeTerminalContent as copy } from '../../content/homeTerminal';
 
 export interface TerminalItem { label?: string; text?: string; href?: string; internal?: boolean }
 export interface TerminalOutput { title?: string; paragraphs?: string[]; items?: TerminalItem[] }
@@ -8,7 +8,7 @@ export type CommandResult = { kind: 'output'; output: TerminalOutput } | { kind:
 export interface CommandContext { previousRandomDestination: string | null; random: () => number }
 interface CommandDefinition { name: string; description: string; visible: boolean; run: (context: CommandContext) => CommandResult }
 const output = (value: TerminalOutput): CommandResult => ({ kind: 'output', output: value });
-export const eligibleRandomRoutes = projects.filter(project => completedRandomProjectSlugs.includes(project.slug)).map(getProjectRoute);
+export const eligibleRandomRoutes = publishedProjects.map(getProjectRoute);
 export function chooseRandomDestination(routes: readonly string[], previous: string | null, random: () => number): string | null {
   const distinct = [...new Set(routes)].filter(route => route.startsWith('/') && !route.startsWith('//') && route !== '/');
   const choices = distinct.length > 1 ? distinct.filter(route => route !== previous) : distinct;
@@ -18,7 +18,7 @@ export const commandRegistry: readonly CommandDefinition[] = [
   { name: 'help', description: 'Show available commands', visible: true, run: () => output({ title: 'AVAILABLE COMMANDS', items: [...commandRegistry.filter(command => command.visible && command.name !== 'help'), commandRegistry.find(command => command.name === 'help')!].map(command => ({ label: command.name, text: command.description })) }) },
   { name: 'whoami', description: 'Who I am', visible: true, run: () => output({ paragraphs: copy.whoami }) },
   { name: 'about', description: 'A little more about me', visible: true, run: () => output({ title: 'ABOUT ME', paragraphs: copy.biography }) },
-  { name: 'projects', description: 'Explore my work', visible: true, run: () => output({ title: 'FEATURED PROJECTS', items: projects.map(project => ({ label: project.title, href: getProjectRoute(project), internal: true })) }) },
+  { name: 'projects', description: 'Explore my work', visible: true, run: () => output({ title: 'AVAILABLE PROJECTS', paragraphs: publishedProjects.length ? undefined : ['No projects are published yet. Please check back soon.'], items: publishedProjects.map((project, index) => ({ label: `${index + 1}. ${project.title}`,  href: getProjectRoute(project), internal: true })) }) },
   { name: 'skills', description: 'My technical toolkit', visible: true, run: () => output({ title: 'MY TOOLKIT', items: copy.skills }) },
   { name: 'interests', description: 'What I enjoy outside work', visible: true, run: () => output({ title: 'OUTSIDE THE TERMINAL', items: copy.interests }) },
   { name: 'now', description: "What I'm currently doing", visible: true, run: () => output({ title: 'CURRENTLY…', items: copy.currentActivities }) },

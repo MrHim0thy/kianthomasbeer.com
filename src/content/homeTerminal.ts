@@ -30,6 +30,3 @@ export const homeTerminalContent = {
     { label: 'Exploring', text: 'Machine learning, data science, and creative technology.' },
   ],
 };
-// Reviewed completed detail pages only. Resolve these IDs against the canonical project data.
-// Add a slug only after its public detail page is finished; sample/placeholder pages are excluded.
-export const completedRandomProjectSlugs = ['virginia-air-quality'];

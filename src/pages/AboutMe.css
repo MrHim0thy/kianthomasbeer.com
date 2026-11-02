@@ -9,7 +9,7 @@
 
 /* Let each interest photograph define its frame, preserving the entire original
    composition at every breakpoint instead of cropping to placeholder ratios. */
-.about-me .about-gallery .about-interest-photo{aspect-ratio:auto;overflow:visible}
+.about-me .about-gallery .about-interest-photo{aspect-ratio:auto;overflow:hidden;border-radius:var(--radius-image);background:transparent}
 .about-me .about-gallery .about-interest-photo>img{width:100%;height:auto;object-fit:contain;object-position:center}
 
 /* Personal photographs retain their complete natural compositions. No fixed-height

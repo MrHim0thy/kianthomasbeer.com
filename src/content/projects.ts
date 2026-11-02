@@ -147,6 +147,11 @@ export const getProjectRoute = (project: Project) => `/projects/${project.slug}`
 export const getProjectCategories = (project: Project) => project.categories;
 export const projects = [...projectEntries].sort((a, b) => a.displayOrder - b.displayOrder);
 // New projects are listed by default. Set published: false to keep one out of all listing filters.
-export const publishedProjects = projects.filter(project => project.published !== false);
+// Every safe slug resolves through the existing /projects/:slug detail route.
+export function getPublishedProjects(collection: readonly Project[]) {
+  return collection.filter(project => project.published !== false && typeof project.slug === 'string' && /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(project.slug))
+    .sort((a, b) => a.displayOrder - b.displayOrder);
+}
+export const publishedProjects = getPublishedProjects(projects);
 // Selected Work grows with the published collection, showing at most six entries.
 export const featuredProjects = publishedProjects.slice(0, 6);
