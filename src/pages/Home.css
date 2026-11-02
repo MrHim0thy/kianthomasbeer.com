@@ -7,7 +7,7 @@
 .home-capability-tools { display: block; margin-top: 21px; font-size: 11px; color: var(--muted); line-height: 1.8; }
 
 /* Contact closes the story; the homepage footer continues the same ink surface. */
-.home-contact { display: grid; grid-template-columns: 1.4fr 1fr; align-items: center; gap: 45px; padding: 60px clamp(24px,4.4vw,62px); margin-inline: -24px; background: var(--navy); color: var(--cream); scroll-margin-top: 30px; }
+.home-contact { display: grid; grid-template-columns: 1.4fr 1fr; align-items: center; gap: 45px; padding: 60px clamp(24px,4.4vw,62px); margin-inline: -24px; background: var(--navy); color: var(--cream); scroll-margin-top: 30px; border-radius: var(--radius-feature) var(--radius-feature) 0 0; }
 .home-contact .eyebrow { color: #edba76; }
 .home-contact h2 { font-size: clamp(37px,4.2vw,58px); line-height: 1.12; margin: 24px 0; letter-spacing: -1.6px; }
 .home-contact h2 em { font-family: Georgia,serif; font-weight: 400; color: #edba76; }
