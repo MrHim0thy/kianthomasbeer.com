@@ -41,7 +41,7 @@ const projectEntries: Project[] = [
     published: true,
     displayOrder: 6,
     year: 2025,
-    illustration: { src: '/images/projects/customer-loyalty-thumbnail.svg', alt: 'Illustrative retail receipt connected to a returning-customer loop and model branches; conceptual artwork, not measured data', width: 1200, height: 720, background: '#eee9de' },
+    illustration: { src: '/images/projects/customer-loyalty.jpg', alt: 'Textured shopping cart with blue bars and a line graph; conceptual illustration, not measured project data', width: 1672, height: 941, background: '#eee9de' },
   },
   {
     slug: 'math-everyday',
@@ -52,7 +52,7 @@ const projectEntries: Project[] = [
     tools: ['R', 'ggplot2', 'wordcloud2', 'treemapify'],
     number: '05',
     kind: 'math-everyday',
-    illustration: { src: '/images/projects/math-everyday-thumbnail.png', alt: 'Blue-and-gold concept artwork featuring a donut chart, line graph, typography, and treemap; illustrative, not measured data', width: 1670, height: 941, background: '#faf7ef' },
+    illustration: { src: '/images/projects/math-everyday.jpg', alt: 'Textured blue-and-mustard donut chart, line graph, and treemap; illustrative, not measured data', width: 1671, height: 941, background: '#faf7ef' },
     displayOrder: 5,
   },
   {
@@ -72,7 +72,7 @@ const projectEntries: Project[] = [
     "number": "04",
     "kind": "air-quality",
     "year": 2026,
-    illustration: { src: '/images/projects/virginia-air-quality-landscape.png', alt: 'Illustrative Virginia silhouette with pollution imagery, atmospheric flow lines, and a cityscape; not a data map', width: 1774, height: 887, background: '#edeaff' },
+    illustration: { src: '/images/projects/virginia-air-quality.jpg', alt: 'Textured burgundy Virginia silhouette with industrial smokestacks and a line graph; illustrative, not a data map', width: 1671, height: 941, background: '#edeaff' },
     "institution": "University of Virginia",
     "overview": "Project overview coming soon. Documentation for this completed statistics capstone will be added here.",
     "displayOrder": 1
@@ -100,7 +100,7 @@ const projectEntries: Project[] = [
   },
   {
     "slug": "what-makes-a-hit-song",
-    illustration: { src: '/images/projects/hit-song-music-analytics.png', alt: 'Concept illustration of a vinyl record surrounded by colorful music analytics panels; not actual project data', width: 1536, height: 1024, background: '#0b0e13' },
+    illustration: { src: '/images/projects/hit-song.jpg', alt: 'Textured vinyl record, sage bars, and cream audio waveform; illustrative, not measured music data', width: 1671, height: 941, background: '#0b0e13' },
     "title": "What Makes a Hit Song?",
     "category": "Research",
     "number": "02",

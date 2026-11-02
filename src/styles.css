@@ -1018,3 +1018,6 @@ footer > a:last-child {
 .tags > span, .about-toolkit > span { border-radius: var(--radius-tag); }
 .placeholder-panel, .about-me .about-mission { border-radius: var(--radius-feature); }
 .about-me :is(.about-story-image,.about-interest-photo > img,.about-portrait-mat) { border-radius: var(--radius-image); }
+
+/* All project-card thumbnails share one responsive 16:9 canvas. */
+.project-card .project-art { width: 100%; height: auto; aspect-ratio: 16 / 9; }

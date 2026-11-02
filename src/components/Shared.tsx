@@ -54,7 +54,7 @@ export function Art({
           alt={illustration.alt}
           width={illustration.width}
           height={illustration.height}
-          style={{ width: "100%", height: "100%", objectFit: "contain", objectPosition: "center" }}
+          style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center" }}
         />
       </div>
     );
