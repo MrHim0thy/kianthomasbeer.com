@@ -1,3 +1,4 @@
+import BeerBuddy from "../components/BeerBuddy";
 import { Heading } from "../components/Shared";
 export default function CuriosityJournal() {
   return (
@@ -21,6 +22,7 @@ export default function CuriosityJournal() {
             <span key={topic}>{topic}</span>
           ))}
         </div>
+        <div className="buddy-shelf buddy-reading-shelf"><BeerBuddy variant="reading" /></div>
       </section>
     </>
   );

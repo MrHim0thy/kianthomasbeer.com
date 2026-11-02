@@ -1,5 +1,11 @@
 @import "tailwindcss";
 :root {
+  --radius-card: 12px;
+  --radius-thumbnail: 10px;
+  --radius-image: 16px;
+  --radius-feature: 16px;
+  --radius-button: 8px;
+  --radius-tag: 4px;
   font-family:
     Inter,
     ui-sans-serif,
@@ -1004,3 +1010,11 @@ footer > a:last-child {
 /* Retain the header brand footprint so removing its mascot does not shift navigation. */
 .site-header .wordmark { padding-right: 63px; }
 @media (max-width: 760px) { .site-header .wordmark { padding-right: 54px; } }
+
+/* Shared corner tokens leave circular artwork and pill-shaped controls intact. */
+.project-card { border-radius: var(--radius-card); }
+.project-art { border-radius: var(--radius-thumbnail); }
+.button, .about-me .about-primary { border-radius: var(--radius-button); }
+.tags > span, .about-toolkit > span { border-radius: var(--radius-tag); }
+.placeholder-panel, .about-me .about-mission { border-radius: var(--radius-feature); }
+.about-me :is(.about-story-image,.about-interest-photo > img,.about-portrait-mat) { border-radius: var(--radius-image); }

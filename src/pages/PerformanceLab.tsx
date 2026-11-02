@@ -1,3 +1,4 @@
+import BeerBuddy from "../components/BeerBuddy";
 import { Heading } from "../components/Shared";
 export default function PerformanceLab() {
   return (
@@ -23,6 +24,7 @@ export default function PerformanceLab() {
             ),
           )}
         </div>
+        <div className="buddy-shelf buddy-sports-shelf"><BeerBuddy variant="frisbee" /></div>
       </section>
     </>
   );

@@ -1,3 +1,4 @@
+import BeerBuddy from "../components/BeerBuddy";
 import { useState } from "react";
 import { Sparkles } from "lucide-react";
 import { publishedProjects, categories, getProjectCategories } from "../content/projects";
@@ -38,6 +39,7 @@ export default function Projects() {
           </div>
         )}
       </div>
+      <div className="buddy-shelf buddy-project-shelf"><BeerBuddy variant="laptop" /></div>
     </>
   );
 }

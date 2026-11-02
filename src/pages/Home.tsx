@@ -1,3 +1,4 @@
+import BeerBuddy from "../components/BeerBuddy";
 import { Link } from "react-router-dom";
 import { ArrowUpRight, ArrowRight, BookOpen, PersonStanding, UserRound, Mail } from "lucide-react";
 import { profile } from "../content";
@@ -59,6 +60,7 @@ export default function Home() {
         </div>
       </section>
 
+      <div className="home-buddy-boundary"><BeerBuddy variant="peeking" /></div>
       <section className="home-contact" id="contact" aria-labelledby="contact-title">
         <div><div className="eyebrow">LET’S CONNECT</div><h2 id="contact-title">Good things start<br />with a <em>conversation.</em></h2><p>I’m always interested in thoughtful problems, new ideas, and opportunities to work with curious people.</p></div>
         <div className="home-contact-actions"><a className="button primary" href={`mailto:${profile.email}`}><Mail size={18} /> Say hello <ArrowUpRight size={18} /></a><ProfileLinks /></div>

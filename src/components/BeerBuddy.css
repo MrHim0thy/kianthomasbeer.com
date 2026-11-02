@@ -1,0 +1,36 @@
+.beer-buddy-egg { position: relative; width: var(--buddy-size,90px); flex: 0 0 auto; z-index: 3; }
+.beer-buddy-egg > button { display: block; width: 100%; padding: 0; border: 0; border-radius: var(--radius-button,8px); background: transparent; cursor: pointer; min-width: 44px; min-height: 44px; touch-action: manipulation; }
+.beer-buddy-egg img { display: block; width: 100%; height: auto; transform-origin: 50% 85%; }
+.beer-buddy-egg > button:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+.beer-buddy-speech { position: absolute; bottom: calc(100% + 9px); right: 0; width: max-content; max-width: min(210px,70vw); padding: 10px 13px; background: var(--cream); color: var(--navy); border: 1px solid #b68847; border-radius: var(--radius-button,8px); font: 12px/1.5 Inter,ui-sans-serif,sans-serif; box-shadow: 0 3px 9px #1a1f2b0a; pointer-events: none; }
+.beer-buddy-speech[hidden] { display: none; }
+.beer-buddy-speech::after { content: ''; position: absolute; right: 20px; top: 100%; width: 7px; height: 7px; background: var(--cream); border-right: 1px solid #b68847; border-bottom: 1px solid #b68847; transform: translateY(-3px) rotate(45deg); }
+.buddy-shelf { position: relative; min-height: 102px; display: flex; justify-content: flex-end; align-items: flex-end; border-bottom: 1px solid var(--line); padding-right: 18px; }
+.buddy-shelf .beer-buddy-egg { bottom: -3px; }
+.buddy-project-shelf { margin-top: -42px; margin-bottom: 22px; }
+.buddy-project-shelf .beer-buddy-egg { --buddy-size: 96px; }
+.buddy-reading-shelf { border-bottom: 0; min-height: 135px; padding-right: 0; }
+.buddy-reading-shelf .beer-buddy-egg { --buddy-size: 78px; }
+.buddy-sports-shelf { min-height: 140px; border-bottom: 0; }
+.buddy-sports-shelf .beer-buddy-egg { --buddy-size: 110px; }
+.buddy-music-shelf { border-bottom: 0; min-height: 145px; padding: 10px 10px 0 0; }
+.buddy-music-shelf .beer-buddy-egg { --buddy-size: 80px; }
+.buddy-travel-shelf { margin-top: 12px; min-height: 145px; padding-right: 8px; }
+.buddy-travel-shelf .beer-buddy-egg { --buddy-size: 90px; }
+.home-buddy-boundary { position: relative; height: 0; z-index: 4; }
+.home-buddy-boundary .beer-buddy-egg { --buddy-size: 85px; position: absolute; right: 12px; bottom: -6px; }
+@media (prefers-reduced-motion: no-preference) {
+  .beer-buddy-egg img { transition: transform 200ms ease; }
+  .beer-buddy-egg > button:is(:hover,:focus-visible) img { transform: translateY(-2px) rotate(-3deg); }
+}
+@media(max-width:900px) { .beer-buddy-egg { --buddy-size: 72px; } .buddy-project-shelf .beer-buddy-egg,.buddy-travel-shelf .beer-buddy-egg { --buddy-size: 78px; } .buddy-sports-shelf .beer-buddy-egg { --buddy-size: 85px; } }
+@media(max-width:600px) {
+  .buddy-shelf { min-height: 82px; padding-right: 6px; }
+  .buddy-shelf .beer-buddy-egg { --buddy-size: 65px; }
+  .buddy-reading-shelf, .buddy-sports-shelf, .buddy-music-shelf, .buddy-travel-shelf { min-height: 120px; }
+  .buddy-reading-shelf .beer-buddy-egg { --buddy-size: 58px; }
+  .beer-buddy-music .beer-buddy-speech { right: auto; left: 0; }
+  .beer-buddy-music .beer-buddy-speech::after { right: auto; left: 20px; }
+  .buddy-project-shelf { margin-top: -35px; }
+  .home-buddy-boundary .beer-buddy-egg { --buddy-size: 65px; right: 12px; bottom: -5px; }
+}
