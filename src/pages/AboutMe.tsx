@@ -33,9 +33,13 @@ export default function AboutMe() {
   useAboutMetadata();
   const exploration = copy.interests.find(interest => interest.id === 'travel');
   return <article className="about-me">
-    <header className="about-hero">
-      <div className="about-introduction"><span className="about-eyebrow">ABOUT ME / KIAN THOMASBEER</span><h1>{copy.headline.lead}<br/><em>{copy.headline.rest}</em></h1><p>{copy.introduction}</p><a className="about-scroll" href="#/about#about-background">A little of my story <ArrowDown size={15}/></a></div>
-      <figure className="about-portrait"><div className="about-portrait-mat"><span className="about-portrait-mark" aria-hidden="true">KT /</span><img src={copy.portrait.src} alt={copy.portrait.alt} width={copy.portrait.width} height={copy.portrait.height} fetchPriority="high"/></div><figcaption>{copy.portraitCaption}</figcaption></figure>
+    <header className="about-hero about-kayaking-hero">
+      <span className="about-eyebrow about-kayaking-label">ABOUT ME / KIAN THOMASBEER</span>
+      <figure className="about-kayaking-photo"><img src="/images/about/ha-long-bay-kayaking.jpeg" alt="Kian kayaking in Ha Long Bay, wearing a blue life jacket in a yellow kayak, with a pink paddle and limestone mountains behind him" width="4032" height="3024" fetchPriority="high"/></figure>
+      <div className="about-phone">
+        <span className="about-phone-camera" aria-hidden="true"/>
+        <div className="about-introduction about-phone-screen"><h1>{copy.headline.lead}<br/><em>{copy.headline.rest}</em></h1><p>{copy.introduction}</p><a className="about-scroll" href="#/about#about-background">A little of my story <ArrowDown size={15} aria-hidden="true"/></a></div>
+      </div>
     </header>
     <section className="about-background" id="about-background" aria-labelledby="about-background-title"><div className="about-section-label"><span>01 / MY BACKGROUND</span><h2 id="about-background-title">A way of thinking,<br/>not just a toolkit.</h2></div><div className="about-background-copy">{copy.background.map(paragraph=><p key={paragraph}>{paragraph}</p>)}<div className="about-toolkit" aria-label="Technical toolkit">{copy.toolkit.map(tool=><span key={tool}>{tool}</span>)}</div><div className="about-project-links"><span>FOLLOW THE QUESTIONS</span>{publishedProjects.map(project=><Link key={project.slug} to={getProjectRoute(project)}>{project.title}<ArrowUpRight size={15}/></Link>)}</div></div></section>
     <section className="about-path" aria-labelledby="about-path-title"><div className="about-section-label"><span>02 / MY PATH</span><h2 id="about-path-title">Learning.<br/>Making. Moving forward.</h2><p>A few threads that connect where I’ve been with where I’m heading.</p><figure className="about-graduation"><img className="about-story-image" src={copy.graduationPhoto.src} alt={copy.graduationPhoto.alt} width={copy.graduationPhoto.width} height={copy.graduationPhoto.height} loading="lazy" decoding="async"/><figcaption>{copy.graduationPhoto.caption}</figcaption></figure></div><ol>{copy.timeline.map((milestone,index)=><li key={milestone.phase}><span className="about-path-number" aria-hidden="true">{String(index+1).padStart(2,'0')}</span><div><span className="about-eyebrow">{milestone.phase}</span><h3>{milestone.title}</h3><p>{milestone.text}</p></div></li>)}</ol></section>
