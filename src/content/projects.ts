@@ -148,5 +148,5 @@ export const getProjectCategories = (project: Project) => project.categories;
 export const projects = [...projectEntries].sort((a, b) => a.displayOrder - b.displayOrder);
 // New projects are listed by default. Set published: false to keep one out of all listing filters.
 export const publishedProjects = projects.filter(project => project.published !== false);
-// Selected Work is always the first three entries from the exact same published list.
-export const featuredProjects = publishedProjects.slice(0, 3);
+// Selected Work grows with the published collection, showing at most six entries.
+export const featuredProjects = publishedProjects.slice(0, 6);
