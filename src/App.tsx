@@ -142,7 +142,6 @@ export default function App() {
         </motion.main>
         <footer className={location.pathname === "/" ? "home-footer" : undefined}>
           <Brand />
-          <p>A work in progress. Just like the person behind it.</p>
           <span>© {new Date().getFullYear()} Kian Thomasbeer</span>
           <a
             href="#top"
