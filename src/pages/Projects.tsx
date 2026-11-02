@@ -13,7 +13,6 @@ export default function Projects() {
       <Heading
         label="WHAT I'VE BUILT"
         title="Projects"
-        text="Explorations at the intersection of data, technology, and real-world questions."
       />
       <div className="filters" aria-label="Filter projects">
         {categories.map((c) => (

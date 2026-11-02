@@ -7,8 +7,9 @@
 .beer-buddy-speech::after { content: ''; position: absolute; right: 20px; top: 100%; width: 7px; height: 7px; background: var(--cream); border-right: 1px solid #b68847; border-bottom: 1px solid #b68847; transform: translateY(-3px) rotate(45deg); }
 .buddy-shelf { position: relative; min-height: 102px; display: flex; justify-content: flex-end; align-items: flex-end; border-bottom: 1px solid var(--line); padding-right: 18px; }
 .buddy-shelf .beer-buddy-egg { bottom: -3px; }
-.buddy-project-shelf { margin-top: -42px; margin-bottom: 22px; }
-.buddy-project-shelf .beer-buddy-egg { --buddy-size: 96px; }
+.buddy-project-shelf { margin-top: -42px; margin-bottom: 0; border-bottom: 0; }
+.buddy-project-shelf .beer-buddy-egg::before { content: ''; position: absolute; bottom: -2px; left: 12%; width: 76%; height: 8px; border-radius: 50%; background: rgb(26 31 43 / 13%); filter: blur(4px); pointer-events: none; z-index: -1; }
+.buddy-project-shelf .beer-buddy-egg { --buddy-size: 96px; bottom: 0; }
 .buddy-reading-shelf { border-bottom: 0; min-height: 135px; padding-right: 0; }
 .buddy-reading-shelf .beer-buddy-egg { --buddy-size: 78px; }
 .buddy-sports-shelf { min-height: 140px; border-bottom: 0; }
