@@ -1,0 +1,4 @@
+[
+  {"id":"sql","name":"SQL","category":"Data & technology","description":"Learning to ask better questions of relational data, one query at a time.","active":true,"color":"amber","goal":{"targetLessons":12,"label":"Build a query notebook","example":true}},
+  {"id":"german","name":"German","category":"Languages & culture","description":"Exploring the words, patterns, and small conversations that open another door.","active":true,"color":"sage","goal":{"targetLessons":10,"label":"Collect everyday language notes","example":true}}
+]

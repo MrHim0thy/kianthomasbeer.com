@@ -1,0 +1,43 @@
+{
+  "id": "german-small-introduction-example",
+  "subjectId": "german",
+  "date": "2026-11-01",
+  "title": "A small introduction goes a long way",
+  "summary": "A sample language note on saying hello and introducing yourself.",
+  "tags": [
+    "Conversation",
+    "Vocabulary"
+  ],
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "Example lesson: “Hallo, ich heiße Kian.” means “Hello, my name is Kian.” “Wie heißt du?” asks “What is your name?” in an informal conversation."
+    },
+    {
+      "type": "heading",
+      "text": "Notice the pattern"
+    },
+    {
+      "type": "paragraph",
+      "text": "In a simple statement, the conjugated verb comes in the second position: ich heiße. In the question Wie heißt du?, the question word comes first and the verb follows."
+    },
+    {
+      "type": "list",
+      "items": [
+        "Hallo! — Hello!",
+        "Ich heiße Kian. — My name is Kian.",
+        "Freut mich! — Nice to meet you!"
+      ]
+    },
+    {
+      "type": "exercise",
+      "text": "Try it: say a greeting, introduce yourself, then ask the other person their name. This is an example practice prompt, not a record of completed practice."
+    }
+  ],
+  "status": "published",
+  "example": true,
+  "source": {
+    "kind": "example",
+    "label": "Demonstration lesson · not a personal learning record"
+  }
+}

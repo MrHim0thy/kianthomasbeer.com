@@ -1,0 +1,40 @@
+{
+  "id": "sql-select-first-rows-example",
+  "subjectId": "sql",
+  "date": "2026-11-02",
+  "title": "Start with a question, then SELECT",
+  "summary": "An example note on choosing columns and naming a result clearly.",
+  "tags": [
+    "SELECT",
+    "Foundations"
+  ],
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "Example lesson: a query is a precise request for a table of results. SELECT chooses the columns; FROM names the table. The table below is a hypothetical teaching example, not personal or project data."
+    },
+    {
+      "type": "code",
+      "language": "sql",
+      "text": "SELECT customer_id, country\nFROM customers;"
+    },
+    {
+      "type": "heading",
+      "text": "A useful habit"
+    },
+    {
+      "type": "paragraph",
+      "text": "Name the question before writing the query. Here, the question is: which country is associated with each customer? Avoid SELECT * when you only need a few columns."
+    },
+    {
+      "type": "exercise",
+      "text": "Try it: write a query that selects product_id and unit_price from a hypothetical products table. No database runs on this page."
+    }
+  ],
+  "status": "published",
+  "example": true,
+  "source": {
+    "kind": "example",
+    "label": "Demonstration lesson · not a personal learning record"
+  }
+}

@@ -1,29 +1,38 @@
-import BeerBuddy from "../components/BeerBuddy";
-import { Heading } from "../components/Shared";
-export default function CuriosityJournal() {
-  return (
-    <>
-      <Heading
-        label={"WHAT I'M EXPLORING"}
-        title={"Curiosity Journal"}
-        text={
-          "A space for blog posts, discoveries, learning notes, and interactive experiments."
-        }
-      />
-      <section className="placeholder-panel">
-        <span className="sample">In development</span>
-        <h2>A little room for what’s next.</h2>
-        <p>
-          This space is taking shape. Original journal entries and experiments
-          will be added here.
-        </p>
-        <div className="tags">
-          {["German", "SQL", "Machine learning", "Statistics"].map((topic) => (
-            <span key={topic}>{topic}</span>
-          ))}
-        </div>
-        <div className="buddy-shelf buddy-reading-shelf"><BeerBuddy variant="reading" /></div>
-      </section>
-    </>
-  );
+import { useEffect, useMemo, useState } from 'react';
+import { ArrowDown, ArrowUpRight, BookOpen, Search, Sparkles, X } from 'lucide-react';
+import BeerBuddy from '../components/BeerBuddy';
+import JournalAnalytics from '../components/journal/JournalAnalytics';
+import { dateLabel, filterLessons, loadJournal, type Journal, type Lesson, type ContentBlock } from '../data/journal/journal';
+import './CuriosityJournal.css';
+function Block({block}:{block:ContentBlock}){
+ if(block.type==='heading')return <h4>{block.text}</h4>;
+ if(block.type==='code')return <div className="journal-code"><span>{block.language} · read-only snippet</span><pre tabIndex={0} aria-label={`${block.language} code`}><code>{block.text}</code></pre></div>;
+ if(block.type==='list')return <ul>{block.items.map((item,i)=><li key={i}>{item}</li>)}</ul>;
+ if(block.type==='exercise')return <aside className="journal-exercise"><span>TRY IT / A PRACTICE PROMPT</span><p>{block.text}</p></aside>;
+ return <p>{block.text}</p>;
+}
+function Entry({lesson,subject,color}:{lesson:Lesson;subject:string;color:string}){
+ return <li className={`journal-entry journal-${color}`}><div className="journal-entry-date"><time dateTime={lesson.date}>{dateLabel(lesson.date)}</time><span>{subject}</span></div><details id={`lesson-${lesson.id}`}><summary><div className="journal-entry-topline"><span>{subject}</span>{lesson.example&&<span className="journal-example-badge">Example lesson</span>}</div><h3>{lesson.title}</h3><p>{lesson.summary}</p><div className="journal-entry-bottom"><div className="journal-tags">{lesson.tags.map(t=><span key={t}>{t}</span>)}</div><span className="journal-read">Read note <ArrowDown size={14} aria-hidden="true"/></span></div></summary><div className="journal-lesson-body">{lesson.example&&<p className="journal-example-note">Demonstration content: this is an example of a journal entry, not evidence that Kian completed or mastered this lesson.</p>}{lesson.content.map((block,i)=><Block key={i} block={block}/>)}<footer className="journal-provenance"><BookOpen size={14} aria-hidden="true"/><span>{lesson.source.label}<br/>Entry ID: {lesson.id}</span></footer></div></details></li>;
+}
+export default function CuriosityJournal(){
+ const [data,setData]=useState<Journal|null>(null);const [error,setError]=useState('');const [retry,setRetry]=useState(0);const [subject,setSubject]=useState('all');const [tag,setTag]=useState('all');const [query,setQuery]=useState('');const [kind,setKind]=useState('all');const [date,setDate]=useState('');const [visible,setVisible]=useState(8);
+ useEffect(()=>{const controller=new AbortController();setData(null);setError('');loadJournal(controller.signal).then(setData).catch(e=>{if(!controller.signal.aborted)setError(e instanceof Error?e.message:'The journal could not be loaded.');});return()=>controller.abort();},[retry]);
+ useEffect(()=>setVisible(8),[subject,tag,query,kind,date]);
+ const lessons=data?.lessons??[];const published=lessons.filter(l=>!l.example);const examples=lessons.filter(l=>l.example);const filtered=useMemo(()=>filterLessons(data?.lessons??[],{subject,tag,query,kind,date}),[data,subject,tag,query,kind,date]);const tags=[...new Set(lessons.flatMap(l=>l.tags))].sort((a,b)=>a.localeCompare(b));
+ function reset(){setSubject('all');setTag('all');setQuery('');setKind('all');setDate('');}
+ function filterSubject(id:string){setSubject(subject===id?'all':id);setTag('all');setDate('');}
+ return <article className="curiosity-journal"><header className="journal-hero"><div><span className="journal-kicker">WHAT I'M EXPLORING</span><h1>Curiosity<br/><em>is a practice.</em></h1><p>A journal of questions, small discoveries, and things worth understanding a little better.</p><a href="#/curiosity-journal#journal-timeline" className="journal-hero-link">Open the notebook <ArrowDown size={16} aria-hidden="true"/></a></div><div className="journal-hero-note"><Sparkles size={24} aria-hidden="true"/><span>THE CURIOSITY JOURNAL</span><p>One new idea.<br/>Another open door.</p><small>Learning in public, without pretending<br/>there’s a finish line.</small><div className="buddy-shelf buddy-reading-shelf"><BeerBuddy variant="reading"/></div></div></header>
+ {error?<section className="journal-status" role="alert"><h2>The notebook couldn’t open.</h2><p>{error}</p><button onClick={()=>setRetry(v=>v+1)}>Try again</button></section>:!data?<p className="journal-status" role="status">Opening the journal…</p>:<>
+ {data.issues.length>0&&<p className="journal-warning" role="status">Some entries could not be displayed because their data is invalid or duplicated. Valid entries remain available.</p>}
+ {examples.length>0&&<div className="journal-demo-notice"><span className="journal-example-badge">Example content</span><p>{examples.length} sample entries demonstrate the journal format. They are clearly marked and excluded from real publication counts.</p></div>}
+ <div className="journal-metrics"><div><strong>{published.length}</strong><span>lessons published</span><small>Real notes shared · not a mastery score</small></div><div><strong>{data.subjects.filter(s=>s.active).length}</strong><span>active subjects</span><small>Subjects currently being explored</small></div><div><strong>{new Set(published.map(l=>l.date)).size}</strong><span>publishing days</span><small>Days with a real published entry</small></div></div>
+ <section className="journal-tracks" aria-labelledby="journal-tracks-title"><div className="journal-section-heading"><div><span className="journal-kicker">01 / OPEN THREADS</span><h2 id="journal-tracks-title">What I’m learning.</h2></div><span className="journal-muted">Pick a subject. Follow a thread.</span></div><div className="journal-track-grid">{data.subjects.length?data.subjects.map(s=>{const real=published.filter(l=>l.subjectId===s.id).length;const sample=examples.filter(l=>l.subjectId===s.id).length;return <div key={s.id} className={`journal-track journal-${s.color} ${subject===s.id?'is-selected':''}`}><div className="journal-track-heading"><span className="journal-subject-mark" aria-hidden="true">{s.name.slice(0,2)}</span><span>{s.category}<small>{s.active?'Currently exploring':'On the shelf'}</small></span></div><h3>{s.name}</h3><p>{s.description}</p><div className="journal-track-count">{real} published {real===1?'lesson':'lessons'}{sample>0&&<span> · {sample} examples</span>}</div>{s.goal&&<div className="journal-goal"><label htmlFor={`goal-${s.id}`}>{s.goal.example?'Example publishing goal':'Publishing goal'} · {s.goal.label}</label><progress id={`goal-${s.id}`} value={Math.min(real,s.goal.targetLessons)} max={s.goal.targetLessons}/><span>{real} / {s.goal.targetLessons} published notes · not learning completion</span></div>}<button className="journal-track-action" aria-pressed={subject===s.id} onClick={()=>filterSubject(s.id)}>{subject===s.id?'Showing this subject':'Explore the notes'}<ArrowUpRight size={16} aria-hidden="true"/></button></div>;}):<p className="journal-status">The next subject starts with a question. Learning tracks will appear here when added.</p>}</div></section>
+ <JournalAnalytics lessons={lessons} subjects={data.subjects} onDate={(value,includeExamples)=>{setDate(value);if(value)setKind(includeExamples?'all':'published');}} date={date}/>
+ <section className="journal-timeline" id="journal-timeline" aria-labelledby="journal-timeline-title"><div className="journal-section-heading"><div><span className="journal-kicker">03 / NOTES FROM THE WAY</span><h2 id="journal-timeline-title">The learning notebook.</h2></div><span className="journal-muted" aria-live="polite">{filtered.length} {filtered.length===1?'entry':'entries'} found</span></div><div className="journal-filters"><label className="journal-search">Search lessons<span><Search size={16} aria-hidden="true"/><input type="search" value={query} onChange={e=>setQuery(e.target.value)} placeholder="A question, a word, an idea…"/></span></label><label>Subject<select value={subject} onChange={e=>{setSubject(e.target.value);setTag('all');}}><option value="all">All subjects</option>{data.subjects.map(s=><option key={s.id} value={s.id}>{s.name}</option>)}</select></label><label>Tag<select value={tag} onChange={e=>setTag(e.target.value)}><option value="all">All tags</option>{tags.map(t=><option key={t}>{t}</option>)}</select></label><label>Entries<select value={kind} onChange={e=>setKind(e.target.value)}><option value="all">All entries</option><option value="published">Real published notes</option><option value="examples">Examples only</option></select></label></div>
+ {date&&<button className="journal-date-filter" onClick={()=>setDate('')}>On {dateLabel(date)} <X size={14} aria-hidden="true"/><span className="journal-sr">Remove date filter</span></button>}
+ {(subject!=='all'||tag!=='all'||query||kind!=='all'||date)&&<button className="journal-reset" onClick={reset}>Clear filters</button>}
+ {filtered.length?<ol className="journal-entries">{filtered.slice(0,visible).map(l=>{const s=data.subjects.find(s=>s.id===l.subjectId)!;return <Entry key={l.id} lesson={l} subject={s.name} color={s.color}/>;})}</ol>:<div className="journal-empty"><BookOpen size={26} aria-hidden="true"/><h3>{lessons.length?'No notes along this thread yet.':'A fresh page.'}</h3><p>{lessons.length?'Try another subject, tag, or search term. The next discovery might be nearby.':'Published lessons will appear here automatically when added to the journal collection.'}</p></div>}
+ {filtered.length>visible&&<button className="journal-more" onClick={()=>setVisible(v=>v+8)}>Read more entries ({filtered.length-visible} remaining)</button>}
+ </section><p className="journal-closing">A record of what I’m exploring. Always room for another question.</p></>}
+ </article>;
 }

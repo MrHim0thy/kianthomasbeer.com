@@ -1,0 +1,53 @@
+name: Publish Journal Lesson
+on:
+  workflow_dispatch:
+    inputs:
+      lesson_json:
+        description: Structured lesson JSON (maximum 50 KB; must validate against the journal schema)
+        required: true
+        type: string
+permissions: {}
+jobs:
+  publish:
+    # Explicit opt-in after owner review. No schedule, public webhook, or frontend token.
+    if: vars.JOURNAL_AUTO_PUBLISH == 'true' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+      actions: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Validate and import lesson
+        id: lesson
+        # Read input from the event FILE, never interpolate lesson text in shell code.
+        run: node scripts/import-journal-lesson.mjs --event "$GITHUB_EVENT_PATH"
+      - run: npm run test:journal
+      - run: npm run build
+      - name: Commit only the validated lesson
+        if: steps.lesson.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- content/journal/lessons
+          git commit -m "Publish journal lesson"
+          for attempt in 1 2 3; do
+            if git push origin HEAD:main; then exit 0; fi
+            if [ "$attempt" -eq 3 ]; then exit 1; fi
+            git fetch origin main
+            git rebase origin/main
+            npm run test:journal
+            npm run build
+          done
+      - name: Request existing Pages deployment
+        # GITHUB_TOKEN pushes do not trigger push workflows. Also retry deployment on idempotent retries.
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run deploy.yml --ref main

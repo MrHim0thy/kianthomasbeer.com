@@ -1,0 +1,39 @@
+{
+  "id": "german-nouns-with-articles-example",
+  "subjectId": "german",
+  "date": "2026-11-03",
+  "title": "Learn the article with the noun",
+  "summary": "A sample note on treating German nouns and their articles as a pair.",
+  "tags": [
+    "Grammar",
+    "Vocabulary"
+  ],
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "Example lesson: German nouns have grammatical gender, and nouns are capitalized. Learning a noun with its definite article helps build useful associations."
+    },
+    {
+      "type": "list",
+      "items": [
+        "der Tisch — the table",
+        "die Frage — the question",
+        "das Buch — the book"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "These are nominative singular forms. Articles can change with grammatical case; this short example is a starting point rather than a complete rule for every sentence."
+    },
+    {
+      "type": "exercise",
+      "text": "Try it: make three vocabulary cards with the article on the same side as the noun."
+    }
+  ],
+  "status": "published",
+  "example": true,
+  "source": {
+    "kind": "example",
+    "label": "Demonstration lesson · not a personal learning record"
+  }
+}

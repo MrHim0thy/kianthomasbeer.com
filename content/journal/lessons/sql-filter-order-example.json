@@ -1,0 +1,36 @@
+{
+  "id": "sql-filter-order-example",
+  "subjectId": "sql",
+  "date": "2026-11-04",
+  "title": "A smaller result can be a better answer",
+  "summary": "An example of filtering rows with WHERE and making ordering explicit.",
+  "tags": [
+    "WHERE",
+    "ORDER BY"
+  ],
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "Example lesson: WHERE filters rows according to a condition. ORDER BY controls how the result is presented. This hypothetical query is a teaching illustration."
+    },
+    {
+      "type": "code",
+      "language": "sql",
+      "text": "SELECT product_id, unit_price\nFROM products\nWHERE unit_price > 20\nORDER BY unit_price DESC, product_id;"
+    },
+    {
+      "type": "paragraph",
+      "text": "The secondary ordering by product_id makes ties in price easier to inspect. Without ORDER BY, a database does not promise a particular row order."
+    },
+    {
+      "type": "exercise",
+      "text": "Try it: change the condition to include prices equal to 20, then sort from the least expensive product to the most expensive."
+    }
+  ],
+  "status": "published",
+  "example": true,
+  "source": {
+    "kind": "example",
+    "label": "Demonstration lesson · not a personal learning record"
+  }
+}
