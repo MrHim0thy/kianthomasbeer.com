@@ -1,0 +1,632 @@
+{
+  "metadata": {
+    "source": "Connected Apple Health synced from Google Health/Fitbit",
+    "snapshotCreated": "2026-11-05",
+    "lastDataDate": "2026-11-04",
+    "status": "historical_snapshot_not_live",
+    "notes": [
+      "Workout records with identical start and end timestamps were collapsed; other overlaps may still represent duplicates.",
+      "Workout type labels beyond verified categories require mapping validation.",
+      "Steps are daily summary values for Oct 22 to Nov 4 only.",
+      "Sleep segments were grouped by gaps greater than 90 minutes; only asleep stages counted.",
+      "Missing data means unavailable, not zero.",
+      "Never claim automatic updates from this file."
+    ]
+  },
+  "workouts": [
+    {
+      "date": "2026-10-01",
+      "start": "2026-10-01T23:05:37.000000-05:00",
+      "end": "2026-10-01T23:35:37.000000-05:00",
+      "activityCode": 20,
+      "activity": "Workout type 20 (verify mapping)",
+      "durationMinutes": 30.0,
+      "distanceMiles": null,
+      "energyKcal": 123.0
+    },
+    {
+      "date": "2026-10-02",
+      "start": "2026-10-02T19:54:21.200000-05:00",
+      "end": "2026-10-02T20:26:20.000000-05:00",
+      "activityCode": 37,
+      "activity": "Running",
+      "durationMinutes": 32.0,
+      "distanceMiles": 3.98,
+      "energyKcal": 462.0
+    },
+    {
+      "date": "2026-10-04",
+      "start": "2026-10-04T00:17:00.000000-05:00",
+      "end": "2026-10-04T00:57:00.000000-05:00",
+      "activityCode": 11,
+      "activity": "Workout type 11 (verify mapping)",
+      "durationMinutes": 40.0,
+      "distanceMiles": null,
+      "energyKcal": 171.0
+    },
+    {
+      "date": "2026-10-04",
+      "start": "2026-10-04T22:23:20.000000-05:00",
+      "end": "2026-10-04T22:53:02.000000-05:00",
+      "activityCode": 13,
+      "activity": "Cycling",
+      "durationMinutes": 29.7,
+      "distanceMiles": null,
+      "energyKcal": 297.0
+    },
+    {
+      "date": "2026-10-05",
+      "start": "2026-10-05T21:09:22.000000-05:00",
+      "end": "2026-10-05T22:04:22.000000-05:00",
+      "activityCode": 50,
+      "activity": "Workout type 50 (verify mapping)",
+      "durationMinutes": 55.0,
+      "distanceMiles": null,
+      "energyKcal": 262.0
+    },
+    {
+      "date": "2026-10-07",
+      "start": "2026-10-07T12:33:00.000000-05:00",
+      "end": "2026-10-07T13:28:00.000000-05:00",
+      "activityCode": 63,
+      "activity": "Workout type 63 (verify mapping)",
+      "durationMinutes": 55.0,
+      "distanceMiles": null,
+      "energyKcal": 547.0
+    },
+    {
+      "date": "2026-10-08",
+      "start": "2026-10-08T21:03:00.000000-05:00",
+      "end": "2026-10-08T21:46:00.000000-05:00",
+      "activityCode": 20,
+      "activity": "Workout type 20 (verify mapping)",
+      "durationMinutes": 43.0,
+      "distanceMiles": null,
+      "energyKcal": 202.0
+    },
+    {
+      "date": "2026-10-09",
+      "start": "2026-10-09T14:29:24.000000-05:00",
+      "end": "2026-10-09T16:24:36.000000-05:00",
+      "activityCode": 79,
+      "activity": "Workout type 79 (verify mapping)",
+      "durationMinutes": 115.2,
+      "distanceMiles": null,
+      "energyKcal": 1001.0
+    },
+    {
+      "date": "2026-10-10",
+      "start": "2026-10-10T14:20:00.000000-05:00",
+      "end": "2026-10-10T14:26:00.000000-05:00",
+      "activityCode": 37,
+      "activity": "Running",
+      "durationMinutes": 6.0,
+      "distanceMiles": 1.01,
+      "energyKcal": 78.0
+    },
+    {
+      "date": "2026-10-11",
+      "start": "2026-10-11T23:20:00.000000-05:00",
+      "end": "2026-10-12T00:05:00.000000-05:00",
+      "activityCode": 20,
+      "activity": "Workout type 20 (verify mapping)",
+      "durationMinutes": 45.0,
+      "distanceMiles": null,
+      "energyKcal": 212.0
+    },
+    {
+      "date": "2026-10-12",
+      "start": "2026-10-12T16:32:00.000000-05:00",
+      "end": "2026-10-12T17:12:00.000000-05:00",
+      "activityCode": 37,
+      "activity": "Running",
+      "durationMinutes": 40.0,
+      "distanceMiles": 3.65,
+      "energyKcal": 516.0
+    },
+    {
+      "date": "2026-10-13",
+      "start": "2026-10-13T14:12:44.000000-05:00",
+      "end": "2026-10-13T14:41:05.600000-05:00",
+      "activityCode": 13,
+      "activity": "Cycling",
+      "durationMinutes": 28.4,
+      "distanceMiles": null,
+      "energyKcal": 69.0
+    },
+    {
+      "date": "2026-10-13",
+      "start": "2026-10-13T15:51:26.000000-05:00",
+      "end": "2026-10-13T16:17:45.200000-05:00",
+      "activityCode": 13,
+      "activity": "Cycling",
+      "durationMinutes": 26.3,
+      "distanceMiles": null,
+      "energyKcal": 124.0
+    },
+    {
+      "date": "2026-10-13",
+      "start": "2026-10-13T16:22:01.000000-05:00",
+      "end": "2026-10-13T16:52:45.000000-05:00",
+      "activityCode": 13,
+      "activity": "Cycling",
+      "durationMinutes": 30.7,
+      "distanceMiles": 0.63,
+      "energyKcal": 203.0
+    },
+    {
+      "date": "2026-10-14",
+      "start": "2026-10-14T21:17:43.000000-05:00",
+      "end": "2026-10-14T22:15:44.000000-05:00",
+      "activityCode": 79,
+      "activity": "Workout type 79 (verify mapping)",
+      "durationMinutes": 58.0,
+      "distanceMiles": null,
+      "energyKcal": 487.0
+    },
+    {
+      "date": "2026-10-16",
+      "start": "2026-10-16T13:41:27.200000-05:00",
+      "end": "2026-10-16T14:13:27.200000-05:00",
+      "activityCode": 13,
+      "activity": "Cycling",
+      "durationMinutes": 32.0,
+      "distanceMiles": null,
+      "energyKcal": 155.0
+    },
+    {
+      "date": "2026-10-16",
+      "start": "2026-10-16T15:18:57.200000-05:00",
+      "end": "2026-10-16T15:59:02.000000-05:00",
+      "activityCode": 13,
+      "activity": "Cycling",
+      "durationMinutes": 40.1,
+      "distanceMiles": null,
+      "energyKcal": 250.0
+    },
+    {
+      "date": "2026-10-17",
+      "start": "2026-10-17T07:57:42.000000-05:00",
+      "end": "2026-10-17T09:29:52.000000-05:00",
+      "activityCode": 75,
+      "activity": "Ultimate frisbee / disc sports",
+      "durationMinutes": 92.2,
+      "distanceMiles": null,
+      "energyKcal": 949.0
+    },
+    {
+      "date": "2026-10-17",
+      "start": "2026-10-17T11:19:57.000000-05:00",
+      "end": "2026-10-17T11:42:59.000000-05:00",
+      "activityCode": 75,
+      "activity": "Ultimate frisbee / disc sports",
+      "durationMinutes": 23.0,
+      "distanceMiles": null,
+      "energyKcal": 252.0
+    },
+    {
+      "date": "2026-10-17",
+      "start": "2026-10-17T11:42:59.000000-05:00",
+      "end": "2026-10-17T12:02:23.600000-05:00",
+      "activityCode": 75,
+      "activity": "Ultimate frisbee / disc sports",
+      "durationMinutes": 19.4,
+      "distanceMiles": null,
+      "energyKcal": 187.0
+    },
+    {
+      "date": "2026-10-17",
+      "start": "2026-10-17T12:19:02.000000-05:00",
+      "end": "2026-10-17T12:41:22.000000-05:00",
+      "activityCode": 75,
+      "activity": "Ultimate frisbee / disc sports",
+      "durationMinutes": 22.3,
+      "distanceMiles": null,
+      "energyKcal": 204.0
+    },
+    {
+      "date": "2026-10-18",
+      "start": "2026-10-18T07:54:41.000000-05:00",
+      "end": "2026-10-18T09:08:58.000000-05:00",
+      "activityCode": 75,
+      "activity": "Ultimate frisbee / disc sports",
+      "durationMinutes": 74.3,
+      "distanceMiles": null,
+      "energyKcal": 725.0
+    },
+    {
+      "date": "2026-10-18",
+      "start": "2026-10-18T09:48:13.000000-05:00",
+      "end": "2026-10-18T11:08:25.000000-05:00",
+      "activityCode": 75,
+      "activity": "Ultimate frisbee / disc sports",
+      "durationMinutes": 80.2,
+      "distanceMiles": null,
+      "energyKcal": 830.0
+    },
+    {
+      "date": "2026-10-18",
+      "start": "2026-10-18T11:31:28.000000-05:00",
+      "end": "2026-10-18T12:37:59.000000-05:00",
+      "activityCode": 75,
+      "activity": "Ultimate frisbee / disc sports",
+      "durationMinutes": 66.5,
+      "distanceMiles": null,
+      "energyKcal": 688.0
+    },
+    {
+      "date": "2026-10-21",
+      "start": "2026-10-21T20:41:43.200000-05:00",
+      "end": "2026-10-21T21:15:06.200000-05:00",
+      "activityCode": 50,
+      "activity": "Workout type 50 (verify mapping)",
+      "durationMinutes": 33.4,
+      "distanceMiles": null,
+      "energyKcal": 154.0
+    },
+    {
+      "date": "2026-10-21",
+      "start": "2026-10-21T21:33:42.000000-05:00",
+      "end": "2026-10-21T22:19:56.000000-05:00",
+      "activityCode": 50,
+      "activity": "Workout type 50 (verify mapping)",
+      "durationMinutes": 46.2,
+      "distanceMiles": null,
+      "energyKcal": 202.0
+    },
+    {
+      "date": "2026-10-23",
+      "start": "2026-10-23T21:59:50.600000-05:00",
+      "end": "2026-10-23T22:30:00.600000-05:00",
+      "activityCode": 47,
+      "activity": "Workout type 47 (verify mapping)",
+      "durationMinutes": 30.2,
+      "distanceMiles": null,
+      "energyKcal": 251.0
+    },
+    {
+      "date": "2026-10-23",
+      "start": "2026-10-23T23:07:55.200000-05:00",
+      "end": "2026-10-23T23:30:20.200000-05:00",
+      "activityCode": 79,
+      "activity": "Workout type 79 (verify mapping)",
+      "durationMinutes": 22.4,
+      "distanceMiles": null,
+      "energyKcal": 131.0
+    },
+    {
+      "date": "2026-10-24",
+      "start": "2026-10-24T23:13:53.000000-05:00",
+      "end": "2026-10-24T23:44:13.000000-05:00",
+      "activityCode": 13,
+      "activity": "Cycling",
+      "durationMinutes": 30.2,
+      "distanceMiles": 0.17,
+      "energyKcal": 263.0
+    },
+    {
+      "date": "2026-10-25",
+      "start": "2026-10-25T15:14:30.600000-05:00",
+      "end": "2026-10-25T15:39:15.600000-05:00",
+      "activityCode": 34,
+      "activity": "Workout type 34 (verify mapping)",
+      "durationMinutes": 24.8,
+      "distanceMiles": null,
+      "energyKcal": 182.0
+    },
+    {
+      "date": "2026-10-25",
+      "start": "2026-10-25T19:45:57.000000-05:00",
+      "end": "2026-10-25T20:31:09.039000-05:00",
+      "activityCode": 13,
+      "activity": "Cycling",
+      "durationMinutes": 45.1,
+      "distanceMiles": 0.02,
+      "energyKcal": 447.0
+    },
+    {
+      "date": "2026-10-27",
+      "start": "2026-10-27T13:51:39.600000-05:00",
+      "end": "2026-10-27T14:18:39.600000-05:00",
+      "activityCode": 13,
+      "activity": "Cycling",
+      "durationMinutes": 27.0,
+      "distanceMiles": null,
+      "energyKcal": 150.0
+    },
+    {
+      "date": "2026-10-27",
+      "start": "2026-10-27T15:58:27.000000-05:00",
+      "end": "2026-10-27T16:31:27.000000-05:00",
+      "activityCode": 13,
+      "activity": "Cycling",
+      "durationMinutes": 33.0,
+      "distanceMiles": null,
+      "energyKcal": 174.0
+    },
+    {
+      "date": "2026-10-27",
+      "start": "2026-10-27T16:56:49.200000-05:00",
+      "end": "2026-10-27T17:31:54.200000-05:00",
+      "activityCode": 75,
+      "activity": "Ultimate frisbee / disc sports",
+      "durationMinutes": 35.1,
+      "distanceMiles": 0.49,
+      "energyKcal": 259.0
+    },
+    {
+      "date": "2026-10-27",
+      "start": "2026-10-27T17:32:24.200000-05:00",
+      "end": "2026-10-27T17:50:39.200000-05:00",
+      "activityCode": 13,
+      "activity": "Cycling",
+      "durationMinutes": 18.2,
+      "distanceMiles": null,
+      "energyKcal": 184.0
+    },
+    {
+      "date": "2026-10-27",
+      "start": "2026-10-27T20:48:43.200000-05:00",
+      "end": "2026-10-27T21:09:57.200000-05:00",
+      "activityCode": 50,
+      "activity": "Workout type 50 (verify mapping)",
+      "durationMinutes": 21.2,
+      "distanceMiles": null,
+      "energyKcal": 83.0
+    },
+    {
+      "date": "2026-10-28",
+      "start": "2026-10-28T13:15:13.200000-05:00",
+      "end": "2026-10-28T13:33:30.200000-05:00",
+      "activityCode": 37,
+      "activity": "Running",
+      "durationMinutes": 18.3,
+      "distanceMiles": 1.84,
+      "energyKcal": 211.0
+    },
+    {
+      "date": "2026-10-28",
+      "start": "2026-10-28T17:17:49.200000-05:00",
+      "end": "2026-10-28T17:53:54.200000-05:00",
+      "activityCode": 75,
+      "activity": "Ultimate frisbee / disc sports",
+      "durationMinutes": 36.1,
+      "distanceMiles": 0.95,
+      "energyKcal": 281.0
+    },
+    {
+      "date": "2026-10-29",
+      "start": "2026-10-29T18:44:04.400000-05:00",
+      "end": "2026-10-29T20:41:29.400000-05:00",
+      "activityCode": 75,
+      "activity": "Ultimate frisbee / disc sports",
+      "durationMinutes": 117.4,
+      "distanceMiles": 3.45,
+      "energyKcal": 1177.0
+    },
+    {
+      "date": "2026-10-30",
+      "start": "2026-10-30T17:00:31.400000-05:00",
+      "end": "2026-10-30T19:08:46.400000-05:00",
+      "activityCode": 79,
+      "activity": "Workout type 79 (verify mapping)",
+      "durationMinutes": 128.2,
+      "distanceMiles": null,
+      "energyKcal": 959.0
+    },
+    {
+      "date": "2026-11-02",
+      "start": "2026-11-02T15:00:00.000000-05:00",
+      "end": "2026-11-02T15:17:46.000000-05:00",
+      "activityCode": 50,
+      "activity": "Workout type 50 (verify mapping)",
+      "durationMinutes": 17.8,
+      "distanceMiles": null,
+      "energyKcal": 89.0
+    },
+    {
+      "date": "2026-11-02",
+      "start": "2026-11-02T15:37:06.000000-05:00",
+      "end": "2026-11-02T16:08:41.000000-05:00",
+      "activityCode": 50,
+      "activity": "Workout type 50 (verify mapping)",
+      "durationMinutes": 31.6,
+      "distanceMiles": null,
+      "energyKcal": 134.0
+    },
+    {
+      "date": "2026-11-02",
+      "start": "2026-11-02T22:33:31.200000-05:00",
+      "end": "2026-11-02T23:08:43.200000-05:00",
+      "activityCode": 13,
+      "activity": "Cycling",
+      "durationMinutes": 35.2,
+      "distanceMiles": 0.21,
+      "energyKcal": 294.0
+    },
+    {
+      "date": "2026-11-04",
+      "start": "2026-11-04T15:29:31.200000-05:00",
+      "end": "2026-11-04T16:12:36.200000-05:00",
+      "activityCode": 34,
+      "activity": "Workout type 34 (verify mapping)",
+      "durationMinutes": 43.1,
+      "distanceMiles": 0.66,
+      "energyKcal": 269.0
+    },
+    {
+      "date": "2026-11-04",
+      "start": "2026-11-04T19:34:15.000000-05:00",
+      "end": "2026-11-04T20:56:17.000000-05:00",
+      "activityCode": 75,
+      "activity": "Ultimate frisbee / disc sports",
+      "durationMinutes": 82.0,
+      "distanceMiles": 2.3,
+      "energyKcal": 851.0
+    },
+    {
+      "date": "2026-11-04",
+      "start": "2026-11-04T21:29:22.800000-05:00",
+      "end": "2026-11-04T21:46:57.800000-05:00",
+      "activityCode": 52,
+      "activity": "Workout type 52 (verify mapping)",
+      "durationMinutes": 17.6,
+      "distanceMiles": 0.55,
+      "energyKcal": 125.0
+    }
+  ],
+  "dailyActivity": [
+    {
+      "date": "2026-10-22",
+      "steps": 820,
+      "walkingRunningMiles": 0.3
+    },
+    {
+      "date": "2026-10-23",
+      "steps": 4825,
+      "walkingRunningMiles": 2
+    },
+    {
+      "date": "2026-10-24",
+      "steps": 10166,
+      "walkingRunningMiles": 4
+    },
+    {
+      "date": "2026-10-25",
+      "steps": 2969,
+      "walkingRunningMiles": 1.2
+    },
+    {
+      "date": "2026-10-26",
+      "steps": 1101,
+      "walkingRunningMiles": 0.4
+    },
+    {
+      "date": "2026-10-27",
+      "steps": 10460,
+      "walkingRunningMiles": 4.4
+    },
+    {
+      "date": "2026-10-28",
+      "steps": 9581,
+      "walkingRunningMiles": 5
+    },
+    {
+      "date": "2026-10-29",
+      "steps": 8243,
+      "walkingRunningMiles": 3.7
+    },
+    {
+      "date": "2026-10-30",
+      "steps": 6721,
+      "walkingRunningMiles": 2.9
+    },
+    {
+      "date": "2026-10-31",
+      "steps": 3332,
+      "walkingRunningMiles": 1.3
+    },
+    {
+      "date": "2026-11-01",
+      "steps": 2663,
+      "walkingRunningMiles": 1
+    },
+    {
+      "date": "2026-11-02",
+      "steps": 8469,
+      "walkingRunningMiles": 3.3
+    },
+    {
+      "date": "2026-11-03",
+      "steps": 2876,
+      "walkingRunningMiles": 1.2
+    },
+    {
+      "date": "2026-11-04",
+      "steps": 6738,
+      "walkingRunningMiles": 3
+    }
+  ],
+  "restingHeartRate": [
+    {
+      "date": "2026-10-27",
+      "bpm": 53.0
+    },
+    {
+      "date": "2026-10-28",
+      "bpm": 54.0
+    },
+    {
+      "date": "2026-10-29",
+      "bpm": 54.0
+    },
+    {
+      "date": "2026-10-30",
+      "bpm": 53.0
+    },
+    {
+      "date": "2026-10-31",
+      "bpm": 53.0
+    },
+    {
+      "date": "2026-11-02",
+      "bpm": 52.0
+    },
+    {
+      "date": "2026-11-03",
+      "bpm": 53.0
+    }
+  ],
+  "sleepSessions": [
+    {
+      "date": "2026-10-27",
+      "minutesAsleep": 546,
+      "end": "2026-10-27T10:54:00.000000-05:00"
+    },
+    {
+      "date": "2026-10-29",
+      "minutesAsleep": 541,
+      "end": "2026-10-29T10:38:00.000000-05:00"
+    },
+    {
+      "date": "2026-10-30",
+      "minutesAsleep": 489,
+      "end": "2026-10-30T10:27:00.000000-05:00"
+    },
+    {
+      "date": "2026-10-31",
+      "minutesAsleep": 519,
+      "end": "2026-10-31T11:05:00.000000-05:00"
+    },
+    {
+      "date": "2026-10-31",
+      "minutesAsleep": 81,
+      "end": "2026-10-31T17:59:00.000000-05:00"
+    },
+    {
+      "date": "2026-11-01",
+      "minutesAsleep": 337,
+      "end": "2026-11-01T10:06:00.000000-05:00"
+    },
+    {
+      "date": "2026-11-01",
+      "minutesAsleep": 57,
+      "end": "2026-11-01T18:53:00.000000-05:00"
+    },
+    {
+      "date": "2026-11-02",
+      "minutesAsleep": 568,
+      "end": "2026-11-02T12:17:00.000000-05:00"
+    },
+    {
+      "date": "2026-11-03",
+      "minutesAsleep": 518,
+      "end": "2026-11-03T12:16:00.000000-05:00"
+    },
+    {
+      "date": "2026-11-04",
+      "minutesAsleep": 459,
+      "end": "2026-11-04T11:39:00.000000-05:00"
+    }
+  ]
+}

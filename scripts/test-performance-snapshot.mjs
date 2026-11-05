@@ -1,0 +1,17 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import vm from 'node:vm';
+import ts from 'typescript';
+const exports={};const source=fs.readFileSync('src/data/performance/snapshot.ts','utf8').replace('import.meta.env.BASE_URL',"'/'");vm.runInNewContext(ts.transpileModule(source,{compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2022}}).outputText,{exports});
+const {parseSnapshot,reconcileWorkouts,sumKnown,average,daysBetween,monday,sleepByDay}=exports;
+const data=parseSnapshot(JSON.parse(fs.readFileSync('public/data/performance-lab/health-snapshot.json','utf8')));
+const result=reconcileWorkouts(data.workouts);assert.equal(result.workouts.length,46);assert.equal(result.duplicates,0);assert.equal(result.excluded,0);
+assert.ok(Math.abs(sumKnown(result.workouts.map(w=>w.durationMinutes))-1978.4)<1e-8);assert.equal(sumKnown(data.dailyActivity.map(d=>d.steps)),78964);
+const base=data.workouts[0];assert.equal(reconcileWorkouts([base,base]).workouts.length,1);
+const overlapping={...base,start:'2026-10-01T23:20:00-05:00',end:'2026-10-01T23:50:00-05:00'};assert.equal(reconcileWorkouts([base,overlapping]).excluded,2);assert.equal(reconcileWorkouts([base,{...base,start:base.end,end:'2026-10-02T00:00:00-05:00'}]).workouts.length,2);
+assert.equal(sumKnown([null,null]),null);assert.equal(sumKnown([null,5]),5);assert.equal(average([]),null);assert.equal(average([null,4,6]),5);assert.equal(monday('2026-11-01'),'2026-10-26');assert.equal(daysBetween('2026-10-31','2026-11-02').length,3);
+const sleep=sleepByDay(data.sleepSessions);assert.equal(sleep.find(s=>s.date==='2026-10-31').total,600);assert.equal(sleep.find(s=>s.date==='2026-10-31').longest,519);assert.ok(!sleep.some(s=>s.date==='2026-10-28'));
+assert.equal(exports.sports[75],'Disc sports');assert.equal(exports.sportName({...base,activityCode:999}),'Unmapped activity · 999');
+assert.throws(()=>parseSnapshot({...data,dailyActivity:[...data.dailyActivity,data.dailyActivity[0]]}));assert.throws(()=>parseSnapshot({...data,workouts:[{...base,energyKcal:undefined}]}));assert.throws(()=>parseSnapshot({...data,workouts:[{...base,date:'2027-01-01'}]}));
+const empty={...data,workouts:[],dailyActivity:[],restingHeartRate:[],sleepSessions:[]};assert.equal(parseSnapshot(empty).workouts.length,0);
+console.log('Passed snapshot validation, 46-workout/78,964-step source totals, overlap/duplicate protection, adjacent workouts, missing values, sleep aggregation, activity mapping, and empty exports.');
