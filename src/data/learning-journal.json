@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "topics": [
+    {
+      "id": "sql",
+      "name": "SQL",
+      "area": "Data & Analytics",
+      "description": "Relational databases, queries and analytical thinking",
+      "goalLessons": 20
+    },
+    {
+      "id": "german",
+      "name": "German",
+      "area": "Languages",
+      "description": "Grammar, vocabulary and everyday conversation",
+      "goalLessons": 20
+    }
+  ],
+  "entries": [
+    {
+      "id": "demo-sql-joins",
+      "topicId": "sql",
+      "date": "2026-11-05",
+      "title": "Understanding SQL joins",
+      "summary": "How INNER JOIN and LEFT JOIN combine records across related tables.",
+      "tags": [
+        "SQL",
+        "Databases"
+      ],
+      "body": "INNER JOIN returns matching rows from both tables. LEFT JOIN keeps all rows from the left table, including unmatched rows.",
+      "status": "example"
+    },
+    {
+      "id": "demo-german-word-order",
+      "topicId": "german",
+      "date": "2026-11-04",
+      "title": "German word order",
+      "summary": "Main clauses generally place the conjugated verb second, while subordinate clauses move it to the end.",
+      "tags": [
+        "German",
+        "Grammar"
+      ],
+      "body": "Compare: Ich lerne Deutsch. Ich glaube, dass ich Deutsch lerne.",
+      "status": "example"
+    }
+  ]
+}
