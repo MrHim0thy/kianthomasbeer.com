@@ -62,7 +62,7 @@ export default function Home() {
 
       <div className="home-buddy-boundary"><BeerBuddy variant="peeking" /></div>
       <section className="home-contact" id="contact" aria-labelledby="contact-title">
-        <div><div className="eyebrow">LET’S CONNECT</div><h2 id="contact-title">Good things start<br />with a conversation.</h2><p>I’m always interested in thoughtful problems, new ideas, and opportunities to work with curious people.</p></div>
+        <div><div className="eyebrow">LET’S CONNECT</div><h2 id="contact-title">Good things start<br />with a conversation.</h2></div>
         <div className="home-contact-actions"><a className="button primary" href={`mailto:${profile.email}`}><Mail size={18} /> Say hello <ArrowUpRight size={18} /></a><ProfileLinks /></div>
       </section>
     </div>

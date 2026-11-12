@@ -7,10 +7,10 @@
 .home-capability-tools { display: block; margin-top: 21px; font-size: 11px; color: var(--muted); line-height: 1.8; }
 
 /* Contact closes the homepage story. */
-.home-contact { display: grid; grid-template-columns: 1.4fr 1fr; align-items: center; gap: 45px; padding: 60px clamp(24px,4.4vw,62px); margin-inline: -24px; background: var(--navy); color: var(--cream); scroll-margin-top: 30px; border-radius: var(--radius-feature) var(--radius-feature) 0 0; }
+.home-contact { display: grid; grid-template-columns: 1.4fr 1fr; align-items: center; gap: 45px; padding: 40px clamp(24px,4.4vw,62px); margin-inline: -24px; background: var(--navy); color: var(--cream); scroll-margin-top: 30px; border-radius: var(--radius-feature) var(--radius-feature) 0 0; }
 .home-contact .eyebrow { color: #edba76; }
 .home-contact h2 { font-family: var(--font-heading); font-weight: 650; color: #ffffff; font-size: clamp(37px,4.2vw,58px); line-height: 1.12; margin: 24px 0; letter-spacing: -1.6px; }
-.home-contact p { color: var(--home-dark-muted); max-width: 46ch; }
+
 .home-contact-actions { justify-self: end; }
 .home-contact-actions .button { min-height: 52px; background: var(--amber); color: var(--navy); border-color: var(--amber); }
 .home-contact-actions .profile-links { flex-wrap: wrap; gap: 20px; margin-top: 26px; }
@@ -123,7 +123,7 @@
   .home-capabilities { padding-block: 35px 48px; }
   .home-capability-grid { grid-template-columns: 1fr; gap: 26px; }
   .home-capability + .home-capability { border-left: 0; border-top: 1px solid var(--line); padding-left: 0; padding-top: 24px; }
-  .home-contact { grid-template-columns: 1fr; padding: 35px 23px; gap: 26px; }
+  .home-contact { grid-template-columns: 1fr; padding: 28px 23px; gap: 20px; }
   .home-contact h2 { font-size: clamp(33px,8.7vw,44px); letter-spacing: -1.3px; }
   .home-contact-actions { justify-self: start; }
   .home-contact-actions .profile-links { gap: 15px; }
