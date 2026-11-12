@@ -58,7 +58,7 @@ export default function InteractiveTerminal() {
     <div className="terminal-body">
       <div className="terminal-introduction">
         <p className="terminal-executed-command"><span>kian@home:~$</span> whoami</p>
-        <h1>Hi, I’m <span>Kian.</span></h1>
+        <h1>Hi, I’m Kian.</h1>
         <p className="terminal-subtitle">Exploring data, technology, ideas, and everything in between.</p>
         <p className="terminal-welcome">Welcome to my little corner of the internet.</p>
         <div className="terminal-links"><Link className="button primary" to="/projects">Explore my work<ArrowUpRight size={18} aria-hidden="true" /></Link><ProfileLinks /></div>

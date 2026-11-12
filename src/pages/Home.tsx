@@ -26,7 +26,7 @@ export default function Home() {
 
       <section className="home-explore" aria-labelledby="explore-title">
         <div className="home-explore-intro">
-          <h2 id="explore-title">More than one <br />way to be <em>curious.</em></h2>
+          <h2 id="explore-title">More than one <br />way to be curious.</h2>
           <p>Ideas, competition, and the curiosity that keeps it interesting.</p>
         </div>
         <div className="home-destinations">
@@ -62,7 +62,7 @@ export default function Home() {
 
       <div className="home-buddy-boundary"><BeerBuddy variant="peeking" /></div>
       <section className="home-contact" id="contact" aria-labelledby="contact-title">
-        <div><div className="eyebrow">LET’S CONNECT</div><h2 id="contact-title">Good things start<br />with a <em>conversation.</em></h2><p>I’m always interested in thoughtful problems, new ideas, and opportunities to work with curious people.</p></div>
+        <div><div className="eyebrow">LET’S CONNECT</div><h2 id="contact-title">Good things start<br />with a conversation.</h2><p>I’m always interested in thoughtful problems, new ideas, and opportunities to work with curious people.</p></div>
         <div className="home-contact-actions"><a className="button primary" href={`mailto:${profile.email}`}><Mail size={18} /> Say hello <ArrowUpRight size={18} /></a><ProfileLinks /></div>
       </section>
     </div>

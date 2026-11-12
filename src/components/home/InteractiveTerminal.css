@@ -14,7 +14,6 @@
 .terminal-executed-command { font: 15px/1.7 var(--terminal-mono); color: var(--navy); }
 .terminal-executed-command > span, .terminal-input-prompt { color: var(--accent); }
 .terminal-introduction h1 { font-size: clamp(45px, 4.8vw, 72px); letter-spacing: -2.8px; line-height: 1.12; margin: 25px 0 15px; white-space: nowrap; }
-.terminal-introduction h1 > span { font-family: Georgia,serif; font-style: italic; font-weight: 400; color: var(--accent); }
 .terminal-subtitle { font: 19px/1.6 var(--terminal-mono); color: #53636b; letter-spacing: -.5px; max-width: 550px; }
 .terminal-welcome { font: 13px/1.8 var(--terminal-mono); color: var(--muted); margin-top: 17px; }
 .terminal-links { display: flex; align-items: center; flex-wrap: wrap; gap: 19px 21px; margin-top: 27px; }

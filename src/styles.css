@@ -1,5 +1,6 @@
 @import "tailwindcss";
 :root {
+  --font-heading: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --radius-card: 12px;
   --radius-thumbnail: 10px;
   --radius-image: 16px;
