@@ -751,29 +751,6 @@ nav a:hover {
   color: var(--muted);
   font-size: 12px;
 }
-footer {
-  border-top: 1px solid var(--line);
-  padding: 25px 0;
-  display: flex;
-  align-items: center;
-  gap: 25px;
-}
-footer p {
-  font-size: 10px;
-}
-footer > span {
-  margin-left: auto;
-  color: var(--muted);
-  font-size: 9px;
-}
-footer > a:last-child {
-  border: 1px solid var(--line);
-  border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  display: grid;
-  place-items: center;
-}
 .skip-link {
   position: fixed;
   top: -80px;
@@ -980,25 +957,6 @@ footer > a:last-child {
   }
   .section-bottom {
     padding-bottom: 55px;
-  }
-  footer {
-    flex-wrap: wrap;
-    gap: 15px;
-  }
-  footer .wordmark {
-    font-size: 24px;
-  }
-  footer .wordmark > img {
-    width: 35px;
-    height: 35px;
-  }
-  footer p {
-    width: calc(100% - 115px);
-    font-size: 9px;
-  }
-  footer > span {
-    margin-left: 0;
-    margin-right: auto;
   }
 }
 @media (prefers-reduced-motion: reduce) {

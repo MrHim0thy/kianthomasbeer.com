@@ -10,6 +10,8 @@ import {
 import { MotionConfig, motion } from "framer-motion";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 import { projects, articles, profile } from "./content";
+import Footer from "./components/Footer";
+import { navigation } from "./content/navigation";
 import Home from "./pages/Home";
 import Projects from "./pages/Projects";
 import CuriosityJournal from "./pages/CuriosityJournal";
@@ -19,13 +21,6 @@ import ProjectDetail from "./pages/ProjectDetail";
 import Article from "./pages/Article";
 import NotFound from "./pages/NotFound";
 const AboutMe = lazy(() => import("./pages/AboutMe"));
-const navigation = [
-  { label: "Home", path: "/" },
-  { label: "Projects", path: "/projects" },
-  { label: "Curiosity Journal", path: "/curiosity-journal" },
-  { label: "Performance Lab", path: "/performance-lab" },
-  { label: "About Me", path: "/about" },
-];
 function Brand({ showMascot = true }: { showMascot?: boolean }) {
   return (
     <Link to="/" className="wordmark" aria-label="Kian Thomasbeer home">
@@ -140,25 +135,7 @@ export default function App() {
             <Route path="*" element={<NotFound />} />
           </Routes>
         </motion.main>
-        <footer className={location.pathname === "/" ? "home-footer" : undefined}>
-          <Brand />
-          <span>© {new Date().getFullYear()} Kian Thomasbeer</span>
-          <a
-            href="#top"
-            onClick={(e) => {
-              e.preventDefault();
-              window.scrollTo({
-                top: 0,
-                behavior: matchMedia("(prefers-reduced-motion: reduce)").matches
-                  ? "instant"
-                  : "smooth",
-              });
-            }}
-            aria-label="Back to top"
-          >
-            ↑
-          </a>
-        </footer>
+        <Footer />
       </div>
     </MotionConfig>
   );
