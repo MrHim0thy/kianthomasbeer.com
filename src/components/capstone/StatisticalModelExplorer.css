@@ -1,7 +1,7 @@
 .uva-modeling { margin-top: 70px; padding-top: 45px; border-top: 1px solid var(--line); }
 .modeling-introduction { max-width: 880px; margin-top: 20px; font-size: 16px; line-height: 1.9; }
 .modeling-tabs { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-top: 32px; }
-.modeling-tabs > button { display: flex; flex-direction: column; align-items: flex-start; text-align: left; gap: 10px; padding: 18px; border: 1px solid var(--line); border-radius: 5px; color: var(--navy); background: #fffdf74d; font-size: 14px; line-height: 1.4; }
+.modeling-tabs > button { display: flex; flex-direction: column; align-items: flex-start; text-align: left; gap: 10px; padding: 18px; border: 1px solid var(--line); border-radius: 5px; color: var(--navy); background: var(--page-bg); font-size: 14px; line-height: 1.4; }
 .modeling-tabs > button[aria-selected="true"] { border-color: var(--accent); background: #e9a23b0c; }
 .modeling-tab-number { font-size: 9px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--muted); }
 .modeling-final { display: inline-flex; align-items: center; gap: 5px; color: #46573d; font-size: 9px; line-height: 1.5; padding: 3px 6px; background: #a8d86f20; border: 1px solid #cad8b8; border-radius: 3px; }

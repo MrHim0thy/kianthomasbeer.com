@@ -9,7 +9,7 @@
 .respiratory-scope { font-size: 12px; line-height: 1.8; background: #a8d86f13; border-left: 2px solid #97a58c; padding: 14px 17px; margin-top: 22px; }
 .respiratory-scope strong { color: var(--navy); font-weight: 600; }
 .respiratory-chart-help { font-size: 11px; margin-top: 25px; margin-bottom: 12px; }
-.respiratory-chart-frame { position: relative; width: 100%; border: 1px solid var(--line); border-radius: 5px; background: #fffdf74d; padding: 0; }
+.respiratory-chart-frame { position: relative; width: 100%; border: 1px solid var(--line); border-radius: 5px; background: var(--page-bg); padding: 0; }
 .respiratory-chart-frame:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 .respiratory-chart-frame svg { display: block; width: 100%; height: auto; touch-action: pan-y; }
 .respiratory-grid-line { stroke: var(--line); stroke-width: 1; stroke-dasharray: 3 5; }

@@ -12,7 +12,7 @@
 .seasonal-mode select { font: inherit; font-size: 12px; padding: 11px; min-height: 44px; border: 1px solid var(--line); border-radius: 5px; background: var(--cream); color: var(--navy); max-width: 100%; }
 .seasonal-mode select:focus-visible, .seasonal-table-wrap:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 .seasonal-chart-help { margin: 23px 0 16px; font-size: 12px; line-height: 1.9; }
-.seasonal-chart-container { border: 1px solid var(--line); border-radius: 5px; background: #fffdf74d; }
+.seasonal-chart-container { border: 1px solid var(--line); border-radius: 5px; background: var(--page-bg); }
 .seasonal-chart-container svg { display: block; width: 100%; height: auto; }
 .seasonal-grid-line { stroke: var(--line); stroke-dasharray: 3 5; }
 .seasonal-zero-line { stroke: #7b817e; stroke-width: 1.3; }
@@ -27,7 +27,7 @@
 .seasonal-reference-bar .seasonal-positive { fill: var(--navy); }
 .seasonal-month-label { fill: var(--navy); font: 13px Inter,system-ui,sans-serif; }
 .seasonal-value { fill: var(--navy); font: 12px Inter,system-ui,sans-serif; font-variant-numeric: tabular-nums; }
-.seasonal-detail { padding: 23px 25px; border-left: 2px solid var(--amber); margin-top: 24px; background: #fffdf74d; }
+.seasonal-detail { padding: 23px 25px; border-left: 2px solid var(--amber); margin-top: 24px; background: var(--page-bg); }
 .seasonal-detail h3 { margin: 12px 0; font-size: 23px; }
 .seasonal-detail p { font-size: 13px; max-width: 850px; }
 .seasonal-detail .seasonal-equation { color: var(--navy); font-size: 16px; font-variant-numeric: tabular-nums; margin-bottom: 12px; }

@@ -41,7 +41,7 @@ const projectEntries: Project[] = [
     published: true,
     displayOrder: 6,
     year: 2025,
-    illustration: { src: '/images/projects/customer-loyalty.jpg', alt: 'Textured shopping cart with blue bars and a line graph; conceptual illustration, not measured project data', width: 1672, height: 941, background: '#eee9de' },
+    illustration: { src: '/images/projects/customer-loyalty.jpg', alt: 'Textured shopping cart with blue bars and a line graph; conceptual illustration, not measured project data', width: 1672, height: 941, background: 'var(--surface)'  },
   },
   {
     slug: 'math-everyday',
@@ -52,7 +52,7 @@ const projectEntries: Project[] = [
     tools: ['R', 'ggplot2', 'wordcloud2', 'treemapify'],
     number: '05',
     kind: 'math-everyday',
-    illustration: { src: '/images/projects/math-everyday.jpg', alt: 'Textured blue-and-mustard donut chart, line graph, and treemap; illustrative, not measured data', width: 1671, height: 941, background: '#faf7ef' },
+    illustration: { src: '/images/projects/math-everyday.jpg', alt: 'Textured blue-and-mustard donut chart, line graph, and treemap; illustrative, not measured data', width: 1671, height: 941, background: 'var(--page-bg)'  },
     displayOrder: 5,
   },
   {

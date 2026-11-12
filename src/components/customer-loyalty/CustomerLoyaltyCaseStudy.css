@@ -1,5 +1,5 @@
 /* Scoped retail-research editorial: ink, paper, terracotta, and olive. */
-.loyalty-study { --loyalty-ink: #283c35; --loyalty-rust: #a45137; --loyalty-paper: #eee9de; --loyalty-rule: #cfc9bc; padding-bottom: 30px; }
+.loyalty-study { --loyalty-ink: var(--navy); --loyalty-rust: #a45137; --loyalty-paper: var(--surface); --loyalty-rule: var(--line); padding-bottom: 30px; }
 .loyalty-study .loyalty-back { display: inline-flex; gap: 8px; align-items: center; font-size: 12px; margin: 32px 0; }
 .loyalty-study .loyalty-eyebrow { font-size: 10px; letter-spacing: 1.7px; line-height: 1.7; color: var(--loyalty-rust); font-weight: 600; }
 .loyalty-study h1, .loyalty-study h2, .loyalty-study h3 { color: var(--loyalty-ink); }
@@ -20,7 +20,7 @@
 .loyalty-byline { display: flex; flex-wrap: wrap; gap: 16px 30px; padding: 19px 0; border-block: 1px solid var(--loyalty-rule); font-size: 11px; color: var(--muted); }
 .loyalty-section { display: grid; grid-template-columns: .8fr 1.3fr; gap: clamp(30px,7vw,100px); padding: 65px 0; border-bottom: 1px solid var(--loyalty-rule); }
 .loyalty-study code { font-size: 12px; color: var(--loyalty-rust); overflow-wrap: anywhere; }
-.loyalty-callout { border-left: 3px solid var(--loyalty-rust); padding: 15px 22px; background: #eee9de80; margin-top: 27px; }
+.loyalty-callout { border-left: 3px solid var(--loyalty-rust); padding: 15px 22px; background: var(--surface); margin-top: 27px; }
 .loyalty-callout strong { font-size: 14px; color: var(--loyalty-ink); }
 .loyalty-callout p { margin-top: 8px; font-size: 13px; }
 .loyalty-data-fields { margin: 25px 0; }
@@ -56,7 +56,7 @@
 .loyalty-model-name { display: flex; justify-content: space-between; gap: 20px; align-items: baseline; }
 .loyalty-model-name h3 { font-size: 19px; }
 .loyalty-model-name > span { color: var(--loyalty-rust); font-size: clamp(19px,2.6vw,30px); font-variant-numeric: tabular-nums; white-space: nowrap; }
-.loyalty-bar { background: #e7e5dc; height: 10px; margin: 14px 0; }
+.loyalty-bar { background: var(--surface); height: 10px; margin: 14px 0; }
 .loyalty-bar > span { background: var(--loyalty-ink); height: 100%; display: block; }
 .loyalty-model:nth-child(even) .loyalty-bar > span { background: #798974; }
 .loyalty-model-details { display: grid; grid-template-columns: 1.5fr 1fr; gap: 35px; }
@@ -72,7 +72,7 @@
 .loyalty-originals > p:not(.loyalty-eyebrow) { max-width: 82ch; }
 .loyalty-figure-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 35px; margin-top: 35px; }
 .loyalty-figure-grid figure { margin: 0; min-width: 0; }
-.loyalty-figure-grid a { background: white; display: flex; aspect-ratio: 1.6; align-items: center; }
+.loyalty-figure-grid a { background:var(--page-bg); display: flex; aspect-ratio: 1.6; align-items: center; }
 .loyalty-figure-grid img { width: 100%; height: auto; max-height: 100%; object-fit: contain; }
 .loyalty-figure-grid figcaption { color: var(--loyalty-ink); font-size: 12px; line-height: 1.7; padding-top: 15px; }
 .loyalty-figure-grid figcaption span { display: block; color: var(--muted); font-size: 10px; }

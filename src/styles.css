@@ -14,17 +14,22 @@
     "Segoe UI",
     sans-serif;
   color: #1a1f2b;
-  background: #faf7ef;
+  background: var(--page-bg);
   font-synthesis: none;
-  --cream: #faf7ef;
+  --page-bg: #ffffff;
+  --surface: #f8f9fa;
+  --surface-raised: #f3f4f6;
+  --shadow-color: rgb(26 31 43 / 8%);
+  /* Compatibility alias for existing illustrations and reversed text. */
+  --cream: var(--page-bg);
   --navy: #1a1f2b;
   --amber: #e9a23b;
   --sage: #a8d86f;
   --sky: #7fb3d3;
   --blush: #f7d6a6;
   --muted: #59616a;
-  --line: #dddcd2;
-  --surface: #f1eee5;
+  --line: #e5e7eb;
+
   --accent: #955713;
   --lime: var(--accent);
 }
@@ -627,7 +632,7 @@ nav a:hover {
   border: 1px solid var(--line);
   border-top: 3px solid var(--amber);
   border-radius: 6px;
-  background: #fffdf7;
+  background: var(--page-bg);
   padding: 40px;
   margin: 15px 0 100px;
   max-width: 900px;
@@ -644,7 +649,7 @@ nav a:hover {
 .sample {
   font-size: 10px;
   color: #4b6534;
-  background: #eef4e5;
+  background: var(--surface);
   border: 1px solid #cad8b8;
   border-radius: 3px;
   padding: 5px 8px;
@@ -707,7 +712,7 @@ nav a:hover {
   color: #4b6534;
   border: 1px solid #cad8b8;
   border-radius: 5px;
-  background: #eef4e5;
+  background: var(--surface);
   padding: 17px 20px;
   margin: 5px 0 25px;
   line-height: 1.7;
@@ -842,7 +847,7 @@ footer > a:last-child {
     right: 0;
     left: 0;
     z-index: 20;
-    background: #fffdf7;
+    background: var(--page-bg);
     border: 1px solid var(--line);
     padding: 20px;
     border-radius: 5px;
