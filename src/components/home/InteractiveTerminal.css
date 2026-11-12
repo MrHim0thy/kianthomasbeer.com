@@ -8,7 +8,7 @@
 .terminal-window-dots i:nth-child(2) { background: #ffbe34; }
 .terminal-window-dots i:nth-child(3) { background: #30c94c; }
 .terminal-window-label { font: 12px/1.5 var(--terminal-mono); color: var(--muted); }
-.terminal-buddy { position: absolute; width: 155px; aspect-ratio: 3/2; left: 108px; bottom: calc(100% - 8px); pointer-events: auto; z-index: 3; }
+.terminal-buddy { position: absolute; width: 135px; aspect-ratio: 3/2; left: 118px; bottom: calc(100% - 7px); pointer-events: auto; z-index: 3; }
 .terminal-buddy img { display: block; width: 100%; height: auto; transform-origin: 50% 91.6%; }
 .terminal-body { padding: 27px 25px 20px; }
 .terminal-executed-command { font: 15px/1.7 var(--terminal-mono); color: var(--navy); }
@@ -93,7 +93,7 @@
   .terminal-titlebar { gap: 14px; padding: 0 16px; }
   .terminal-window-dots { gap: 7px; padding-right: 14px; }
   .terminal-window-dots i { width: 10px; height: 10px; }
-  .terminal-buddy { width: 138px; left: 87px; bottom: calc(100% - 7px); }
+  .terminal-buddy { width: 120px; left: 96px; bottom: calc(100% - 6px); }
   .terminal-subtitle { font-size: 16px; letter-spacing: -.3px; }
   .terminal-welcome { font-size: 12px; }
   .terminal-links { gap: 12px; }
